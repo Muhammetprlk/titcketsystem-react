@@ -21,10 +21,13 @@ export const NewUser =  "New User"
 export const New =  "New"
 export const Pending =  "Pending"
 export const Done =  "Done"
+export const Open =  "Open"
+export const Closed =  "Closed"
 export const Doing =  "Doing"
 export const Smooth =  "Smooth"
 export const Running =  "Running"
 export const Cancel =  "Cancel"
+export const Yes="Yes"
 
 export const kolkata_India =  "kolkata, India"
 export const India_Surat =  "India, Surat"
@@ -142,9 +145,11 @@ export const Finance =  "Finance"
 
 
 // Project 
-
-
-export const CreateProject =  "Project Title"
+export const CreateProjectSearchCollaborators="Search Collaborators..."
+export const CreateProjectConfirmationHeader="Confirmation"
+export const CreateProjectConfimationMessage="Are you sure?"
+export const CreateProjectSuccesMessage="Project successfuly added"
+export const CreateProject =  "Create New"
 export const ProjectTitle =  "Project Title"
 export const ClientName =  "Client name"
 export const ProjectRate =  "Project Rate"

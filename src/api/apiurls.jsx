@@ -4,3 +4,5 @@ export const getToken=url+"/api/token/";
 export const verifyToken=url+"/api/token-verify/";
 export const createAccountApi=url+"/api/user/register/";
 export const createProject=url+"/api/";
+export const getProjects=url+"/api/";
+export const getCompany=url+"/api/company/";

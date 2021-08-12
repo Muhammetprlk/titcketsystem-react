@@ -22,8 +22,9 @@ const CreateCompany = (props) => {
       setTogglePassword(!tPassword)
     }
 
-    const CreateComp=(user_name,user_surname,user_username,user_email,user_phone,user_password)=>{
-        let user={
+    const CreateComp=(companyname,user_name,user_surname,user_username,user_email,user_phone,user_password)=>{
+        let  company={
+            company_name:companyname,
             first_name: user_name,
             last_name: user_surname,
             username: user_username,
@@ -31,7 +32,7 @@ const CreateCompany = (props) => {
             email: user_email,
             password: user_password,
         }
-        axios.post(createAccountApi,user).then(response=>{
+        axios.post("/api",company).then(response=>{
             console.log(response);
             return response.data.token
           }).catch((error)=>{
@@ -51,7 +52,7 @@ const CreateCompany = (props) => {
                   <h4>{CCompanyCreate}</h4>
                   <FormGroup>
                     <Label className="col-form-label">{CCompanyName}</Label>
-                    <Input className="form-control" type="text" required="" onChange={e => setCompanyName(e.target.value)} />
+                    <Input className="form-control" type="text" maxLength="30" required="" onChange={e => setCompanyName(e.target.value)} />
                   </FormGroup>
                   <FormGroup>
                     <Label className="col-form-label pt-0">{CCopmanyAdminName}</Label>
@@ -83,7 +84,7 @@ const CreateCompany = (props) => {
                   </FormGroup>
                   <div className="form-group mb-0">
                       <br></br>
-                    <Button color="primary" className="btn-block" onClick={()=>CreateComp(name,surname,username,email,phone,password)} >{CCompanyCreate}</Button>
+                    <Button color="primary" className="btn-block" onClick={()=>CreateComp(companyName,name,surname,username,email,phone,password)} >{CCompanyCreate}</Button>
                   </div>
                 </Form>
               </div>
