@@ -35,12 +35,11 @@ const Logins = (props) => {
       axios.post(getToken,{username,password}).then(response=>{
         console.log(response.data.token);
         setValue(man);
-        console.log("result", response.data.token);
-        setName(response.data.user_name);
+        setName(response.data.user_firstname+" "+response.data.user_lastname);
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('isSuperUser', response.data.user_superuser);
         localStorage.setItem('authenticatedUser', JSON.stringify(response.data));
-        window.location.href = `${process.env.PUBLIC_URL}/dashboard/default/`
+        window.location.href = `${process.env.PUBLIC_URL}/`
         return response.data.token
       }).catch(()=>{
         toast.error(SignInErrorMessage);

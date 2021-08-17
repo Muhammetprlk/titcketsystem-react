@@ -1,4 +1,4 @@
-import { Home, Airplay, Box, FolderPlus, Command, Cloud, FileText, Server, BarChart, Users, Layers, ShoppingBag, List, Mail, MessageCircle, GitPullRequest, Monitor, Heart, Clock, Zap, CheckSquare, Calendar, Image, Film, HelpCircle, Radio, Map, Edit, Sunrise, Package } from 'react-feather'
+import { Home, Airplay, Box, FolderPlus, Command, Cloud, FileText, Server, BarChart, Users, Layers, ShoppingBag, List, Mail, MessageCircle, GitPullRequest, Monitor, Heart, Clock, Zap, CheckSquare, Calendar, Activity,Image, Film, HelpCircle, Radio, Map, Edit, Sunrise, Package } from 'react-feather'
 export const MENUITEMS = [
     {
         menutitle:"General",
@@ -13,7 +13,13 @@ export const MENUITEMS = [
             {
                 title: 'Project',icon:Box, type: 'sub',badge: "badge badge-danger",active:false, children: [
                     { path: `${process.env.PUBLIC_URL}/app/project/project-list`, type: 'link', title: 'Project List' },
-                    { path: `${process.env.PUBLIC_URL}/app/project/new-project`, type: 'link', title: 'Create New' }
+                    { path: `${process.env.PUBLIC_URL}/app/project/new-project`, type: 'link', title: 'Create New Project' },
+                ]
+            },
+            {
+                title: 'Issue',icon:Activity, type: 'sub',badge: "badge badge-danger",active:false, children: [
+                    { path: `${process.env.PUBLIC_URL}/app/issue/all-issues`, type: 'link', title: 'Issues' },
+                    { path: `${process.env.PUBLIC_URL}/app/issue/new-issue`, type: 'link', title: 'Create New Issue' },
                 ]
             },
             {

@@ -1,4 +1,4 @@
-import React, { Fragment, useState ,useEffect} from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import Breadcrumb from '../../../layout/breadcrumb'
 import Dropzone from 'react-dropzone-uploader'
 import { Container, Row, Col, Card, CardBody, Form, Modal, ModalHeader, ModalBody, ModalFooter, Media, FormGroup, Label, Input, Button } from 'reactstrap'
@@ -7,42 +7,63 @@ import { useForm } from 'react-hook-form'
 import { addNewProject } from '../../../redux/project-app/action'
 import { useDispatch } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom'
-import { ProjectTitle, CreateProjectSuccesMessage,CreateProjectConfirmationHeader, CreateProjectConfimationMessage,Yes,Cancel, ProjectStatus, Open, Closed, EnterSomeDetails, Add, CreateProject,CreateProjectSearchCollaborators } from '../../../constant'
+import { ProjectTitle, CreateProjectSuccesMessage, CreateProjectConfirmationHeader, CreateProjectConfimationMessage, Yes, Cancel, ProjectStatus, Open, Closed, EnterSomeDetails, Add, CreateProject, CreateProjectSearchCollaborators } from '../../../constant'
 import * as API from '../../../api/apiurls';
 import axios from 'axios'
 import { toast } from 'react-toastify';
 import one from "../../../assets/images/user/1.jpg";
 import three from "../../../assets/images/user/3.jpg";
 import ScrollArea from 'react-scrollbar';
+import SweetAlert from 'sweetalert2'
 
 
 const Newproject = (props) => {
 
   const dispatch = useDispatch()
   const { register, handleSubmit, errors } = useForm();
-  const {searchbar,setSearchbar}=useState("");
-  const [confirmation, setConfitmation] = useState({ toggle: false, item: {} });
+  const [ projectTitle, setProjectTitle ] = useState("");
+  const [ projectDescription, setProjectDescription ] = useState("");
+  const [ projectStatus, setProjectStatus ] = useState("");
+  const [ searchbar, setSearchbar ] = useState("");
   const [users, setUsers] = useState([]);
   const [foundUsers, setFoundUsers] = useState([]);
   const [authenticatedUser, setAuthenticatedUser] = useState(JSON.parse(localStorage.getItem('authenticatedUser')));
 
   useEffect(() => {
-    axios.post(API.getCompany,{admin:authenticatedUser.user_id}).then(response=>{
+    axios.post(API.getCompany, { admin: authenticatedUser.user_id }).then(response => {
       console.log(response.data);
-      const employees=[];
-      response.data.employee.map(e=>{
-        employees.push({...e,isSelect:false});
+      const employees = [];
+      response.data.employee.map(e => {
+        employees.push({ ...e, isSelect: false });
       });
       console.log(employees);
       setUsers(employees);
       setFoundUsers(employees);
     });
-  },[]);
+  }, []);
 
 
   const handleAddUser = (user) => {
-    if (confirmation.toggle) toggleConfirmation();
     user.isSelect = !user.isSelect;
+    if (!user.isSelect) {
+      SweetAlert.fire({
+        title: CreateProjectConfimationMessage,
+        cancelButtonText: Cancel,
+        confirmButtonText: Yes,
+        reverseButtons: true,
+        showCancelButton: true,
+      }).then(result => {
+        if (result.value) {
+          changeSpesificUser(user);
+        }
+      })
+    }
+    else {
+      changeSpesificUser(user);
+    }
+  }
+
+  const changeSpesificUser = (user) => {
     const list = [];
     users.map(u => {
       if (u.id === user.id) {
@@ -55,11 +76,11 @@ const Newproject = (props) => {
     setUsers(list);
   }
 
-  const filter=(event)=>{
+  const filter = (event) => {
     const keyword = event.target.value;
     if (keyword !== '') {
       const results = users.filter((user) => {
-        return (user.first_name+" "+user.last_name).toLowerCase().includes(keyword.toLowerCase());
+        return (user.first_name + " " + user.last_name).toLowerCase().includes(keyword.toLowerCase());
       });
       setFoundUsers(results);
     } else {
@@ -68,42 +89,51 @@ const Newproject = (props) => {
     setSearchbar(keyword);
   }
 
+  const ClearForm=()=>{
+    setProjectStatus(Open);
+    setProjectTitle("");
+    setProjectDescription("");
+
+    const list = [];
+    users.map(u => {
+      u.isSelect=false;
+      list.push(u);
+    })
+
+    setUsers(list);
+    setFoundUsers(list);
+  }
 
   const AddProject = data => {
     if (data !== '') {
-
-      const collaborators=[];
-      users.map((u)=>{
-        if(u.isSelect){
+      const collaborators = [];
+      users.map((u) => {
+        if (u.isSelect) {
           collaborators.push(u.id);
         }
       });
 
       const project = {
-        collaborators:collaborators,
+        employees: collaborators,
         title: data.project_title,
         content: data.project_description,
         status: data.project_status === Closed ? 1 : 2,
-        user: authenticatedUser.user_id,
+        admin_id: authenticatedUser.user_id,
       }
 
       console.log(project);
-      // axios.post(API.createProject, project).then(response => {
-      //   console.log(response.data);
-      //   toast.success(CreateProjectSuccesMessage);
-      // }).catch(error => {
-      //   console.log(error.response);
-      // });
+      axios.post(API.createProject, project).then(response => {
+        toast.success(CreateProjectSuccesMessage);
+        ClearForm();
+      }).catch(error => {
+        toast.error(error.response.data.error);
+      });
 
 
     } else {
       errors.showMessages();
     }
   };
-
-  const toggleConfirmation = () => {
-    setConfitmation({ toggle: false, item: {} });
-  }
 
   return (
     <Fragment>
@@ -118,16 +148,25 @@ const Newproject = (props) => {
                     <Col>
                       <FormGroup>
                         <Label>{ProjectTitle}</Label>
-                        <Input className="form-control" type="text" name="project_title" innerRef={register({ required: true })} />
+                        <Input className="form-control" type="text" name="project_title" innerRef={register({ required: true })}  onChange={e => setProjectTitle(e.target.value)} value={projectTitle} />
                         <span style={{ color: "red" }}>{errors.title && 'Title is required'}</span>
                       </FormGroup>
                     </Col>
                   </Row>
                   <Row>
-                    <Col sm="4">
+                    <Col>
+                      <FormGroup>
+                        <Label>{EnterSomeDetails}</Label>
+                        <Input type="textarea" className="form-control" name="project_description" rows="3" innerRef={register({ required: true })}  onChange={e => setProjectDescription(e.target.value)} value={projectDescription} />
+                        <span style={{ color: "red" }}>{errors.description && 'Some Details is required'}</span>
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col >
                       <FormGroup>
                         <Label>{ProjectStatus}</Label>
-                        <Input type="select" name="project_status" className="form-control digits" innerRef={register({ required: true })}>
+                        <Input type="select" name="project_status" className="form-control digits" innerRef={register({ required: true })}  onChange={e => setProjectStatus(e.target.value)} value={projectStatus} >
                           <option value={Open}>{Open}</option>
                           <option value={Closed}>{Closed}</option>
                         </Input>
@@ -136,20 +175,9 @@ const Newproject = (props) => {
                   </Row>
                   <Row>
                     <Col>
-                      <FormGroup>
-                        <Label>{EnterSomeDetails}</Label>
-                        <Input type="textarea" className="form-control" name="project_description" rows="3" innerRef={register({ required: true })} />
-                        <span style={{ color: "red" }}>{errors.description && 'Some Details is required'}</span>
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col>
                       <FormGroup className="mb-0">
-                        <Button color="success" className="mr-3">{Add}</Button>
-                        <Link to={`${process.env.PUBLIC_URL}/app/project/project-list`}>
-                          <Button color="danger">{Cancel}</Button>
-                        </Link>
+                        <Button color="primary" className="mr-3">{Add}</Button>
+                          <Button color="light" onClick={()=>{ClearForm()}} >{Cancel}</Button>
                       </FormGroup>
                     </Col>
                   </Row>
@@ -171,13 +199,13 @@ const Newproject = (props) => {
                       <img className="img-50 rounded-circle m-r-15" src={three} alt="fourteenImg" />
                       <div className="social-status social-online"></div>
                       <Media body>
-                        <span className="f-w-600 d-block">{user.first_name+" "+user.last_name}</span><span className="d-block">{user.email}</span>
+                        <span className="f-w-600 d-block">{user.first_name + " " + user.last_name}</span><span className="d-block">{user.email}</span>
                       </Media>
                       <div className="mr-5 my-auto">
                         <div className="product-icon">
                           <ul className="product-social">
                             <li className="d-inline-block" >
-                              {user.isSelect ? <a onClick={() => { setConfitmation({ toggle: true, item: user }) }} > <i style={{ color: "#dc3545" }} className="fa fa-minus"></i> </a> : <a onClick={() => { handleAddUser(user) }} ><i style={{ color: "#51bb25" }} className="fa fa-plus"></i></a>}
+                              <a onClick={() => { handleAddUser(user) }} >{user.isSelect ? <i style={{ color: "#dc3545" }} className="fa fa-minus"></i> : <i style={{ color: "#51bb25" }} className="fa fa-plus"></i>}</a>
                             </li>
                           </ul>
                         </div>
@@ -190,16 +218,6 @@ const Newproject = (props) => {
           </Col>
         </Row>
       </Container>
-      <Modal isOpen={confirmation.toggle} size="xs" toggle={toggleConfirmation} centered >
-        <ModalHeader toggle={toggleConfirmation}>{CreateProjectConfirmationHeader}</ModalHeader>
-        <ModalBody>
-          {CreateProjectConfimationMessage}
-        </ModalBody>
-        <ModalFooter>
-          <Button color="danger" onClick={toggleConfirmation}>{Cancel}</Button>
-          <Button color="success" onClick={() => { handleAddUser(confirmation.item) }}>{Yes}</Button>
-        </ModalFooter>
-      </Modal>
     </Fragment>
   );
 }

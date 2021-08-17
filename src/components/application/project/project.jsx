@@ -4,26 +4,24 @@ import { Container, Row, Col, Card, CardBody, FormGroup, Progress, Nav, NavItem,
 import { Target, Info, CheckCircle, PlusCircle } from 'react-feather';
 import {Link} from 'react-router-dom'
 import { useSelector } from 'react-redux';
-import {Issues,Resolved,Comment,Done,All,Doing,CreateNewProject} from '../../../constant'
+import {Issues,Resolved,Comment,Done,All,Doing,CreateNewProject,ProjectList} from '../../../constant'
 import { DefaultLayout } from '../../../layout/theme-customizer';
 import * as API from '../../../api/apiurls';
 import axios from 'axios'
 
 const Project = (props) => {
-  const id = window.location.pathname.split('/').pop()
-  const defaultLayout= Object.keys(DefaultLayout);
-  const layout= id ? id : defaultLayout
+  // const id = window.location.pathname.split('/').pop()
+  // const defaultLayout= Object.keys(DefaultLayout);
+  // const layout= id ? id : defaultLayout
   const [activeTab,setActiveTab] = useState("1")
   const [projects,setProjects] = useState()
-  const allProject = useSelector(content => content.Projectapp.all_Project);
-  const doingProject = useSelector(content => content.Projectapp.doing_Project);
-  const doneProject = useSelector(content => content.Projectapp.done_Project);
+  // const allProject = useSelector(content => content.Projectapp.all_Project);
+  // const doingProject = useSelector(content => content.Projectapp.doing_Project);
+  // const doneProject = useSelector(content => content.Projectapp.done_Project);
 
 
   useEffect(() => {
     axios.get(API.getProjects).then(response=>{
-      console.log(allProject);
-      console.log(response.data);
       setProjects(response.data)
     });
   },[]);
@@ -31,7 +29,7 @@ const Project = (props) => {
 
   return (
     <Fragment>
-      <Breadcrumb parent="Project" title="Project List" />
+      <Breadcrumb parent="Project" title={ProjectList} />
       <Container fluid={true}>
         <Row>
           <Col md="12" className="project-list">

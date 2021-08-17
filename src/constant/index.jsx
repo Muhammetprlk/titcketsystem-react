@@ -153,6 +153,7 @@ export const CreateProject =  "Create New"
 export const ProjectTitle =  "Project Title"
 export const ClientName =  "Client name"
 export const ProjectRate =  "Project Rate"
+export const ProjectList="Project List"
 
 export const ProgressLevel =  "Progress Level"
 export const ProjectStatus =  "Project Status"
@@ -172,6 +173,14 @@ export const CreateNewProject =  "Create New Project"
 export const Issues =  "Issues"
 export const Resolved =  "Resolved"
 export const Comment =  "Comment"
+export const Comments =  "Comments"
+
+
+// New Issue
+export const NewIssueHeader =  "New Issue"
+export const NewIssueProject =  "Project"
+export const NewIssueTitle =  "Issue Title"
+export const NewIssueContent =  "Issue Content"
 
 
 // ecommerce

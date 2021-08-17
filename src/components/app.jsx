@@ -24,7 +24,7 @@ const App = ({children}) => {
         </div>
       
       </div>
-      <ThemeCustomize/>
+      {/* <ThemeCustomize/> */}
       <ToastContainer/>
     </Fragment>
   );
