@@ -13,49 +13,16 @@ import DOMPurify from 'dompurify'
 import ReactDOMServer from "react-dom/server";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from 'remark-gfm';
-import { Link,useParams } from 'react-router-dom';
+import { Link,useParams ,useLocation,useHistory} from 'react-router-dom';
 import axios from 'axios';
 import * as API from '../../../api/apiurls';
-
-
-const fakeIssue = {
-    issue_id:1,
-    Username: "Muhammetprlk",
-    Name: "Muhammet",
-    Surname: "Parlak",
-    IssueCreatedDate: "11/11/2021",
-    IssueProject: "Google Chrome",
-    IssueTitle: "Google Chrome refusing to open pages in Windows 10",
-    IssueContent: "I'm running Google Chrome on Windows 10, latest editions. Chrome refuses to open any pages, returning \"Aw snap\" error messages. To resolve this I've:\n\n 1. Removed all extensions. \n 2. Uninstalled and reinstalled Chrome.\n 3. Tried Chrome on a different user.\n 4. Ran Chrome Cleanup Tool.\n 5. Deleted my Google folder in Appdata.\n 6. Incognito pages don't work either.\n\nNone of these worked. Firefox at all times is working perfectly so its not an internet problem.\n\nAnyone have any ideas on how to fix this?",
-    Comments:
-        [
-            {
-                Username: "Theo",
-                Name: "Theodor",
-                Surname: "Herzl",
-                CommentCreatedDate: "11/11/2021",
-                CommentContent: "<p>It is likely that malware is trying (and failing) to modify the page that is loading. I&#39;ve also seen this as a symptom of machines that had nasty redirect malware removed, as the redirects that the malware creates no longer have anywhere to resolve.</p><p>I highly recommend a fresh Windows 10 install, only way to be sure you&#39;re fully free of whatever may have infected your current Windows installation.</p>"
-            },
-            {
-                Username: "Bibin Gangadharan",
-                Name: "Bibin",
-                Surname: "Gangadharan",
-                CommentCreatedDate: "11/11/2021",
-                CommentContent: "<p>Please follow below steps, to resolve &quot;Aw snap&quot; error messages with Chrome browser.</p><p><strong>Steps To Resolve:</strong></p><ul><li>Go to Chrome shortcut in the Desktop (If not exists create one)</li><li>Right click -&gt; Properties</li><li>In the target field, At the end add a space followed by the below&nbsp;<strong>-no-sandbox</strong></li><li>Apply-Ok</li><li>Launch chrome using the shortcut</li></ul>"
-            },
-            {
-                Username: "lightcoder",
-                Name: "light",
-                Surname: "coder",
-                CommentCreatedDate: "11/11/2021",
-                CommentContent: "<p>Follow the below steps</p><ol><li>Go to windows task manager</li><li>go to details tab</li><li>kill all the chrome process</li><li>run the chrome it will open</li></ol>"
-            }
-        ]
-};
+import { toast } from 'react-toastify';
 
 const Issue = () => {
     const [text, setText] = useState('')
     const [issueDetail,setIssueDetail]=useState({});
+    const [issueComments,setIssueComments]=useState([]);
+
     const handleChange = (text) => {
         setText(text);
     }
@@ -64,18 +31,27 @@ const Issue = () => {
     const {issueid}=useParams();
 
     useEffect(() => {
-        axios.post(API.getIssueDetail,{id:issueid}).then(response=>{
-          setIssueDetail(response.data)
-        });
+        axios.post(API.getIssueDetail,{id:issueid},API.getHeader()).then(response=>{
+          setIssueDetail({...response.data,comments:null})
+          setIssueComments(response.data.comments);
+        }).catch(error=>{
+            toast.error(error.response.data.error);
+        })
       },[]);
 
     const postAnswer=()=>{
         const answer={
-            user_id:authenticatedUser.user_id,
-            issue_id:fakeIssue.issue_id,
-            comment_content:text
+            comment_content:text,
+            issue_id:issueDetail.id,
         }
-        console.log(answer);
+        axios.post(API.postAnswerForIssue,answer,API.getHeader()).then(response=>{
+            const newComment={...response.data,content:text}
+            setIssueComments([...issueComments,newComment]); 
+            setText("");
+        }).catch(error=>{
+            toast.error(error.response.data.error);
+        })
+        
     }
 
 
@@ -90,7 +66,7 @@ const Issue = () => {
                             <div className="blog-box blog-details">
                                 <div className="blog-details">
                                     <ul className="blog-social">
-                                        <li className="digits">{issueDetail.IssueCreatedDate}</li>
+                                        <li className="digits">{new Date(issueDetail.ıssues_created_date).toLocaleDateString()+" "+new Date(issueDetail.ıssues_created_date).toLocaleTimeString()}</li>
                                         <li><i className="icofont icofont-user"></i>{issueDetail.user_firstname+" "+issueDetail.user_lastname} <span>{"( "+issueDetail.user_username+" )"} </span></li>
                                         <li><i className="icofont icofont-cube"></i>{issueDetail.project_name}</li>
                                     </ul>
@@ -106,8 +82,8 @@ const Issue = () => {
                                 <h4>{Comments}</h4>
                                 <hr />
                                 <ul>
-                                    {issueDetail.commnets?.map(com =>
-                                        <li>
+                                    {issueComments?.map((com,key) =>
+                                        <li key={key}>
                                             <Media className="align-self-center">
                                                 <Col sm="0">
                                                     <Media className="align-self-center" src={comment} alt="" />
@@ -117,7 +93,7 @@ const Issue = () => {
                                                         <Row>
                                                             <h6 className="mt-0">{com.firstname+" "+com.lastname}<span> {"( "+com.username+" )"}</span></h6>
                                                         </Row>
-                                                        <Row>
+                                                        <Row style={{display:"inline-block"}} >
                                                             <ReactMarkdown children={com.content} remarkPlugins={[remarkGfm]} />
                                                         </Row>
                                                     </Media>

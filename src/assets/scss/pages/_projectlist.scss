@@ -75,8 +75,15 @@
 
 	.badge {
 		position: absolute;
-		right: 30px;
+		right: 55px;
 		top: 15px;
+	}
+
+	.update {
+		position: absolute;
+		right:30px;
+		top: 15px;
+		cursor: pointer;
 	}
 
 	.project-status {

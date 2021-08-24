@@ -10,23 +10,26 @@ import { DefaultLayout } from '../theme-customizer';
 
 const Sidebar = (props) => {
   const id = window.location.pathname.split('/').pop()
-  const defaultLayout= Object.keys(DefaultLayout);
-  const layout= id ? id : defaultLayout
+  const defaultLayout = Object.keys(DefaultLayout);
+  const layout = id ? id : defaultLayout
   // eslint-disable-next-line
   const [mainmenu, setMainMenu] = useState(MENUITEMS);
   const [margin, setMargin] = useState(0);
   const [width, setWidth] = useState(0);
   const [sidebartoogle, setSidebartoogle] = useState(true)
+  const { user_role } = JSON.parse(localStorage.getItem('authenticatedUser'));
+
+
   const wrapper = useSelector(content => content.Customizer.sidebar_types.type) || configDB.data.settings.sidebar.type;
   const handleScroll = () => {
-    if(window.scrollY > 400){
-        if(configDB.data.settings.sidebar.type.split(' ').pop() === 'material-type' || configDB.data.settings.sidebar.type.split(' ').pop() ==='advance-layout')
-          document.querySelector(".sidebar-main").className = "sidebar-main hovered"
-    }else{
-      if(document.getElementById("sidebar-main"))
-      document.querySelector(".sidebar-main").className = "sidebar-main"
+    if (window.scrollY > 400) {
+      if (configDB.data.settings.sidebar.type.split(' ').pop() === 'material-type' || configDB.data.settings.sidebar.type.split(' ').pop() === 'advance-layout')
+        document.querySelector(".sidebar-main").className = "sidebar-main hovered"
+    } else {
+      if (document.getElementById("sidebar-main"))
+        document.querySelector(".sidebar-main").className = "sidebar-main"
     }
-}
+  }
   useEffect(() => {
     document.querySelector(".left-arrow").classList.add("d-none")
     window.addEventListener('resize', handleResize)
@@ -56,8 +59,8 @@ const Sidebar = (props) => {
       })
       return items
     })
-    window.addEventListener('scroll',handleScroll)
-    handleScroll();   
+    window.addEventListener('scroll', handleScroll)
+    handleScroll();
     return () => {
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleResize)
@@ -73,15 +76,14 @@ const Sidebar = (props) => {
   const setNavActive = (item) => {
     MENUITEMS.map(menuItems => {
       menuItems.Items.filter(Items => {
-        if (Items !== item)
-        {
+        if (Items !== item) {
           Items.active = false
           document.querySelector(".bg-overlay1").classList.remove("active")
-          } 
-        if (Items.children && Items.children.includes(item))
-          {Items.active = true
-            document.querySelector(".sidebar-link").classList.add("active")
-          }
+        }
+        if (Items.children && Items.children.includes(item)) {
+          Items.active = true
+          document.querySelector(".sidebar-link").classList.add("active")
+        }
         if (Items.children) {
           Items.children.filter(submenuItems => {
             if (submenuItems.children && submenuItems.children.includes(item)) {
@@ -103,11 +105,11 @@ const Sidebar = (props) => {
   }
 
   const toggletNavActive = (item) => {
-    if(window.innerWidth <= 991){
+    if (window.innerWidth <= 991) {
       document.querySelector(".page-header").className = "page-header close_icon";
       document.querySelector(".sidebar-wrapper").className = "sidebar-wrapper close_icon "
       document.querySelector(".mega-menu-container").classList.remove("d-block")
-      if(item.type === "sub"){
+      if (item.type === "sub") {
         document.querySelector(".page-header").className = "page-header ";
         document.querySelector(".sidebar-wrapper").className = "sidebar-wrapper "
       }
@@ -141,14 +143,14 @@ const Sidebar = (props) => {
 
   const scrollToRight = () => {
     if (margin <= -2598 || margin <= -2034) {
-      if(width === 492){
+      if (width === 492) {
         setMargin(-3570)
-      }else{
+      } else {
         setMargin(-3464)
       }
       document.querySelector(".right-arrow").classList.add("d-none")
       document.querySelector(".left-arrow").classList.remove("d-none")
-    }else {
+    } else {
       setMargin(margin => margin += (-width));
       document.querySelector(".left-arrow").classList.remove("d-none")
     }
@@ -191,13 +193,13 @@ const Sidebar = (props) => {
     document.querySelector(".page-header").className = "page-header close_icon";
     document.querySelector(".sidebar-wrapper").className = "sidebar-wrapper close_icon"
   }
-  
+
   return (
     <Fragment>
-       <div className={`bg-overlay1`} onClick={() => {closeOverlay()}} ></div>
+      <div className={`bg-overlay1`} onClick={() => { closeOverlay() }} ></div>
       <div className="sidebar-wrapper" id="sidebar-wrapper">
         <div className="logo-wrapper">
-          <Link to={`${process.env.PUBLIC_URL}/dashboard/default/${layout}`}>
+          <Link to={`${process.env.PUBLIC_URL}/dashboard/default/`}>
             <img className="img-fluid for-light" src={require("../../assets/images/logo/logo.png")} alt="" />
             <img className="img-fluid for-dark" src={require("../../assets/images/logo/logo_dark.png")} alt="" />
           </Link>
@@ -205,28 +207,29 @@ const Sidebar = (props) => {
           <div className="toggle-sidebar" onClick={() => openCloseSidebar(sidebartoogle)}><Grid className="status_toggle middle sidebar-toggle" /></div>
         </div>
         <div className="logo-icon-wrapper">
-          <Link to={`${process.env.PUBLIC_URL}/dashboard/default/${layout}`}><img className="img-fluid" src={require("../../assets/images/logo/logo-icon.png")} alt="" /></Link>
+          <Link to={`${process.env.PUBLIC_URL}/dashboard/default/`}><img className="img-fluid" src={require("../../assets/images/logo/logo-icon.png")} alt="" /></Link>
         </div>
         <nav className="sidebar-main" id="sidebar-main">
-            <div className="left-arrow" onClick={scrollToLeft}><ArrowLeft /></div>
-            <div id="sidebar-menu" style={wrapper.split(' ').includes('horizontal-wrapper') ? { 'marginLeft': margin + 'px' } : { margin: '0px' }}>
-              <ul className="sidebar-links custom-scrollbar" >
-                <li className="back-btn">
-                  <div className="mobile-back text-right"><span>{"Back"}</span><i className="fa fa-angle-right pl-2" aria-hidden="true"></i></div>
-                </li>
-                {
-                  MENUITEMS.map((Item, i) =>
-                    <Fragment key={i}>
-                      <li className="sidebar-main-title">
-                        <div>
-                          <h6 className="lan-1">{props.t(Item.menutitle)}</h6>
-                          <p className="lan-2">{props.t(Item.menucontent)}</p>
-                        </div>
-                      </li>
-                      {Item.Items.map((menuItem, i) =>
+          <div className="left-arrow" onClick={scrollToLeft}><ArrowLeft /></div>
+          <div id="sidebar-menu" style={wrapper.split(' ').includes('horizontal-wrapper') ? { 'marginLeft': margin + 'px' } : { margin: '0px' }}>
+            <ul className="sidebar-links custom-scrollbar" >
+              <li className="back-btn">
+                <div className="mobile-back text-right"><span>{"Back"}</span><i className="fa fa-angle-right pl-2" aria-hidden="true"></i></div>
+              </li>
+              {
+                MENUITEMS.map((Item, i) =>
+                  <Fragment key={i}>
+                    <li className="sidebar-main-title">
+                      <div>
+                        <h6 className="lan-1">{props.t(Item.menutitle)}</h6>
+                        <p className="lan-2">{props.t(Item.menucontent)}</p>
+                      </div>
+                    </li>
+                    {Item.Items.map((menuItem, i) =>
+                      menuItem.userRole.includes(user_role) ?
                         <li className="sidebar-list" key={i}>
                           {(menuItem.type === 'sub') ?
-                            <a href="javascript" className={`sidebar-link sidebar-title ${menuItem.active ? activeClass() : ''}`} onClick={(event) => {event.preventDefault(); setNavActive(menuItem)}}>
+                            <a href="javascript" className={`sidebar-link sidebar-title ${menuItem.active ? activeClass() : ''}`} onClick={(event) => { event.preventDefault(); setNavActive(menuItem) }}>
                               <menuItem.icon />
                               <span>{props.t(menuItem.title)}</span>
                               {menuItem.badge ? <label className={menuItem.badge}>{menuItem.badgetxt}</label> : ""}
@@ -240,7 +243,7 @@ const Sidebar = (props) => {
                             : ''}
 
                           {(menuItem.type === 'link') ?
-                            <Link  to={menuItem.path+'/'+layout} className={`sidebar-link sidebar-title link-nav  ${menuItem.active ? 'active' : ''}`} onClick={() => toggletNavActive(menuItem)}>
+                            <Link to={menuItem.path + '/'} className={`sidebar-link sidebar-title link-nav  ${menuItem.active ? 'active' : ''}`} onClick={() => toggletNavActive(menuItem)}>
                               <menuItem.icon />
                               <span>{props.t(menuItem.title)}</span>
                               {menuItem.badge ? <label className={menuItem.badge}>{menuItem.badgetxt}</label> : ""}
@@ -253,53 +256,54 @@ const Sidebar = (props) => {
                               style={menuItem.active ? sidebartoogle ? { opacity: 1, transition: 'opacity 500ms ease-in' } : { display: "block" } : { display: "none" }}>
 
                               {menuItem.children.map((childrenItem, index) => {
+                                if (childrenItem.userRole.includes(user_role)) {
+                                  return (
+                                    <li key={index}>
 
-                                return (
-                                  <li key={index}>
+                                      {(childrenItem.type === 'sub') ?
+                                        <a href="javascript" className={`${childrenItem.active ? 'active' : ''}`} onClick={(event) => { event.preventDefault(); toggletNavActive(childrenItem) }}>{props.t(childrenItem.title)}
+                                          <span className="sub-arrow">
+                                            <i className="fa fa-chevron-right"></i>
+                                          </span>
+                                          <div className="according-menu">
+                                            {childrenItem.active ?
+                                              <i className="fa fa-angle-down"></i>
+                                              : <i className="fa fa-angle-right"></i>
+                                            }
+                                          </div>
+                                        </a>
+                                        : ''}
 
-                                    {(childrenItem.type === 'sub') ?
-                                      <a href="javascript" className={`${childrenItem.active ? 'active' : ''}`} onClick={(event) =>{event.preventDefault(); toggletNavActive(childrenItem)}}>{props.t(childrenItem.title)}
-                                        <span className="sub-arrow">
-                                          <i className="fa fa-chevron-right"></i>
-                                        </span>
-                                        <div className="according-menu">
-                                          {childrenItem.active ?
-                                            <i className="fa fa-angle-down"></i>
-                                            : <i className="fa fa-angle-right"></i>
-                                          }
-                                        </div>
-                                      </a>
-                                      : ''}
+                                      {(childrenItem.type === 'link') ?
+                                        <Link to={childrenItem.path + '/'} className={`${childrenItem.active ? 'active' : ''}`} onClick={() => toggletNavActive(childrenItem)}>{props.t(childrenItem.title)}</Link>
+                                        : ''}
 
-                                    {(childrenItem.type === 'link') ?
-                                      <Link  to={childrenItem.path+'/'+layout} className={`${childrenItem.active ? 'active' : ''}`} onClick={() => toggletNavActive(childrenItem)}>{props.t(childrenItem.title)}</Link>
-                                      : ''}
+                                      {childrenItem.children ?
+                                        <ul className="nav-sub-childmenu submenu-content"
+                                          style={childrenItem.active ? { display: "block" } : { display: "none" }}
+                                        >
+                                          {childrenItem.children.map((childrenSubItem, key) =>
+                                            <li key={key}>
+                                              {(childrenSubItem.type === 'link') ?
+                                                <Link to={childrenSubItem.path + '/'} className={`${childrenSubItem.active ? 'active' : ''}`} onClick={() => toggletNavActive(childrenSubItem)}>{props.t(childrenSubItem.title)}</Link>
+                                                : ''}
+                                            </li>
+                                          )}
+                                        </ul>
+                                        : ""}
 
-                                    {childrenItem.children ?
-                                      <ul className="nav-sub-childmenu submenu-content"
-                                        style={childrenItem.active ? { display: "block" } : { display: "none" }}
-                                      >
-                                        {childrenItem.children.map((childrenSubItem, key) =>
-                                          <li key={key}>
-                                            {(childrenSubItem.type === 'link') ?
-                                              <Link to={childrenSubItem.path+'/'+layout} className={`${childrenSubItem.active ? 'active' : ''}`} onClick={() => toggletNavActive(childrenSubItem)}>{props.t(childrenSubItem.title)}</Link>
-                                              : ''}
-                                          </li>
-                                        )}
-                                      </ul>
-                                      : ""}
-
-                                  </li>
-                                )
+                                    </li>
+                                  )
+                                }
                               })}
                             </ul>
                             : ''}
-                        </li>)}
-                    </Fragment>
-                  )}
-              </ul>
-            </div>
-            <div className="right-arrow" onClick={scrollToRight}><ArrowRight /></div>
+                        </li> : '')}
+                  </Fragment>
+                )}
+            </ul>
+          </div>
+          <div className="right-arrow" onClick={scrollToRight}><ArrowRight /></div>
         </nav>
       </div>
     </Fragment>

@@ -6,8 +6,8 @@ import DatePicker from "react-datepicker";
 import { useForm } from 'react-hook-form'
 import { addNewProject } from '../../../redux/project-app/action'
 import { useDispatch } from 'react-redux';
-import { withRouter, Link } from 'react-router-dom'
-import { ProjectTitle, CreateProjectSuccesMessage, menuitemProject, CreateProjectSelectEmployeeMessage, CreateProjectConfirmationHeader, CreateProjectConfimationMessage, Yes, Cancel, ProjectStatus, Open, Closed, EnterSomeDetails, Add, CreateProject, CreateProjectSearchCollaborators } from '../../../constant'
+import { withRouter, Link ,useLocation} from 'react-router-dom'
+import { ProjectTitle, UpdateProjectSuccesMessage,menuitemProject, UpdateProjectConfirmationHeader, Update,UpdateProjectConfimationMessage, Yes, Cancel, ProjectStatus, Open, Closed, EnterSomeDetails, Add, UpdateProjectTitle, UpdateProjectSearchCollaborators } from '../../../constant'
 import * as API from '../../../api/apiurls';
 import axios from 'axios'
 import { toast } from 'react-toastify';
@@ -17,24 +17,28 @@ import ScrollArea from 'react-scrollbar';
 import SweetAlert from 'sweetalert2'
 
 
-const Newproject = (props) => {
-
+const UpdateProject = (props) => {
+    const {query} =useLocation();
+    if(query===undefined){
+        window.location.replace(`${process.env.PUBLIC_URL}/app/project/project-list/`);
+    }
+    console.log(query);
   const dispatch = useDispatch()
   const { register, handleSubmit, errors } = useForm();
-  const [projectTitle, setProjectTitle] = useState("");
-  const [projectDescription, setProjectDescription] = useState("");
-  const [projectStatus, setProjectStatus] = useState("");
-  const [searchbar, setSearchbar] = useState("");
+  const [ projectTitle, setProjectTitle ] = useState(query.title);
+  const project_id = query.id;
+  const [ projectDescription, setProjectDescription ] = useState(query.content);
+  const [ projectStatus, setProjectStatus ] = useState(query.status===1?Open:Closed);
+  const [ searchbar, setSearchbar ] = useState("");
   const [users, setUsers] = useState([]);
   const [foundUsers, setFoundUsers] = useState([]);
-  const [authenticatedUser, setAuthenticatedUser] = useState(JSON.parse(localStorage.getItem('authenticatedUser')));
 
   useEffect(() => {
-    axios.get(API.getCompany, API.getHeader()).then(response => {
+    axios.get(API.getCompany,API.getHeader()).then(response => {
       console.log(response.data);
       const employees = [];
       response.data.employee.map(e => {
-        employees.push({ ...e, isSelect: false });
+        employees.push({ ...e, isSelect: query.employees.includes(e.id)?true:false });
       });
       console.log(employees);
       setUsers(employees);
@@ -47,7 +51,7 @@ const Newproject = (props) => {
     user.isSelect = !user.isSelect;
     if (!user.isSelect) {
       SweetAlert.fire({
-        title: CreateProjectConfimationMessage,
+        title: UpdateProjectConfimationMessage,
         cancelButtonText: Cancel,
         confirmButtonText: Yes,
         reverseButtons: true,
@@ -89,14 +93,14 @@ const Newproject = (props) => {
     setSearchbar(keyword);
   }
 
-  const ClearForm = () => {
+  const ClearForm=()=>{
     setProjectStatus(Open);
     setProjectTitle("");
     setProjectDescription("");
 
     const list = [];
     users.map(u => {
-      u.isSelect = false;
+      u.isSelect=false;
       list.push(u);
     })
 
@@ -104,7 +108,11 @@ const Newproject = (props) => {
     setFoundUsers(list);
   }
 
-  const AddProject = data => {
+  const cancel=()=>{
+    window.location.replace(`${process.env.PUBLIC_URL}/app/project/project-list/`);
+  }
+
+  const UpdateProjectF = data => {
     if (data !== '') {
       const collaborators = [];
       users.map((u) => {
@@ -113,26 +121,22 @@ const Newproject = (props) => {
         }
       });
 
-      if (collaborators.length > 0) {
-        const project = {
-          employees: collaborators,
-          title: data.project_title,
-          content: data.project_description,
-          status: data.project_status !== Closed ? 1 : 2,
-        }
-
-        console.log(project);
-        axios.post(API.createProject, project, API.getHeader()).then(response => {
-          toast.success(CreateProjectSuccesMessage);
-          ClearForm();
-        }).catch(error => {
-          toast.error(error.response.data.error);
-        });
-      }
-      else {
-        toast.warning(CreateProjectSelectEmployeeMessage);
+      const project = {
+        id:project_id,
+        employees: collaborators,
+        title: data.project_title,
+        content: data.project_description,
+        status: data.project_status !== Closed ? 1 : 2,
       }
 
+      console.log(project);
+      axios.post(API.updateProjectApi, project,API.getHeader()).then(response => {
+        toast.success(UpdateProjectSuccesMessage);
+        ClearForm();
+        window.location.replace(`${process.env.PUBLIC_URL}/app/project/project-list/`);
+      }).catch(error => {
+        toast.error(error.response.data.error);
+      });
 
 
     } else {
@@ -142,18 +146,18 @@ const Newproject = (props) => {
 
   return (
     <Fragment>
-      <Breadcrumb parent={menuitemProject} title={CreateProject} />
+      <Breadcrumb parent={menuitemProject} title={UpdateProjectTitle} />
       <Container fluid={true}>
         <Row>
           <Col sm="7">
             <Card>
               <CardBody>
-                <Form className="theme-form" onSubmit={handleSubmit(AddProject)}>
+                <Form className="theme-form" onSubmit={handleSubmit(UpdateProjectF)}>
                   <Row>
                     <Col>
                       <FormGroup>
                         <Label>{ProjectTitle}</Label>
-                        <Input className="form-control" type="text" name="project_title" innerRef={register({ required: true })} onChange={e => setProjectTitle(e.target.value)} value={projectTitle} />
+                        <Input className="form-control" type="text" name="project_title" innerRef={register({ required: true })}  onChange={e => setProjectTitle(e.target.value)} value={projectTitle} />
                         <span style={{ color: "red" }}>{errors.title && 'Title is required'}</span>
                       </FormGroup>
                     </Col>
@@ -162,7 +166,7 @@ const Newproject = (props) => {
                     <Col>
                       <FormGroup>
                         <Label>{EnterSomeDetails}</Label>
-                        <Input type="textarea" className="form-control" name="project_description" rows="3" innerRef={register({ required: true })} onChange={e => setProjectDescription(e.target.value)} value={projectDescription} />
+                        <Input type="textarea" className="form-control" name="project_description" rows="3" innerRef={register({ required: true })}  onChange={e => setProjectDescription(e.target.value)} value={projectDescription} />
                         <span style={{ color: "red" }}>{errors.description && 'Some Details is required'}</span>
                       </FormGroup>
                     </Col>
@@ -171,7 +175,7 @@ const Newproject = (props) => {
                     <Col >
                       <FormGroup>
                         <Label>{ProjectStatus}</Label>
-                        <Input type="select" name="project_status" className="form-control digits" innerRef={register({ required: true })} onChange={e => setProjectStatus(e.target.value)} value={projectStatus} >
+                        <Input type="select" name="project_status" className="form-control digits" innerRef={register({ required: true })}  onChange={e => setProjectStatus(e.target.value)} value={projectStatus} >
                           <option value={Open}>{Open}</option>
                           <option value={Closed}>{Closed}</option>
                         </Input>
@@ -181,8 +185,8 @@ const Newproject = (props) => {
                   <Row>
                     <Col>
                       <FormGroup className="mb-0">
-                        <Button color="primary" className="mr-3">{Add}</Button>
-                        <Button color="light" onClick={() => { ClearForm() }} >{Cancel}</Button>
+                        <Button color="primary" className="mr-3">{Update}</Button>
+                          <Button color="light" onClick={()=>{cancel()}} >{Cancel}</Button>
                       </FormGroup>
                     </Col>
                   </Row>
@@ -196,12 +200,13 @@ const Newproject = (props) => {
                 <ScrollArea horizontal={false} vertical={true} >
                   <Form>
                     <FormGroup className="m-0">
-                      <Input className="form-control-social" value={searchbar} onChange={filter} type="search" placeholder={CreateProjectSearchCollaborators} />
+                      <Input className="form-control-social" value={searchbar} onChange={filter} type="search" placeholder={UpdateProjectSearchCollaborators} />
                     </FormGroup>
                   </Form>
                   {foundUsers?.map((user) => {
                     return <Media>
                       <img className="img-50 rounded-circle m-r-15" src={three} alt="fourteenImg" />
+                      <div className="social-status social-online"></div>
                       <Media body>
                         <span className="f-w-600 d-block">{user.first_name + " " + user.last_name}</span><span className="d-block">{user.email}</span>
                       </Media>
@@ -226,4 +231,4 @@ const Newproject = (props) => {
   );
 }
 
-export default withRouter(Newproject);
+export default withRouter(UpdateProject);

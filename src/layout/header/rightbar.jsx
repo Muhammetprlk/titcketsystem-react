@@ -46,7 +46,9 @@ const Rightbar = (props) => {
   // auth0 profile
   const {logout} = useAuth0()
   const authenticated = JSON.parse(localStorage.getItem("authenticated"));
-  const auth0_profile = JSON.parse(localStorage.getItem("auth0_profile"))
+  const auth0_profile = JSON.parse(localStorage.getItem("auth0_profile"));
+  const { username,company } = JSON.parse(localStorage.getItem('authenticatedUser'));
+
 
   const handleSetLanguage = (key) => {
     setLanguage(key);
@@ -208,13 +210,13 @@ const Rightbar = (props) => {
             <div className="media profile-media">
               <img className="b-r-10" src={authenticated ? auth0_profile.picture : profile} alt="" />
               <div className="media-body"><span>{authenticated ? auth0_profile.name :  name}</span>
-                <p className="mb-0 font-roboto">{Admin} <i className="middle fa fa-angle-down"></i></p>
+                <p className="mb-0 font-roboto">{(company===undefined?"Super User":company)+" / "+username} <i className="middle fa fa-angle-down"></i></p>
               </div>
             </div>
             <ul className="profile-dropdown onhover-show-div">
-              <li onClick={() => UserMenuRedirect(`${process.env.PUBLIC_URL}/app/users/userProfile`)}><User /><span>{Account} </span></li>
-              <li onClick={() => UserMenuRedirect(`${process.env.PUBLIC_URL}/app/email-app`)}><Mail /><span>{Inbox}</span></li>
-              <li onClick={() => UserMenuRedirect(`${process.env.PUBLIC_URL}/app/todo-app/todo`)}><FileText /><span>{Taskboard}</span></li>
+              <li onClick={() => UserMenuRedirect(`${process.env.PUBLIC_URL}/app/user/userprofile`)}><User /><span>{Account} </span></li>
+              {/* <li onClick={() => UserMenuRedirect(`${process.env.PUBLIC_URL}/app/email-app`)}><Mail /><span>{Inbox}</span></li>
+              <li onClick={() => UserMenuRedirect(`${process.env.PUBLIC_URL}/app/todo-app/todo`)}><FileText /><span>{Taskboard}</span></li> */}
               <li onClick={authenticated ? Logout_From_Auth0 : Logout_From_Firebase}><LogIn /><span>{LogOut}</span></li>
             </ul>
           </li>

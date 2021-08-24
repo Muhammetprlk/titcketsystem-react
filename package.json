@@ -2,7 +2,7 @@
   "name": "cuba-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://webiots.co.in/cuba/",
+  "homepage": ".",
   "dependencies": {
     "@auth0/auth0-react": "^1.0.0",
     "@fullcalendar/daygrid": "^5.1.0",

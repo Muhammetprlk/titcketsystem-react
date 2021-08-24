@@ -4,10 +4,15 @@ import Ckeditor from 'react-ckeditor-component'
 import { Typeahead } from 'react-bootstrap-typeahead';
 import Dropzone from 'react-dropzone-uploader'
 import { Container, Row, Col, Card, CardHeader, CardBody, Form, FormGroup, Label, Input, Button } from "reactstrap"
-import { PostEdit, Title, Type, Category,NewIssueTitle, Content,NewIssueContent, Post, Discard,NewIssueProject, Text, Audio,NewIssueHeader, Video, Image, Add, Cancel } from "../../../constant";
+import { PostEdit, Title, Type, Category,NewIssueSuccessMessage,NewIssueTitle,menuitemIssue, Content,NewIssueContent, Post, Discard,NewIssueProject, Text, Audio,NewIssueHeader, Video, Image, Add, Cancel } from "../../../constant";
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import * as API from '../../../api/apiurls'
+import ReactMarkdown from "react-markdown";
+import SimpleMDE from "react-simplemde-editor";
+import ReactDOMServer from "react-dom/server";
+import remarkGfm from 'remark-gfm';
+import { toast } from 'react-toastify';
 
 
 const NewIssue = (props) => {
@@ -16,19 +21,21 @@ const NewIssue = (props) => {
   const [issueContent, setIssueContent] = useState("")
   const [issueProjectId, setIssueProjectId] = useState(-1)
   const [projects, setProjects] = useState()
+  const [authenticatedUser, setAuthenticatedUser] = useState(JSON.parse(localStorage.getItem('authenticatedUser')));
 
 
   const data = [{ name: 'Lifestyle' }, { name: 'Travel' }]
 
   useEffect(() => {
-    axios.get(API.getProjects).then(response=>{
-      setProjects(response.data)
-    });
+    axios.get(API.getProjects,API.getHeader()).then(response=>{
+      setProjects(response.data.projects)
+    }).catch(error=>{
+      toast.error(error.response.data.error);
+    })
   },[]);
 
-  const onChange = (evt) => {
-    const newContent = evt.editor.getData();
-    setIssueContent(newContent)
+  const onChange = (content) => {
+    setIssueContent(content)
   }
 
   const getUploadParams = ({ meta }) => { return { url: 'https://httpbin.org/post' } }
@@ -40,8 +47,13 @@ const NewIssue = (props) => {
         issue_title: data.issue_title,
         issue_content: issueContent,
         issue_projectid: data.issue_projectid,
+        user_id:authenticatedUser.user_id
       }
-      console.log(issue);
+      axios.post(API.createIssue,issue,API.getHeader()).then(response=>{
+        toast.success(NewIssueSuccessMessage);
+      }).then(error=>{
+        toast.error(error.response.data.error);
+      })
     } else {
       errors.showMessages();
     }
@@ -50,7 +62,7 @@ const NewIssue = (props) => {
 
   return (
     <Fragment>
-      <Breadcrumb parent="Blog" title={NewIssueHeader} />
+      <Breadcrumb parent={menuitemIssue} title={NewIssueHeader} />
       <Container fluid={true}>
         <Row>
           <Col sm="12">
@@ -63,7 +75,7 @@ const NewIssue = (props) => {
                         <Label>{NewIssueProject}</Label>
                         <Input type="select" name="issue_projectid" className="form-control digits" innerRef={register({ required: true })} onChange={e => setIssueProjectId(e.target.value)} value={issueProjectId} >
                           {projects?.map(project=>
-                            <option value={project.id} >{project.title}</option>
+                            project.status===1?  <option value={project.id} >{project.title}</option>:null
                           )}
                         </Input>
                       </FormGroup>
@@ -82,13 +94,17 @@ const NewIssue = (props) => {
                     <Col>
                       <FormGroup>
                         <Label>{NewIssueContent}</Label>
-                        <Ckeditor
-                          activeclassName="p10"
-                          events={{
-                            "change": onChange
-                          }}
-                          content={issueContent}
-                        />
+                        <div className="add-comment" >
+                                <SimpleMDE
+                                    id="editor_container"
+                                    onChange={onChange}
+                                    value={issueContent}
+                                    options={{
+                                        previewRender(text) { return ReactDOMServer.renderToString(<ReactMarkdown className="add-comment" children={text} remarkPlugins={[remarkGfm]} />) },
+                                        spellChecker: false
+                                    }}
+                                />
+                            </div>
                         <span style={{ color: "red" }}>{errors.description && 'Some Details is required'}</span>
                       </FormGroup>
                     </Col>

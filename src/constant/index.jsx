@@ -144,16 +144,7 @@ export const BrowserUses =  "Browser Uses"
 export const Finance =  "Finance"
 
 
-// Project 
-export const CreateProjectSearchCollaborators="Search Collaborators..."
-export const CreateProjectConfirmationHeader="Confirmation"
-export const CreateProjectConfimationMessage="Are you sure?"
-export const CreateProjectSuccesMessage="Project successfuly added"
-export const CreateProject =  "Create New"
-export const ProjectTitle =  "Project Title"
-export const ClientName =  "Client name"
-export const ProjectRate =  "Project Rate"
-export const ProjectList="Project List"
+
 
 export const ProgressLevel =  "Progress Level"
 export const ProjectStatus =  "Project Status"
@@ -175,12 +166,6 @@ export const Resolved =  "Resolved"
 export const Comment =  "Comment"
 export const Comments =  "Comments"
 
-
-// New Issue
-export const NewIssueHeader =  "New Issue"
-export const NewIssueProject =  "Project"
-export const NewIssueTitle =  "Issue Title"
-export const NewIssueContent =  "Issue Content"
 
 
 // ecommerce
@@ -1442,79 +1427,80 @@ export const RegisterPersonalDetails="Enter your personal details to create acco
 //Create Company Page
 export const CCompanyCreate="Create Company";
 export const CCompanyName="Company Name";
+export const CCopmanyPhone="Company Phone";
+export const CCopmanyEmail="Company Email";
+export const CCopmanyWebsite="Company Website";
 export const CCopmanyAdminName="Admin's Name";
+export const CCopmanyAdminLastname="Admin's Lastname";
 export const CCopmanyAdminUsername="Admin's Username";
 export const CCopmanyAdminEmail="Admin's Email Adress";
-export const CCopmanyAdminPhone="Admin's Email Phone";
+export const CCopmanySuccessMessage="Company successfuly added";
 
+// Create Employee Page
+export const CreateEmployeeAccountHeader="Create account for employee";
+export const CreateEmployeeEnterDetail="Enter your employee details to create account";
+export const CreateEmployeeCreate="Create Employee Account";
+export const CreateEmployeeSuccessMessage="Employee successfuly added";
 
+//Employee List Page
 
+export const EmployeeListTitle="Employee List";
 
 
+//Menu Items
+export const menutitle="General";
 
+export const menuitemDashboard="Dashboard";
+export const menuitemDashboardDefault="Default";
+export const menuitemDashboardEcommerce="Ecommerce";
 
+export const menuitemProject="Project";
+export const menuitemProjectNew="Create New Project";
+export const menuitemProjectList="Project List";
 
+export const menuitemIssue="Issue";
+export const menuitemIssueList="All Issues";
+export const menuitemIssueNew="Create New Issues";
 
+export const menuitemEmployees="Employee";
+export const menuitemEmployeesNew="Create New Employee";
+export const menuitemEmployeesList="Employees";
 
+export const menuitemCreateCompany="Create Company";
 
 
+// New Issue
+export const NewIssueHeader =  "New Issue"
+export const NewIssueProject =  "Project"
+export const NewIssueTitle =  "Issue Title"
+export const NewIssueContent =  "Issue Content"
+export const NewIssueSuccessMessage =  "Issue successfuly added"
 
+//All Issues
+export const IssueList="Issue List"
+export const CreateNewIssue="Create New Issue"
 
+// Project 
+export const CreateProjectSearchCollaborators="Search Epmloyees..."
+export const CreateProjectConfirmationHeader="Confirmation"
+export const CreateProjectConfimationMessage="Are you sure?"
+export const CreateProjectSuccesMessage="Project successfuly added"
+export const CreateProjectSelectEmployeeMessage="Please select minimum 1 employee"
+export const CreateProject =  "Create New"
+export const UpdateProjectSearchCollaborators="Search Collaborators..."
+export const UpdateProjectConfirmationHeader="Confirmation"
+export const UpdateProjectConfimationMessage="Are you sure?"
+export const UpdateProjectSuccesMessage="Project successfuly updated"
+export const UpdateProjectTitle =  "Update Project"
+export const ProjectTitle =  "Project Title"
+export const ProjectList="Project List"
 
 
+//UserProfile
+export const Role="Role";
 
 
+//project detail
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export const ProjectDetailTitle="Project Detail";
+export const ProjectDetailParent="Project";
