@@ -16,7 +16,7 @@ const JobList = () => {
                             <CardBody>
                             <Media><img className="img-40 img-fluid m-r-20" src={require("../../assets/images/job-search/1.jpg")} alt=""/>
                                 <Media body>
-                                <h6 className="f-w-600"><a href="#javascript">{UIandUX_IT_Frontend_Developer}</a><span className="badge badge-primary pull-right">{New}</span></h6>
+                                <h6 className="f-w-600"><a  >{UIandUX_IT_Frontend_Developer}</a><span className="badge badge-primary pull-right">{New}</span></h6>
                                 <p>{"(L6) Salt Lake City, UT"}<span><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i></span></p>
                                 </Media>
                             </Media>
@@ -31,7 +31,7 @@ const JobList = () => {
                             <CardBody>
                             <Media><img className="img-40 img-fluid m-r-20" src={require("../../assets/images/job-search/2.jpg")} alt=""/>
                                 <Media body>
-                                <h6 className="f-w-600"><a href="#javascript">{ReactandReact_Native_Developer}</a><span className="badge badge-primary pull-right">{New}</span></h6>
+                                <h6 className="f-w-600"><a  >{ReactandReact_Native_Developer}</a><span className="badge badge-primary pull-right">{New}</span></h6>
                                 <p>{"San Diego, CA"} <span><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning-o"></i></span></p>
                                 </Media>
                             </Media>
@@ -45,7 +45,7 @@ const JobList = () => {
                             <CardBody>
                             <Media><img className="img-40 img-fluid m-r-20" src={require("../../assets/images/job-search/3.jpg")} alt=""/>
                                 <Media body>
-                                <h6 className="f-w-600"><a href="#javascript">{SeniorUXDesigner}</a><span className="pull-right">{"2 days ago"}</span></h6>
+                                <h6 className="f-w-600"><a  >{SeniorUXDesigner}</a><span className="pull-right">{"2 days ago"}</span></h6>
                                 <p>{"Minneapolis, MN"}<span><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning-half-o"></i><i className="fa fa-star font-warning-o"></i></span></p>
                                 </Media>
                             </Media>
@@ -58,7 +58,7 @@ const JobList = () => {
                             <CardBody>
                             <Media><img className="img-40 img-fluid m-r-20" src={require("../../assets/images/job-search/4.jpg")} alt=""/>
                                 <Media body>
-                                <h6 className="f-w-600"><a href="#javascript">{FrontEndWebDeveloper}</a><span className="pull-right">{"3 days ago"}</span></h6>
+                                <h6 className="f-w-600"><a  >{FrontEndWebDeveloper}</a><span className="pull-right">{"3 days ago"}</span></h6>
                                 <p>{"Cisco"} <span>{"Lelystad, Netherlands"} </span><span><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning-half-o"></i></span></p>
                                 </Media>
                             </Media>
@@ -71,7 +71,7 @@ const JobList = () => {
                             <CardBody>
                             <Media><img className="img-40 img-fluid m-r-20" src={require("../../assets/images/job-search/5.jpg")} alt=""/>
                                 <Media body>
-                                <h6 className="f-w-600"><a href="#javascript">{GraphicDesigner}</a><span className="pull-right">{"3 days ago"}</span></h6>
+                                <h6 className="f-w-600"><a  >{GraphicDesigner}</a><span className="pull-right">{"3 days ago"}</span></h6>
                                 <p>{"Infosys"} <span>{"Lelystad, Netherlands"} </span><span><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning-half-o"></i><i className="fa fa-star font-warning-o"></i></span></p>
                                 </Media>
                             </Media>
@@ -84,7 +84,7 @@ const JobList = () => {
                             <CardBody>
                             <Media><img className="img-40 img-fluid m-r-20" src={require("../../assets/images/job-search/6.jpg")} alt=""/>
                                 <Media body>
-                                <h6 className="f-w-600"><a href="#javascript">{DesignerCRM}</a><span className="pull-right">{"3 days ago"}</span></h6>
+                                <h6 className="f-w-600"><a  >{DesignerCRM}</a><span className="pull-right">{"3 days ago"}</span></h6>
                                 <p>{"Citrix"} <span>{"Lelystad, Netherlands"} </span><span><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning-o"></i><i className="fa fa-star font-warning-o"></i></span></p>
                                 </Media>
                             </Media>
@@ -98,7 +98,7 @@ const JobList = () => {
                             <CardBody>
                             <Media><img className="img-40 img-fluid m-r-20" src={require("../../assets/images/job-search/2.jpg")} alt=""/>
                                 <Media body>
-                                <h6 className="f-w-600"><a href="#javascript">{UIDesigner_E_commerce}</a><span className="pull-right">{"5 days ago"}</span></h6>
+                                <h6 className="f-w-600"><a  >{UIDesigner_E_commerce}</a><span className="pull-right">{"5 days ago"}</span></h6>
                                 <p>{"Ericsson"} <span>{"Lelystad, Netherlands"} </span><span><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning-o"></i></span></p>
                                 </Media>
                             </Media>
@@ -111,7 +111,7 @@ const JobList = () => {
                             <CardBody>
                             <Media><img className="img-40 img-fluid m-r-20" src={require("../../assets/images/job-search/3.jpg")} alt=""/>
                                 <Media body>
-                                <h6 className="f-w-600"><a href="#javascript">{SeniorUXDesigner}</a><span className="pull-right">{"5 days ago"}</span></h6>
+                                <h6 className="f-w-600"><a  >{SeniorUXDesigner}</a><span className="pull-right">{"5 days ago"}</span></h6>
                                 <p>{"Minneapolis, MN"} <span><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning-half-o"></i><i className="fa fa-star font-warning-o"></i></span></p>
                                 </Media>
                             </Media>

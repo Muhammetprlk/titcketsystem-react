@@ -75,7 +75,7 @@ const NewIssue = (props) => {
                         <Label>{NewIssueProject}</Label>
                         <Input type="select" name="issue_projectid" className="form-control digits" innerRef={register({ required: true })} onChange={e => setIssueProjectId(e.target.value)} value={issueProjectId} >
                           {projects?.map(project=>
-                            project.status===1?  <option value={project.id} >{project.title}</option>:null
+                            project.status===1?  <option key={project.id} value={project.id} >{project.title}</option>:null
                           )}
                         </Input>
                       </FormGroup>

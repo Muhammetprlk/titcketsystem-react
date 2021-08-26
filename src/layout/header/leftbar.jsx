@@ -162,7 +162,7 @@ const Leftbar = (props) => {
       <Col className="left-header horizontal-wrapper pl-0">
         {/* <ul className="horizontal-menu">
           <li className="mega-menu outside">
-          <a className={`nav-link ${bonusui ? 'active' : ''}`} href="#javascript" onClick={() => ToggleBonusUI(bonusui)}><Layers /><span>{BonusUi}</span></a>
+          <a className={`nav-link ${bonusui ? 'active' : ''}`}   onClick={() => ToggleBonusUI(bonusui)}><Layers /><span>{BonusUi}</span></a>
             <div className="mega-menu-container nav-submenu menu-to-be-close" style={bonusui ? { display: "" } : { display: "none" }}>
                 <Container fluid={true}>
                   <Row>
@@ -224,10 +224,10 @@ const Leftbar = (props) => {
                 </Container>
             </div>
           </li>
-          <li className="level-menu outside"><a className={levelMenu ? "nav-link active" : "nav-link"} href="#javascript" onClick={() => OnLevelMenu(levelMenu)}><Inbox/><span>{LevelMenu}</span></a>
+          <li className="level-menu outside"><a className={levelMenu ? "nav-link active" : "nav-link"}   onClick={() => OnLevelMenu(levelMenu)}><Inbox/><span>{LevelMenu}</span></a>
             <ul className="header-level-menu menu-to-be-close" style={levelMenu ? { display: "" } : { display: "none" }}>
               <li><Link to={`${process.env.PUBLIC_URL}/app/file-manager/${layout}`}><GitPullRequest/><span>{FileManager}</span></Link></li>
-              <li><a href="#javascript"><Users/><span>{"Users"}</span></a>
+              <li><a  ><Users/><span>{"Users"}</span></a>
                 <ul className="header-level-sub-menu">
                   <li><Link to={`${process.env.PUBLIC_URL}/app/users/userProfile/${layout}`}><User/><span>{UserProfile}</span></Link></li>
                   <li><Link to={`${process.env.PUBLIC_URL}/app/users/userEdit/${layout}`}><UserMinus/><span>{UserEdit}</span></Link></li>

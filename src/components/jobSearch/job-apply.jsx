@@ -49,7 +49,7 @@ const JobApply = (props) => {
                                         <img className="img-40 img-fluid m-r-20" src={one} alt="" />
                                         <Media body>
                                             <h6 className="f-w-600">
-                                                <a href="#javascript">{UIDesigner}</a>
+                                                <a  >{UIDesigner}</a>
                                                 <span className="pull-right">
                                                 <Button color="primary">
                                                     <span>

@@ -461,11 +461,11 @@ const General = () => {
               <CardHeader><img className="img-fluid" src={require("../../../assets/images/user-card/3.jpg")} alt="" /></CardHeader>
               <div className="card-profile"><img className="rounded-circle" src={require("../../../assets/images/avtar/3.jpg")} alt="" /></div>
               <ul className="card-social">
-                <li><a href="#javascript"><i className="fa fa-facebook"></i></a></li>
-                <li><a href="#javascript"><i className="fa fa-google-plus"></i></a></li>
-                <li><a href="#javascript"><i className="fa fa-twitter"></i></a></li>
-                <li><a href="#javascript"><i className="fa fa-instagram"></i></a></li>
-                <li><a href="#javascript"><i className="fa fa-rss"></i></a></li>
+                <li><a  ><i className="fa fa-facebook"></i></a></li>
+                <li><a  ><i className="fa fa-google-plus"></i></a></li>
+                <li><a  ><i className="fa fa-twitter"></i></a></li>
+                <li><a  ><i className="fa fa-instagram"></i></a></li>
+                <li><a  ><i className="fa fa-rss"></i></a></li>
               </ul>
               <div className="text-center profile-details">
                 <h4>{MarkJecno}</h4>

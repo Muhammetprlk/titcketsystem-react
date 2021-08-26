@@ -120,7 +120,7 @@ const Root = (props) => {
 
               <App>
                 <Route exact path={`${process.env.PUBLIC_URL}/`} render={() => {
-                  return (<Redirect to={`${process.env.PUBLIC_URL}/`} />)
+                  return (<Redirect to={`${process.env.PUBLIC_URL}/dashboard/`} />)
                 }} />
                 <TransitionGroup>
                   {routes.map(({ path, Component,userRole }) => (

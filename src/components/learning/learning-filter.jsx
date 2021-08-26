@@ -113,17 +113,17 @@ const LearningFilter = () => {
                                         <div className="categories">
                                             <div className="learning-header"><span className="f-w-600">{Design}</span></div>
                                             <ul>
-                                                <li><a href="#javascript">{UIDesign} </a><span className="badge badge-primary pull-right">{"28"}</span></li>
-                                                <li><a href="#javascript">{UXDesign} </a><span className="badge badge-primary pull-right">{"35"}</span></li>
-                                                <li><a href="#javascript">{InterfaceDesign} </a><span className="badge badge-primary pull-right">{"17"}</span></li>
-                                                <li><a href="#javascript">{UserExperience} </a><span className="badge badge-primary pull-right">{"26"}</span></li>
+                                                <li><a  >{UIDesign} </a><span className="badge badge-primary pull-right">{"28"}</span></li>
+                                                <li><a  >{UXDesign} </a><span className="badge badge-primary pull-right">{"35"}</span></li>
+                                                <li><a  >{InterfaceDesign} </a><span className="badge badge-primary pull-right">{"17"}</span></li>
+                                                <li><a  >{UserExperience} </a><span className="badge badge-primary pull-right">{"26"}</span></li>
                                             </ul>
                                         </div>
                                         <div className="categories pt-0">
                                             <div className="learning-header"><span className="f-w-600">{Development}</span></div>
                                             <ul>
-                                                <li><a href="#javascript">{FrontendDevelopment}</a><span className="badge badge-primary pull-right">{"48"}</span></li>
-                                                <li><a href="#javascript">{BackendDevelopment}</a><span className="badge badge-primary pull-right">{"19"}</span></li>
+                                                <li><a  >{FrontendDevelopment}</a><span className="badge badge-primary pull-right">{"48"}</span></li>
+                                                <li><a  >{BackendDevelopment}</a><span className="badge badge-primary pull-right">{"19"}</span></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -141,19 +141,19 @@ const LearningFilter = () => {
                                     <div className="collapse show" id="collapseicon2" aria-labelledby="collapseicon2" data-parent="#accordion">
                                         <CardBody className="upcoming-course">
                                             <Media>
-                                                <Media body><span className="f-w-600">{UXDevelopment}</span><span className="d-block">{CourseBy} <a href="#javascript"> {"Lorem ipsum"}</a></span><span className="d-block"><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star-half-o font-warning"></i></span></Media>
+                                                <Media body><span className="f-w-600">{UXDevelopment}</span><span className="d-block">{CourseBy} <a  > {"Lorem ipsum"}</a></span><span className="d-block"><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star-half-o font-warning"></i></span></Media>
                                                 <div>
                                                     <h5 className="mb-0 font-primary">{"18"}</h5><span className="d-block">{"Dec"}</span>
                                                 </div>
                                             </Media>
                                             <Media>
-                                                <Media body><span className="f-w-600">{BusinessAnalyst}</span><span className="d-block">{CourseBy} <a href="#javascript">{"Lorem ipsum"} </a></span><span className="d-block"><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i></span></Media>
+                                                <Media body><span className="f-w-600">{BusinessAnalyst}</span><span className="d-block">{CourseBy} <a  >{"Lorem ipsum"} </a></span><span className="d-block"><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i></span></Media>
                                                 <div>
                                                     <h5 className="mb-0 font-primary">{"28"}</h5><span className="d-block">{"Dec"}</span>
                                                 </div>
                                             </Media>
                                             <Media>
-                                                <Media body><span className="f-w-600">{WebDevelopment}</span><span className="d-block">{CourseBy} <a href="#javascript">{"Lorem ipsum"} </a></span><span className="d-block"><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star-o font-warning"></i></span></Media>
+                                                <Media body><span className="f-w-600">{WebDevelopment}</span><span className="d-block">{CourseBy} <a  >{"Lorem ipsum"} </a></span><span className="d-block"><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star-o font-warning"></i></span></Media>
                                                 <div>
                                                     <h5 className="mb-0 font-primary">{"5"}</h5><span className="d-block">{"Jan"}</span>
                                                 </div>

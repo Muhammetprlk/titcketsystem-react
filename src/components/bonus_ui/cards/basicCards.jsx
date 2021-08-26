@@ -82,7 +82,7 @@ const BasicCards = () => {
                         <Card className="height-equal">
                             <CardHeader>
                                 <h5>{CardSubTitle}</h5>
-                                <span>{"Using the"} <a href="#javascript">{"card"}</a> {"component, you can extend the default collapse behavior to create an accordion."}</span>
+                                <span>{"Using the"} <a  >{"card"}</a> {"component, you can extend the default collapse behavior to create an accordion."}</span>
                             </CardHeader>
                             <CardBody>
                                 <p> 

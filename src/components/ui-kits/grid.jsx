@@ -14,7 +14,7 @@ const Grid = (props) => {
                 <h5>{GridOptions}</h5><span>{"Bootstrap grid allows building an equal height flexbile blocks easily"}</span>
               </CardHeader>
               <CardBody className="card-body">
-                <p>{"While Bootstrap uses"} <code>{"em"} </code>{"or"} <code>{"rem"} </code>{"for defining most sizes"}, <code>{"px"}</code> {"are used for grid breakpoints and container widths. This is because the viewport width is in pixels and does not change with the"} <a href="#javascript">{"font size"}</a>.</p>
+                <p>{"While Bootstrap uses"} <code>{"em"} </code>{"or"} <code>{"rem"} </code>{"for defining most sizes"}, <code>{"px"}</code> {"are used for grid breakpoints and container widths. This is because the viewport width is in pixels and does not change with the"} <a  >{"font size"}</a>.</p>
                 <div className="table-responsive">
                   <Table bordered striped>
                     <thead>

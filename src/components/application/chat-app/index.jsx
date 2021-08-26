@@ -186,11 +186,11 @@ const Chat = (props) =>  {
                                 </div>
                             </div>
                             <ul className="list-inline float-left float-sm-right chat-menu-icons">
-                                <li className="list-inline-item"><a href="#javascript"><i className="icon-search"></i></a></li>
-                                <li className="list-inline-item"><a href="#javascript"><i className="icon-clip"></i></a></li>
-                                <li className="list-inline-item"><a href="#javascript"><i className="icon-headphone-alt"></i></a></li>
-                                <li className="list-inline-item"><a href="#javascript"><i className="icon-video-camera"></i></a></li>
-                                <li className="list-inline-item toogle-bar" onClick={() => chatMenuToggle()}><a href="#javascript"><i className="icon-menu"></i></a></li>
+                                <li className="list-inline-item"><a  ><i className="icon-search"></i></a></li>
+                                <li className="list-inline-item"><a  ><i className="icon-clip"></i></a></li>
+                                <li className="list-inline-item"><a  ><i className="icon-headphone-alt"></i></a></li>
+                                <li className="list-inline-item"><a  ><i className="icon-video-camera"></i></a></li>
+                                <li className="list-inline-item toogle-bar" onClick={() => chatMenuToggle()}><a  ><i className="icon-menu"></i></a></li>
                             </ul>
                         </div>
                         <div className="chat-history chat-msg-box custom-scrollbar" >
@@ -252,17 +252,17 @@ const Chat = (props) =>  {
                       <Col className={`pl-0 chat-menu ${menuToggle ? 'show' : ''}`}>
                             <Nav tabs className="nav  border-tab nav-primary">
                                 <NavItem  id="myTab" role="tablist">
-                                    <NavLink tag="a" href="#javascript" className={activeTab === '1' ? 'active' : ''} onClick={() => setActiveTab('1')}>
+                                    <NavLink tag="a"   className={activeTab === '1' ? 'active' : ''} onClick={() => setActiveTab('1')}>
                                         {CALL}
                                     </NavLink>
                                 </NavItem>
                                 <NavItem  id="myTab" role="tablist">
-                                    <NavLink tag="a" href="#javascript" className={activeTab === '2' ? 'active' : ''} onClick={() => setActiveTab('2')}>
+                                    <NavLink tag="a"   className={activeTab === '2' ? 'active' : ''} onClick={() => setActiveTab('2')}>
                                         {STATUS}
                                     </NavLink>
                                 </NavItem>
                                 <NavItem  id="myTab" role="tablist">
-                                    <NavLink tag="a" href="#javascript" className={activeTab === '3' ? 'active' : ''} onClick={() => setActiveTab('3')}>
+                                    <NavLink tag="a"   className={activeTab === '3' ? 'active' : ''} onClick={() => setActiveTab('3')}>
                                         {PROFILE}
                                     </NavLink>
                                 </NavItem>
@@ -333,11 +333,11 @@ const Chat = (props) =>  {
                                             <h5 className="text-uppercase">{MarkJecno}</h5>
                                             <div className="social-media">
                                                 <ul className="list-inline">
-                                                    <li className="list-inline-item"><a href="#javascript"><i className="fa fa-facebook"></i></a></li>
-                                                    <li className="list-inline-item"><a href="#javascript"><i className="fa fa-google-plus"></i></a></li>
-                                                    <li className="list-inline-item"><a href="#javascript"><i className="fa fa-twitter"></i></a></li>
-                                                    <li className="list-inline-item"><a href="#javascript"><i className="fa fa-instagram"></i></a></li>
-                                                    <li className="list-inline-item"><a href="#javascript"><i className="fa fa-rss"></i></a></li>
+                                                    <li className="list-inline-item"><a  ><i className="fa fa-facebook"></i></a></li>
+                                                    <li className="list-inline-item"><a  ><i className="fa fa-google-plus"></i></a></li>
+                                                    <li className="list-inline-item"><a  ><i className="fa fa-twitter"></i></a></li>
+                                                    <li className="list-inline-item"><a  ><i className="fa fa-instagram"></i></a></li>
+                                                    <li className="list-inline-item"><a  ><i className="fa fa-rss"></i></a></li>
                                                 </ul>
                                             </div>
                                             <hr />

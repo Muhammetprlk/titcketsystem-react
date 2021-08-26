@@ -28,7 +28,7 @@ const CustomeBoard = (props) => {
                                     <Board
                                         renderCard={({ title, date, priority, img, company, rate, customer_img1, customer_img2, customer_img3,bg_color}) => (
                                             <div className="kanban-item">
-                                                <a className={`kanban-box ${bg_color}`} href="#javascript">
+                                                <a className={`kanban-box ${bg_color}`}  >
                                                     <span className="date">{date}</span>
                                                     <span className={`badge ${priority === "Low" ? "badge-success" : "badge-primary"} f-right`}>{priority}</span>
                                                     <h6>{title}</h6>

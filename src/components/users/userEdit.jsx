@@ -22,10 +22,10 @@ const UserEdit = (props) => {
                 <CardHeader>
                   <h4 className="card-title mb-0">{MyProfile}</h4>
                   <div className="card-options">
-                    <a className="card-options-collapse" href="#javascript">
+                    <a className="card-options-collapse"  >
                       <i className="fe fe-chevron-up"></i>
                     </a>
-                    <a className="card-options-remove" href="#javascript">
+                    <a className="card-options-remove"  >
                       <i className="fe fe-x"></i>
                     </a>
                   </div>
@@ -69,10 +69,10 @@ const UserEdit = (props) => {
                 <CardHeader>
                   <h4 className="card-title mb-0">{EditProfile}</h4>
                   <div className="card-options">
-                    <a className="card-options-collapse" href="#javascript">
+                    <a className="card-options-collapse"  >
                       <i className="fe fe-chevron-up"></i>
                     </a>
-                    <a className="card-options-remove" href="#javascript">
+                    <a className="card-options-remove"  >
                       <i className="fe fe-x"></i>
                     </a>
                   </div>
@@ -154,7 +154,7 @@ const UserEdit = (props) => {
               <Card>
                 <CardHeader>
                   <h4 className="card-title mb-0">{UsersTableTitle}</h4>
-                  <div className="card-options"><a className="card-options-collapse" href="#javascript" data-toggle="card-collapse"><i className="fe fe-chevron-up"></i></a><a className="card-options-remove" href="#javascript" data-toggle="card-remove"><i className="fe fe-x"></i></a></div>
+                  <div className="card-options"><a className="card-options-collapse"   data-toggle="card-collapse"><i className="fe fe-chevron-up"></i></a><a className="card-options-remove"   data-toggle="card-remove"><i className="fe fe-x"></i></a></div>
                 </CardHeader>
                 <div className="table-responsive">
                   <table className="table card-table table-vcenter text-nowrap">
@@ -169,7 +169,7 @@ const UserEdit = (props) => {
 
                       {data.map((items,i) => 
                         <tr key={i}>
-                          <td><a className="text-inherit" href="#javascript">{items.projectName} </a></td>
+                          <td><a className="text-inherit"  >{items.projectName} </a></td>
                           <td>{items.date}</td>
                           <td><span className="status-icon bg-success"></span>{items.status}</td>
                           <td>{items.price}</td>

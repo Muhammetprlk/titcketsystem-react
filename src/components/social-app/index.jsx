@@ -32,12 +32,12 @@ const SocialApp = () => {
                                 <div className="info market-tabs p-0">
                                     <Nav tabs className="border-tab tabs-scoial">
                                         <NavItem className="nav" id="myTab" role="tablist">
-                                            <NavLink tag="a" href="#javascript" className={activeTab === '1' ? 'active' : ''} onClick={() => setActiveTab('1')}>
+                                            <NavLink tag="a"   className={activeTab === '1' ? 'active' : ''} onClick={() => setActiveTab('1')}>
                                                 {Timline}
                                         </NavLink>
                                         </NavItem>
                                         <NavItem className="nav" id="myTab" role="tablist">
-                                            <NavLink tag="a" href="#javascript" className={activeTab === '2' ? 'active' : ''} onClick={() => setActiveTab('2')}>
+                                            <NavLink tag="a"   className={activeTab === '2' ? 'active' : ''} onClick={() => setActiveTab('2')}>
                                                 {About}
                                         </NavLink>
                                         </NavItem>
@@ -47,12 +47,12 @@ const SocialApp = () => {
                                             <div className="desc mt-2">{GeneralManager}</div>
                                         </NavItem>
                                         <NavItem className="nav" id="myTab" role="tablist">
-                                            <NavLink tag="a" href="#javascript" className={activeTab === '3' ? 'active' : ''} onClick={() => setActiveTab('3')}>
+                                            <NavLink tag="a"   className={activeTab === '3' ? 'active' : ''} onClick={() => setActiveTab('3')}>
                                                 {Friends}
                                         </NavLink>
                                         </NavItem>
                                         <NavItem className="nav" id="myTab" role="tablist">
-                                            <NavLink tag="a" href="#javascript" className={activeTab === '4' ? 'active' : ''} onClick={() => setActiveTab('4')}>
+                                            <NavLink tag="a"   className={activeTab === '4' ? 'active' : ''} onClick={() => setActiveTab('4')}>
                                                 {Photos}
                                         </NavLink>
                                         </NavItem>

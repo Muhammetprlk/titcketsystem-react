@@ -1315,25 +1315,6 @@ $badge-light-color in (primary, $primary-color),
 }
 
 .widget-joins {
-  &:before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 1px;
-    background-color: $light-semi-gray;
-    left: calc(50% - 1px);
-  }
-
-  &:after {
-    content: "";
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    background-color: $light-semi-gray;
-    left: 0;
-    top: 50%;
-  }
-
   .media {
     padding: 30px;
     text-align: center;

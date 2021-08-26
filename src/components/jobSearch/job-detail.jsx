@@ -30,7 +30,7 @@ const JobDetail = (props) => {
                                         <img className="img-40 img-fluid m-r-20" src={one} alt="" />
                                         <Media body>
                                             <h6 className="f-w-600">
-                                                <a href="#javascript">{"Product Designer (UI/UX Designer)"}</a>
+                                                <a  >{"Product Designer (UI/UX Designer)"}</a>
                                                 <span className="pull-right">
                                                     <Link to={`${process.env.PUBLIC_URL}/app/jobSearch/job-apply`}> 
                                                     <Button color="primary">{"Apply for this job"}</Button>
@@ -110,7 +110,7 @@ const JobDetail = (props) => {
                                                     <Media>
                                                         <img className="img-40 img-fluid m-r-20" src={require(`../../assets/images/${data.logo}`)} alt="" />
                                                         <Media body>
-                                                            <h6 className="f-w-600"><a href="#javascript">{data.job_name}</a>
+                                                            <h6 className="f-w-600"><a  >{data.job_name}</a>
                                                                 {(data.badgeType === 'primary' ? <span className="badge badge-primary pull-right">{data.badgeValue}</span>
                                                                     : ''
                                                                 )}
@@ -140,7 +140,7 @@ const JobDetail = (props) => {
                                             <Media>
                                                 <img className="img-40 img-fluid m-r-20" src={two} alt="" />
                                                 <Media body>
-                                                    <h6 className="f-w-600"><a href="#javascript">{SeniorUXDesigner}</a><span className="pull-right">{"5 days ago"}</span></h6>
+                                                    <h6 className="f-w-600"><a  >{SeniorUXDesigner}</a><span className="pull-right">{"5 days ago"}</span></h6>
                                                     <p>{"Sutherland"} <span>{"Lelystad, Netherlands"} </span><span><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning"></i><i className="fa fa-star font-warning-half-o"></i><i className="fa fa-star font-warning-o"></i></span></p>
                                                 </Media>
                                             </Media>

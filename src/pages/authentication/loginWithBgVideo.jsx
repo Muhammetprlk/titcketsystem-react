@@ -26,7 +26,7 @@ const  LoginWithBgVideo = (props) => {
           <div className="login-card">
             <div>
               <div>
-                <a className="logo text-left" href="#javascript">
+                <a className="logo text-left"  >
                   <img className="img-fluid for-light" src={require("../../assets/images/logo/login.png")} alt="looginpage"/>
                   <img className="img-fluid for-dark" src={require("../../assets/images/logo/logo_dark.png")} alt="looginpage"/>
                 </a>
@@ -71,7 +71,7 @@ const  LoginWithBgVideo = (props) => {
                             <Input id="checkbox1" type="checkbox"/>
                             <Label className="text-muted" for="checkbox1">{RememberPassword}</Label>
                           </div>
-                          <a className="link" href="#javascript">{ForgotPassword}</a>
+                          <a className="link"  >{ForgotPassword}</a>
                           {selected === "firebase" ?
                             <Button color="primary" className="btn-block" >{SignIn}</Button>
                             :
@@ -95,7 +95,7 @@ const  LoginWithBgVideo = (props) => {
                             </Button>
                           </div>
                         </div>
-                        <p className="mt-4 mb-0">{"Don't have account?"}<a className="ml-2" href="#javascript">{CreateAccount}</a></p>
+                        <p className="mt-4 mb-0">{"Don't have account?"}<a className="ml-2"  >{CreateAccount}</a></p>
                       </Form>
                     </TabPane>
                     <TabPane  className="fade show" tabId="auth0">

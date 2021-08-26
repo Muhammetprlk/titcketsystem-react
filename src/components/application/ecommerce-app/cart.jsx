@@ -58,7 +58,7 @@ const  Cart = () =>  {
                                     </td>
                                     <td>
                                         <div className="product-name">
-                                            <a href="#javascript">{item.name}</a>
+                                            <a  >{item.name}</a>
                                         </div>
                                     </td>
                                     <td>{symbol}{item.price}</td>
@@ -80,7 +80,7 @@ const  Cart = () =>  {
                                         </fieldset>
                                     </td>
                                     <td>
-                                        <a href="#javascript" onClick={() => removefromcart(item)}><XCircle /></a>
+                                        <a   onClick={() => removefromcart(item)}><XCircle /></a>
                                     </td>
                                     <td>{symbol} {item.price * item.qty}</td>
                                 </tr>

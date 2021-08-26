@@ -129,7 +129,7 @@ const Modals = (props) => {
                         <p>{"This"} <button className="btn btn-primary popover-test">{"button"}</button> {"triggers a popover on click."}</p>
                         <hr/>
                         <h5>{"Tooltips in a modal"}</h5>
-                        <p><a className="tooltip-test" href="#javascript" >{"that link"}</a> {"have tooltips on hover."}</p>
+                        <p><a className="tooltip-test"   >{"that link"}</a> {"have tooltips on hover."}</p>
                       </ModalBody>
                       <ModalFooter>
                         <Button color="secondary"  onClick={Tooltippopovermodaltoggle}>{Close}</Button>

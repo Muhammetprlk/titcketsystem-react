@@ -41,7 +41,7 @@ const MesonryDesc = () => {
                                 >
                                     {masonryImg.map((element, index) =>
                                         <li style={{ listStyle: "none" }} key={index} >
-                                            <a href="#javascript" data-size="1600x950">
+                                            <a   data-size="1600x950">
                                                 <Media src={require(`../../assets/images/${element.src}`)} style={{ width: '100%' }} alt="" />
                                                 <div className="caption">
                                                     <h4>{PortfolioTitle}</h4>

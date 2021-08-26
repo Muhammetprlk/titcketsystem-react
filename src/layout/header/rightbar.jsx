@@ -205,7 +205,7 @@ const Rightbar = (props) => {
               <li className="text-center"> <button className="btn btn-primary">{ViewAll}     </button></li>
             </ul>
           </li>
-          <li className="maximize"><a className="text-dark" href="#javascript" onClick={goFull}><Minimize /></a></li>
+          <li className="maximize"><a className="text-dark"   onClick={goFull}><Minimize /></a></li>
           <li className="profile-nav onhover-dropdown p-0">
             <div className="media profile-media">
               <img className="b-r-10" src={authenticated ? auth0_profile.picture : profile} alt="" />

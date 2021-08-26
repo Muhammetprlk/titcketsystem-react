@@ -43,7 +43,7 @@ const PhotosTab = () => {
                 <Col sm="12">
                     <Card>
                         <CardBody className="my-gallery row gallery-with-description">
-                            <figure className="col-xl-3 col-sm-6"><a href="#javascript"  data-size="1600x950">
+                            <figure className="col-xl-3 col-sm-6"><a    data-size="1600x950">
                                 <Media
                                     src={require(`../../assets/images/${smallImages[0]}`)}
                                     alt="Gallery"
@@ -57,7 +57,7 @@ const PhotosTab = () => {
                                     <p>{"is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy."}</p>
                                 </div></a>
                             </figure>
-                            <figure className="col-xl-3 col-sm-6"><a href="#javascript"  data-size="1600x950">
+                            <figure className="col-xl-3 col-sm-6"><a    data-size="1600x950">
                                 <Media
                                     src={require(`../../assets/images/${smallImages[1]}`)}
                                     alt="Gallery"
@@ -71,7 +71,7 @@ const PhotosTab = () => {
                                     <p>{"is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy."}</p>
                                 </div></a>
                             </figure>
-                            <figure className="col-xl-3 col-sm-6"><a href="#javascript"  data-size="1600x950">
+                            <figure className="col-xl-3 col-sm-6"><a    data-size="1600x950">
                                 <Media
                                     src={require(`../../assets/images/${smallImages[2]}`)}
                                     alt="Gallery"
@@ -85,7 +85,7 @@ const PhotosTab = () => {
                                     <p>{"is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy."}</p>
                                 </div></a>
                             </figure>
-                            <figure className="col-xl-3 col-sm-6"><a href="#javascript"  data-size="1600x950">
+                            <figure className="col-xl-3 col-sm-6"><a    data-size="1600x950">
                                 <Media
                                     src={require(`../../assets/images/${smallImages[3]}`)}
                                     alt="Gallery"
@@ -99,7 +99,7 @@ const PhotosTab = () => {
                                     <p>{"is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy."}</p>
                                 </div></a>
                             </figure>
-                            <figure className="col-xl-3 col-sm-6"><a href="#javascript"  data-size="1600x950">
+                            <figure className="col-xl-3 col-sm-6"><a    data-size="1600x950">
                                 <Media
                                     src={require(`../../assets/images/${smallImages[4]}`)}
                                     alt="Gallery"
@@ -113,7 +113,7 @@ const PhotosTab = () => {
                                     <p>{"is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy."}</p>
                                 </div></a>
                             </figure>
-                            <figure className="col-xl-3 col-sm-6"><a href="#javascript"  data-size="1600x950">
+                            <figure className="col-xl-3 col-sm-6"><a    data-size="1600x950">
                                 <Media
                                     src={require(`../../assets/images/${smallImages[5]}`)}
                                     alt="Gallery"
@@ -127,7 +127,7 @@ const PhotosTab = () => {
                                     <p>{"is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy."}</p>
                                 </div></a>
                             </figure>
-                            <figure className="col-xl-3 col-sm-6"><a href="#javascript"  data-size="1600x950">
+                            <figure className="col-xl-3 col-sm-6"><a    data-size="1600x950">
                                 <Media
                                     src={require(`../../assets/images/${smallImages[6]}`)}
                                     alt="Gallery"
@@ -141,7 +141,7 @@ const PhotosTab = () => {
                                     <p>{"is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy."}</p>
                                 </div></a>
                             </figure>
-                            <figure className="col-xl-3 col-sm-6"><a href="#javascript"  data-size="1600x950">
+                            <figure className="col-xl-3 col-sm-6"><a    data-size="1600x950">
                                 <Media
                                     src={require(`../../assets/images/${smallImages[7]}`)}
                                     alt="Gallery"
@@ -155,7 +155,7 @@ const PhotosTab = () => {
                                     <p>{"is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy."}</p>
                                 </div></a>
                             </figure>
-                            <figure className="col-xl-3 col-sm-6"><a href="#javascript"  data-size="1600x950">
+                            <figure className="col-xl-3 col-sm-6"><a    data-size="1600x950">
                                 <Media
                                     src={require(`../../assets/images/${smallImages[8]}`)}
                                     alt="Gallery"
@@ -169,7 +169,7 @@ const PhotosTab = () => {
                                     <p>{"is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy."}</p>
                                 </div></a>
                             </figure>
-                            <figure className="col-xl-3 col-sm-6"><a href="#javascript"  data-size="1600x950">
+                            <figure className="col-xl-3 col-sm-6"><a    data-size="1600x950">
                                 <Media
                                     src={require(`../../assets/images/${smallImages[9]}`)}
                                     alt="Gallery"
@@ -183,7 +183,7 @@ const PhotosTab = () => {
                                     <p>{"is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy."}</p>
                                 </div></a>
                             </figure>
-                            <figure className="col-xl-3 col-sm-6"><a href="#javascript"  data-size="1600x950">
+                            <figure className="col-xl-3 col-sm-6"><a    data-size="1600x950">
                                 <Media
                                     src={require(`../../assets/images/${smallImages[10]}`)}
                                     alt="Gallery"
@@ -197,7 +197,7 @@ const PhotosTab = () => {
                                     <p>{"is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy."}</p>
                                 </div></a>
                             </figure>
-                            <figure className="col-xl-3 col-sm-6"><a href="#javascript"  data-size="1600x950">
+                            <figure className="col-xl-3 col-sm-6"><a    data-size="1600x950">
                                 <Media
                                     src={require(`../../assets/images/${smallImages[11]}`)}
                                     alt="Gallery"

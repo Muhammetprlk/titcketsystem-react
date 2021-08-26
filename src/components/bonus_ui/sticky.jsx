@@ -28,7 +28,7 @@ const Sticky = (props) => {
                 <Card>
                   <CardHeader>
                     <h5>{StickyNote}
-                      <a href="#javascript" onClick={addStickyNote} className="btn btn-primary pull-right m-l-10">{AddNewNote}</a>
+                      <a   onClick={addStickyNote} className="btn btn-primary pull-right m-l-10">{AddNewNote}</a>
                     </h5>
                   </CardHeader>
                   <CardBody>

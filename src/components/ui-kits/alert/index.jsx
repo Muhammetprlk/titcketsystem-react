@@ -50,28 +50,28 @@ const Alerts  = (props) => {
                   </CardHeader>
                   <CardBody className="card-body">
                     <Alert color="primary dark">
-                      <p>{"This is a primary alert with"} <a className="alert-link" href="#javascript">{"an example link"}</a>{".Click It"}</p>
+                      <p>{"This is a primary alert with"} <a className="alert-link"  >{"an example link"}</a>{".Click It"}</p>
                     </Alert>
                     <Alert color="secondary dark">
-                      <p>{"This is a secondary alert with"} <a className="alert-link" href="#javascript">{"an example link"}</a>{".Click It"}</p>
+                      <p>{"This is a secondary alert with"} <a className="alert-link"  >{"an example link"}</a>{".Click It"}</p>
                     </Alert>
                     <Alert color="success dark">
-                      <p>{"This is a success alert with"} <a className="alert-link" href="#javascript">{"an example link"}</a>{".Click It"}</p>
+                      <p>{"This is a success alert with"} <a className="alert-link"  >{"an example link"}</a>{".Click It"}</p>
                     </Alert>
                     <Alert color="info dark">
-                      <p>{"This is a info alert with"} <a className="alert-link" href="#javascript">{"an example link"}</a>{".Click It"}</p>
+                      <p>{"This is a info alert with"} <a className="alert-link"  >{"an example link"}</a>{".Click It"}</p>
                     </Alert>
                     <Alert color="warning dark">
-                      <p>{"This is a warning alert with"} <a className="alert-link" href="#javascript">{"an example link"}</a>{".Click It"}</p>
+                      <p>{"This is a warning alert with"} <a className="alert-link"  >{"an example link"}</a>{".Click It"}</p>
                     </Alert>
                     <Alert color="danger dark">
-                      <p>{"This is a danger alert with"} <a className="alert-link" href="#javascript">{"an example link"}</a>{".Click It"}</p>
+                      <p>{"This is a danger alert with"} <a className="alert-link"  >{"an example link"}</a>{".Click It"}</p>
                     </Alert>
                     <Alert color="light dark">
-                      <p>{"This is a light alert with"} <a className="alert-link" href="#javascript">{"an example link"}</a>{".Click It"}</p>
+                      <p>{"This is a light alert with"} <a className="alert-link"  >{"an example link"}</a>{".Click It"}</p>
                     </Alert>
                     <Alert color="dark dark">
-                      <p>{"This is a light alert with"} <a className="alert-link" href="#javascript">{"an example link"}</a>{".Click It"}</p>
+                      <p>{"This is a light alert with"} <a className="alert-link"  >{"an example link"}</a>{".Click It"}</p>
                     </Alert>
                   </CardBody>
                 </Card>
@@ -138,28 +138,28 @@ const Alerts  = (props) => {
                   </CardHeader>
                   <CardBody className="card-body">
                      <Alert color="primary">
-                      <p>{"This is a primary alert with"} <a className="alert-link" href="#javascript">{"an example link"}</a>{".Click It"}</p>
+                      <p>{"This is a primary alert with"} <a className="alert-link"  >{"an example link"}</a>{".Click It"}</p>
                     </Alert>
                     <Alert color="secondary">
-                      <p>{"This is a secondary alert with"} <a className="alert-link" href="#javascript">{"an example link"}</a>{".Click It"}</p>
+                      <p>{"This is a secondary alert with"} <a className="alert-link"  >{"an example link"}</a>{".Click It"}</p>
                     </Alert>
                     <Alert color="success">
-                      <p>{"This is a success alert with"} <a className="alert-link" href="#javascript">{"an example link"}</a>{".Click It"}</p>
+                      <p>{"This is a success alert with"} <a className="alert-link"  >{"an example link"}</a>{".Click It"}</p>
                     </Alert>
                     <Alert color="info">
-                      <p>{"This is a info alert with"} <a className="alert-link" href="#javascript">{"an example link"}</a>{".Click It"}</p>
+                      <p>{"This is a info alert with"} <a className="alert-link"  >{"an example link"}</a>{".Click It"}</p>
                     </Alert>
                     <Alert color="warning">
-                      <p>{"This is a warning alert with"} <a className="alert-link" href="#javascript">{"an example link"}</a>{".Click It"}</p>
+                      <p>{"This is a warning alert with"} <a className="alert-link"  >{"an example link"}</a>{".Click It"}</p>
                     </Alert>
                     <Alert color="danger">
-                      <p>{"This is a danger alert with"} <a className="alert-link" href="#javascript">{"an example link"}</a>{".Click It"}</p>
+                      <p>{"This is a danger alert with"} <a className="alert-link"  >{"an example link"}</a>{".Click It"}</p>
                     </Alert>
                     <Alert color="light">
-                      <p>{"This is a light alert with"} <a className="alert-link" href="#javascript">{"an example link"}</a>{".Click It"}</p>
+                      <p>{"This is a light alert with"} <a className="alert-link"  >{"an example link"}</a>{".Click It"}</p>
                     </Alert>
                     <Alert color="dark">
-                      <p>{"This is a light alert with"} <a className="alert-link" href="#javascript">{"an example link"}</a>{".Click It"}</p>
+                      <p>{"This is a light alert with"} <a className="alert-link"  >{"an example link"}</a>{".Click It"}</p>
                     </Alert>
                   </CardBody>
                 </Card>

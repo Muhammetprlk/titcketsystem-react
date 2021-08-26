@@ -35,11 +35,11 @@ const List = (props) => {
               </CardHeader>
               <CardBody>
                 <ListGroup>
-                  <ListGroupItem className="list-group-item-action" tag="a" href="#javascript" active>{"Cras justo odio"}</ListGroupItem>
-                  <ListGroupItem className="list-group-item-action" tag="a" href="#javascript">{"Dapibus ac facilisis in"}</ListGroupItem>
-                  <ListGroupItem className="list-group-item-action" tag="a" href="#javascript">{"Morbi leo risus"}</ListGroupItem>
-                  <ListGroupItem className="list-group-item-action" tag="a" href="#javascript">{"Porta ac consectetur ac"}</ListGroupItem>
-                  <ListGroupItem className="list-group-item-action" tag="a" href="#javascript" disabled>{"Vestibulum at eros"}</ListGroupItem>
+                  <ListGroupItem className="list-group-item-action" tag="a"   active>{"Cras justo odio"}</ListGroupItem>
+                  <ListGroupItem className="list-group-item-action" tag="a"  >{"Dapibus ac facilisis in"}</ListGroupItem>
+                  <ListGroupItem className="list-group-item-action" tag="a"  >{"Morbi leo risus"}</ListGroupItem>
+                  <ListGroupItem className="list-group-item-action" tag="a"  >{"Porta ac consectetur ac"}</ListGroupItem>
+                  <ListGroupItem className="list-group-item-action" tag="a"   disabled>{"Vestibulum at eros"}</ListGroupItem>
                 </ListGroup>
               </CardBody>
             </Card>
@@ -146,16 +146,16 @@ const List = (props) => {
                 <Row>
                   <Col sm="4 tab-javascript">
                     <ListGroup className="nav-primary nav-pills">
-                      <ListGroupItem href="#javascript" className={activeTab === '1' ? 'list-group-item-action active' : ''} onClick={() => setActiveTab('1')}>{Hometxt}</ListGroupItem>
+                      <ListGroupItem   className={activeTab === '1' ? 'list-group-item-action active' : ''} onClick={() => setActiveTab('1')}>{Hometxt}</ListGroupItem>
                     </ListGroup>
                     <ListGroup>
-                      <ListGroupItem href="#javascript" className={activeTab === '2' ? 'list-group-item-action active' : ''} onClick={() => setActiveTab('2')}>{Profile}</ListGroupItem>
+                      <ListGroupItem   className={activeTab === '2' ? 'list-group-item-action active' : ''} onClick={() => setActiveTab('2')}>{Profile}</ListGroupItem>
                     </ListGroup>
                     <ListGroup>
-                      <ListGroupItem href="#javascript" className={activeTab === '3' ? 'list-group-item-action active' : ''} onClick={() => setActiveTab('3')}>{Messages}</ListGroupItem>
+                      <ListGroupItem   className={activeTab === '3' ? 'list-group-item-action active' : ''} onClick={() => setActiveTab('3')}>{Messages}</ListGroupItem>
                     </ListGroup>
                     <ListGroup>
-                      <ListGroupItem href="#javascript" className={activeTab === '4' ? 'list-group-item-action active' : ''} onClick={() => setActiveTab('4')}>{Settings}</ListGroupItem>
+                      <ListGroupItem   className={activeTab === '4' ? 'list-group-item-action active' : ''} onClick={() => setActiveTab('4')}>{Settings}</ListGroupItem>
                     </ListGroup>
                   </Col>
                   <Col sm="8">
@@ -177,9 +177,9 @@ const List = (props) => {
               </CardHeader>
               <CardBody>
                 <ListGroup>
-                  <ListGroupItem className="list-group-item-action" tag="a" href="#javascript"><i className="icon-save-alt"></i>{"Cras justo odio"}</ListGroupItem>
-                  <ListGroupItem className="list-group-item-action" tag="a" href="#javascript"><i className="icon-target"></i>{"Dapibus ac facilisis in"}</ListGroupItem>
-                  <ListGroupItem className="list-group-item-action" tag="a" href="#javascript"><i className="icon-mobile"></i>{"Morbi leo risus"}</ListGroupItem>
+                  <ListGroupItem className="list-group-item-action" tag="a"  ><i className="icon-save-alt"></i>{"Cras justo odio"}</ListGroupItem>
+                  <ListGroupItem className="list-group-item-action" tag="a"  ><i className="icon-target"></i>{"Dapibus ac facilisis in"}</ListGroupItem>
+                  <ListGroupItem className="list-group-item-action" tag="a"  ><i className="icon-mobile"></i>{"Morbi leo risus"}</ListGroupItem>
                   <ListGroupItem className="list-group-item-action disabled"><i className="icon-shopping-cart-full"></i>{"Vestibulum at eros"}</ListGroupItem>
                 </ListGroup>
               </CardBody>
@@ -192,11 +192,11 @@ const List = (props) => {
               </CardHeader>
               <CardBody>
                 <ListGroup>
-                  <ListGroupItem className="list-group-item-action" tag="a" href="#javascript">
+                  <ListGroupItem className="list-group-item-action" tag="a"  >
                     <Media body src={require("../../assets/images/user/1.jpg")} alt="" />{"Cras justo odio"}</ListGroupItem>
-                  <ListGroupItem className="list-group-item-action" tag="a" href="#javascript">
+                  <ListGroupItem className="list-group-item-action" tag="a"  >
                     <Media body src={require("../../assets/images/user/1.jpg")} alt="" />{"Dapibus ac facilisis in"}</ListGroupItem>
-                  <ListGroupItem className="list-group-item-action" tag="a" href="#javascript">
+                  <ListGroupItem className="list-group-item-action" tag="a"  >
                     <Media body src={require("../../assets/images/user/1.jpg")} alt="" />{"Morbi leo risus"}</ListGroupItem>
                   <ListGroupItem className="list-group-item-action disabled"><Media body src={require("../../assets/images/user/1.jpg")} alt="" />{"Vestibulum at eros"}</ListGroupItem>
                 </ListGroup>
@@ -210,11 +210,11 @@ const List = (props) => {
               </CardHeader>
               <CardBody>
                 <ListGroup>
-                  <ListGroupItem className="list-group-item-action" tag="a" href="#javascript">
+                  <ListGroupItem className="list-group-item-action" tag="a"  >
                     <Media body className="rounded-circle" src={require("../../assets/images/user/1.jpg")} alt="" />{"Cras justo odio"}</ListGroupItem>
-                  <ListGroupItem className="list-group-item-action" tag="a" href="#javascript">
+                  <ListGroupItem className="list-group-item-action" tag="a"  >
                     <Media body className="rounded-circle" src={require("../../assets/images/user/1.jpg")} alt="" />{"Dapibus ac facilisis in"}</ListGroupItem>
-                  <ListGroupItem className="list-group-item-action" tag="a" href="#javascript">
+                  <ListGroupItem className="list-group-item-action" tag="a"  >
                     <Media body className="rounded-circle" src={require("../../assets/images/user/1.jpg")} alt="" />{"Morbi leo risus"}</ListGroupItem>
                   <ListGroupItem className="list-group-item-action disabled">
                     <Media body className="rounded-circle" src={require("../../assets/images/user/1.jpg")} alt="" />{"Vestibulum at eros"}</ListGroupItem>

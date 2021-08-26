@@ -74,7 +74,7 @@ const TimelineTab = () => {
                                                 </Media>
                                             </Media>
                                         </div>
-                                        <div className="text-center"><a href="#javascript">{MoreCommnets}</a></div>
+                                        <div className="text-center"><a  >{MoreCommnets}</a></div>
                                     </div>
                                     <div className="comments-box">
                                         <Media>
@@ -128,7 +128,7 @@ const TimelineTab = () => {
                                                 </Media>
                                             </Media>
                                         </div>
-                                        <div className="text-center"><a href="#javascript">{MoreCommnets}</a></div>
+                                        <div className="text-center"><a  >{MoreCommnets}</a></div>
                                     </div>
                                     <div className="comments-box">
                                         <Media>

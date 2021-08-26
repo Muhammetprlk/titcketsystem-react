@@ -93,7 +93,7 @@ const ApiBoard = (props) => {
                                         renderCard={({ title, date, priority, backgroundImg, img, company, rate, customer_img1, customer_img2, customer_img3 }) => (
 
                                             <div className="kanban-item" id="todo">
-                                                <a className="kanban-box" href="#javascript">
+                                                <a className="kanban-box"  >
                                                     <span className="date">{date}</span>
                                                     <span className={`badge ${priority === "Argent" ? "badge-danger" : "badge-primary"} f-right`}>{priority}</span>
                                                     <img className="mt-2 img-fluid" src={backgroundImg} alt="" />

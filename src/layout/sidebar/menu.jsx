@@ -1,19 +1,14 @@
 import { Home, Airplay, Box,Briefcase, FolderPlus, Command, Cloud, FileText, Server, BarChart, Users, Layers, ShoppingBag, List, Mail, MessageCircle, GitPullRequest, Monitor, Heart, Clock, Zap, CheckSquare, Calendar, Activity,Image, Film, HelpCircle, Radio, Map, Edit, Sunrise, Package } from 'react-feather'
-import {menutitle,menuitemDashboard,menuitemCreateCompany,menuitemDashboardDefault,menuitemDashboardEcommerce,menuitemEmployees,menuitemIssue,menuitemIssueList,menuitemIssueNew,menuitemProject,menuitemProjectList,menuitemProjectNew,menuitemEmployeesList,menuitemEmployeesNew} from '../../constant'
+import {menutitle,menuitemDashboard,menuitemCreateCompany,menuitemDashboardDefault,menuitemCompany,menuitemListCompany,menuitemDashboardEcommerce,menuitemEmployees,menuitemIssue,menuitemIssueList,menuitemIssueNew,menuitemProject,menuitemProjectList,menuitemProjectNew,menuitemEmployeesList,menuitemEmployeesNew} from '../../constant'
 
 export const MENUITEMS = [
     {
         menutitle:menutitle,
         menucontent:"",
         Items:[
+            { path: `${process.env.PUBLIC_URL}/dashboard`,userRole:["superuser","companyadmin"],icon: Home,  type: 'link',active:false, title: menuitemDashboard },
             {
-                title: menuitemDashboard, userRole:["superuser","companyadmin"], icon: Home, type: 'sub',badge: "badge badge-success", active: false, children: [
-                    { path: `${process.env.PUBLIC_URL}/dashboard/default`, userRole:["superuser"], title: menuitemDashboardDefault, type: 'link' },
-                    { path: `${process.env.PUBLIC_URL}/dashboard/ecommerce`,userRole:["companyadmin"], title: menuitemDashboardEcommerce, type: 'link' },
-                ]
-            },
-            {
-                title: menuitemProject,icon:Box, userRole:["companyadmin","user"], type: 'sub',badge: "badge badge-danger",active:false, children: [
+                title: menuitemProject,icon:Box, userRole:["companyadmin","user",], type: 'sub',badge: "badge badge-danger",active:false, children: [
                     { path: `${process.env.PUBLIC_URL}/app/project/project-list`, type: 'link', title: menuitemProjectList,userRole:["companyadmin","user"] },
                     { path: `${process.env.PUBLIC_URL}/app/project/new-project`, type: 'link', title: menuitemProjectNew ,userRole:["companyadmin"]},
                 ]
@@ -30,8 +25,12 @@ export const MENUITEMS = [
                     { path: `${process.env.PUBLIC_URL}/app/employee/create-employee`, type: 'link', title: menuitemEmployeesNew ,userRole:["companyadmin"]},
                 ]
             },
-            // { path: `${process.env.PUBLIC_URL}/app/support-ticket`,icon: Users,  type: 'link', active:false,title: 'Support Ticket' },
-            { path: `${process.env.PUBLIC_URL}/app/create-company`,userRole:["superuser"],icon: Briefcase,  type: 'link', active:false,title: menuitemCreateCompany },
+            {
+                title: menuitemCompany,icon:Briefcase,userRole:["superuser"], type: 'sub',badge: "badge badge-danger",active:false, children: [
+                    { path: `${process.env.PUBLIC_URL}/app/company-list`, type: 'link', title: menuitemListCompany ,userRole:["superuser"]},
+                    { path: `${process.env.PUBLIC_URL}/app/create-company`, type: 'link', title: menuitemCreateCompany ,userRole:["superuser"]},
+                ]
+            }
         ]
     },
 

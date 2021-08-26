@@ -17,11 +17,11 @@ const Paginations = (props) => {
                   </CardHeader>
                   <CardBody>
                     <Pagination aria-label="Page navigation example"  className="pagination-primary">
-                        <PaginationItem><PaginationLink href="#javascript">{Previous}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"1"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"2"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"3"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{Next}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Previous}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"1"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"2"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"3"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Next}</PaginationLink></PaginationItem>
                     </Pagination>
                   </CardBody>
                 </Card>
@@ -33,11 +33,11 @@ const Paginations = (props) => {
                   </CardHeader>
                   <CardBody>
                     <Pagination aria-label="Page navigation example" className="pagination-primary" >
-                        <PaginationItem><PaginationLink href="#javascript"><span aria-hidden="true">«</span><span className="sr-only">{Previous}</span></PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"1"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"2"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"3"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript"><span aria-hidden="true">»</span><span className="sr-only">{Next}</span></PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  ><span aria-hidden="true">«</span><span className="sr-only">{Previous}</span></PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"1"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"2"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"3"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  ><span aria-hidden="true">»</span><span className="sr-only">{Next}</span></PaginationLink></PaginationItem>
                     </Pagination>
                   </CardBody>
                 </Card>
@@ -50,29 +50,29 @@ const Paginations = (props) => {
                   <CardBody>
                   <nav className="m-b-30" aria-label="Page navigation example">
                     <Pagination className="pagination pagination-primary" aria-label="Page navigation example">
-                        <PaginationItem><PaginationLink href="#javascript">{Previous}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"1"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"2"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"3"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{Next}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Previous}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"1"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"2"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"3"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Next}</PaginationLink></PaginationItem>
                     </Pagination>
                   </nav>
                   <nav className="m-b-30" aria-label="Page navigation example">
                     <Pagination className="pagination justify-content-center pagination-primary" aria-label="Page navigation example">
-                        <PaginationItem><PaginationLink href="#javascript">{Previous}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"1"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"2"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"3"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{Next}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Previous}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"1"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"2"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"3"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Next}</PaginationLink></PaginationItem>
                     </Pagination>
                   </nav>
                   <nav aria-label="Page navigation example">
                     <Pagination className="pagination justify-content-end pagination-primary" aria-label="Page navigation example">
-                        <PaginationItem><PaginationLink href="#javascript">{Previous}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"1"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"2"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"3"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{Next}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Previous}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"1"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"2"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"3"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Next}</PaginationLink></PaginationItem>
                     </Pagination>
                   </nav>
                   </CardBody>
@@ -87,10 +87,10 @@ const Paginations = (props) => {
                     <Pagination aria-label="...">
                       <ul className="pagination pagination-primary">
                         <PaginationItem disabled><PaginationLink>{Previous}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript" >{"1"}</PaginationLink></PaginationItem>
-                        <PaginationItem active><PaginationLink href="#javascript">{"2"} <span className="sr-only">{"(current)"}</span></PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"3"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{Next}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink   >{"1"}</PaginationLink></PaginationItem>
+                        <PaginationItem active><PaginationLink  >{"2"} <span className="sr-only">{"(current)"}</span></PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"3"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Next}</PaginationLink></PaginationItem>
                       </ul>
                     </Pagination>
                   </CardBody>
@@ -104,56 +104,56 @@ const Paginations = (props) => {
                   <CardBody>
                     <Pagination className="m-b-30" aria-label="Page navigation example">
                       <ul className="pagination pagination-primary">
-                        <PaginationItem><PaginationLink href="#javascript">{Previous}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"1"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"2"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"3"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{Next}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Previous}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"1"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"2"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"3"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Next}</PaginationLink></PaginationItem>
                       </ul>
                     </Pagination>
                     <Pagination className="m-b-30" aria-label="Page navigation example">
                       <ul className="pagination pagination-secondary">
-                        <PaginationItem><PaginationLink href="#javascript">{Previous}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"1"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"2"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"3"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{Next}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Previous}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"1"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"2"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"3"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Next}</PaginationLink></PaginationItem>
                       </ul>
                     </Pagination>
                     <Pagination className="m-b-30" aria-label="Page navigation example">
                       <ul className="pagination pagination-success">
-                        <PaginationItem><PaginationLink href="#javascript">{Previous}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"1"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"2"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"3"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{Next}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Previous}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"1"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"2"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"3"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Next}</PaginationLink></PaginationItem>
                       </ul>
                     </Pagination>
                     <Pagination className="m-b-30" aria-label="Page navigation example">
                       <ul className="pagination pagination-info">
-                        <PaginationItem><PaginationLink href="#javascript">{Previous}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"1"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"2"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"3"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{Next}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Previous}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"1"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"2"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"3"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Next}</PaginationLink></PaginationItem>
                       </ul>
                     </Pagination>
                     <Pagination className="m-b-30" aria-label="Page navigation example">
                       <ul className="pagination pagination-warning">
-                        <PaginationItem><PaginationLink href="#javascript">{Previous}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"1"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"2"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"3"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{Next}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Previous}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"1"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"2"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"3"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Next}</PaginationLink></PaginationItem>
                       </ul>
                     </Pagination>
                     <Pagination aria-label="Page navigation example">
                       <ul className="pagination pagination-danger">
-                        <PaginationItem><PaginationLink href="#javascript">{Previous}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"1"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"2"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"3"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{Next}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Previous}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"1"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"2"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"3"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Next}</PaginationLink></PaginationItem>
                       </ul>
                     </Pagination>
                   </CardBody>
@@ -167,20 +167,20 @@ const Paginations = (props) => {
                   <CardBody>
                     <Pagination className="m-b-30" aria-label="Page navigation example">
                       <ul className="pagination pagination-lg pagination-primary">
-                        <PaginationItem><PaginationLink href="#javascript">{Previous}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"1"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"2"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"3"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{Next}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Previous}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"1"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"2"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"3"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Next}</PaginationLink></PaginationItem>
                       </ul>
                     </Pagination>
                     <Pagination aria-label="Page navigation example">
                       <ul className="pagination pagination-sm pagination-primary">
-                        <PaginationItem><PaginationLink href="#javascript">{Previous}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"1"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"2"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{"3"}</PaginationLink></PaginationItem>
-                        <PaginationItem><PaginationLink href="#javascript">{Next}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Previous}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"1"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"2"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{"3"}</PaginationLink></PaginationItem>
+                        <PaginationItem><PaginationLink  >{Next}</PaginationLink></PaginationItem>
                       </ul>
                     </Pagination>
                   </CardBody>

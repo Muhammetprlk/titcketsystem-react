@@ -135,13 +135,13 @@ const Email = (props) => {
                           </Media>
                           <ul className="nav main-menu" role="tablist">
                             <li className="nav-item">
-                              <a className="btn-primary btn-block btn-mail"  onClick={clickCompose} href="#javascript">
+                              <a className="btn-primary btn-block btn-mail"  onClick={clickCompose}  >
                               <i className="icofont icofont-envelope mr-2"></i> 
                                 {NEWMAIL}
                               </a>
                             </li>
                             <li className="nav-item" onClick={() => selectTypes('Inbox')}>
-                              <a className={`show ${type === 'Inbox' ? 'active' : ''}`} href="#javascript">
+                              <a className={`show ${type === 'Inbox' ? 'active' : ''}`}  >
                               <span className="title">
                                 <i className="icon-import"></i> 
                                 {Inbox}
@@ -152,7 +152,7 @@ const Email = (props) => {
                               </a>
                            </li>
                             <li onClick={() => selectTypes('AllEmails')}>
-                              <a className={`${type === 'AllEmails' ? 'active' : ''}`} href="#javascript">
+                              <a className={`${type === 'AllEmails' ? 'active' : ''}`}  >
                                 <span className="title">
                                   <i className="icon-folder"></i> 
                                   {AllMail}
@@ -160,7 +160,7 @@ const Email = (props) => {
                               </a>
                             </li>
                             <li onClick={() => selectTypes('Sent')}>
-                              <a href="#javascript" className={`${type === 'Sent' ? 'active' : ''}`}>
+                              <a   className={`${type === 'Sent' ? 'active' : ''}`}>
                                   <span className="title">
                                       <i className="icon-new-window"></i>
                                       {Sent}
@@ -171,7 +171,7 @@ const Email = (props) => {
                               </a>
                           </li>
                           <li onClick={() => selectTypes('Draft')}>
-                              <a href="#javascript" className={`${type === 'Draft' ? 'active' : ''}`}>
+                              <a   className={`${type === 'Draft' ? 'active' : ''}`}>
                                   <span className="title">
                                       <i className="icon-pencil-alt"></i>
                                       {Draft}
@@ -182,7 +182,7 @@ const Email = (props) => {
                               </a>
                           </li>
                           <li onClick={() => selectTypes('Trash')}>
-                              <a href="#javascript" className={`${type === 'Trash' ? 'active' : ''}`}>
+                              <a   className={`${type === 'Trash' ? 'active' : ''}`}>
                                   <span className="title">
                                       <i className="icon-trash"></i>
                                       {Trash}
@@ -193,7 +193,7 @@ const Email = (props) => {
                               </a>
                           </li>
                           <li>
-                              <a href="#javascript">
+                              <a  >
                                   <span className="title">
                                       <i className="icon-info-alt"></i>
                                       {IMPORTANT}
@@ -201,7 +201,7 @@ const Email = (props) => {
                               </a>
                           </li>
                           <li onClick={() => selectFev('favourite')}>
-                              <a href="#javascript" className={`${type === 'favourite' ? 'active' : ''}`}>
+                              <a   className={`${type === 'favourite' ? 'active' : ''}`}>
                                   <span className="title">
                                       <i className="icon-star"></i>
                                       {Starred}
@@ -212,7 +212,7 @@ const Email = (props) => {
                               <hr />
                           </li>
                           <li onClick={() => selectTypes('Unread')}>
-                              <a href="#javascript">
+                              <a  >
                                   <span className="title">
                                       <i className="icon-email"></i>
                                       {UNREAD}
@@ -220,7 +220,7 @@ const Email = (props) => {
                               </a>
                           </li>
                           <li onClick={() => selectTypes('Spam')}>
-                              <a href="#javascript">
+                              <a  >
                                   <span className="title">
                                       <i className="icon-export"></i>
                                       {Spam}
@@ -228,7 +228,7 @@ const Email = (props) => {
                               </a>
                           </li>
                           <li onClick={() => selectTypes('Outbox')}>
-                              <a href="#javascript">
+                              <a  >
                                   <span className="title">
                                       <i className="icon-share"></i>
                                       {OUTBOX}
@@ -236,7 +236,7 @@ const Email = (props) => {
                               </a>
                           </li>
                           <li>
-                              <a href="#javascript">
+                              <a  >
                                   <span className="title">
                                       <i className="icon-file"></i>
                                       {UPDATE}
@@ -244,7 +244,7 @@ const Email = (props) => {
                               </a>
                           </li>
                           <li>
-                              <a href="#javascript">
+                              <a  >
                                   <span className="title">
                                       <i className="icon-bell"></i>
                                       {ALERT}
@@ -252,7 +252,7 @@ const Email = (props) => {
                               </a>
                           </li>
                           <li>
-                              <a href="#javascript">
+                              <a  >
                                   <span className="title">
                                       <i className="icon-notepad"></i>
                                       {NOTES}
@@ -437,7 +437,7 @@ const Email = (props) => {
                                       <p>{"In elementum varius nisi vel tempus. Donec eleifend egestas viverra. Donec dapibus sollicitudin blandit. Donec scelerisque purus sit amet feugiat efficitur. Quisque feugiat semper sapien vel hendrerit. Mauris lacus felis, consequat nec pellentesque viverra, venenatis a lorem. Sed urna lectus.Quisque feugiat semper sapien vel hendrerit"}</p>
                                       <hr />
                                       <div className="d-inline-block">
-                                          <h6 className="text-muted"><i className="icofont icofont-clip"></i> {ATTACHMENTS}</h6><a className="text-muted text-right right-download" href="#javascript"><i className="fa fa-long-arrow-down mr-2"></i>{DownloadAll}</a>
+                                          <h6 className="text-muted"><i className="icofont icofont-clip"></i> {ATTACHMENTS}</h6><a className="text-muted text-right right-download"  ><i className="fa fa-long-arrow-down mr-2"></i>{DownloadAll}</a>
                                           <div className="clearfix"></div>
                                       </div>
                                       <div className="attachment">
@@ -450,9 +450,9 @@ const Email = (props) => {
                                       <hr />
                                       <div className="action-wrapper">
                                           <ul className="actions">
-                                              <li><a className="text-muted" href="#javascript"><i className="fa fa-reply mr-2"></i>{Reply}</a></li>
-                                              <li><a className="text-muted" href="#javascript"><i className="fa fa-reply-all mr-2"></i>{ReplyAll}</a></li>
-                                              <li><a className="text-muted" href="#javascript"><i className="fa fa-share mr-2"></i></a>{Forward}</li>
+                                              <li><a className="text-muted"  ><i className="fa fa-reply mr-2"></i>{Reply}</a></li>
+                                              <li><a className="text-muted"  ><i className="fa fa-reply-all mr-2"></i>{ReplyAll}</a></li>
+                                              <li><a className="text-muted"  ><i className="fa fa-share mr-2"></i></a>{Forward}</li>
                                           </ul>
                                       </div>
                                   </div>

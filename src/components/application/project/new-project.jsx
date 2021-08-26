@@ -200,7 +200,7 @@ const Newproject = (props) => {
                     </FormGroup>
                   </Form>
                   {foundUsers?.map((user) => {
-                    return <Media>
+                    return <Media key={user.id}>
                       <img className="img-50 rounded-circle m-r-15" src={three} alt="fourteenImg" />
                       <Media body>
                         <span className="f-w-600 d-block">{user.first_name + " " + user.last_name}</span><span className="d-block">{user.email}</span>

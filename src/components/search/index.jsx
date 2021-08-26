@@ -91,7 +91,7 @@ const Search = (props) => {
                     <Row>
                       <Col xl="8" className="box-col-12">
                         <h6 className="mb-2">{"Search result for 'Pixelstrap'"}</h6>
-                        <div className="info-block"><a href="#javascript">{"https://themeforest.net/user/pixelstrap/portfolio/"}</a>
+                        <div className="info-block"><a  >{"https://themeforest.net/user/pixelstrap/portfolio/"}</a>
                           <h6>{"PixelStrap - Portfolio | ThemeForest"}</h6>
                           <p>{"2020's Best Selling Creative WP Themes. The #1 Source of Premium WP Themes! ThemeForest 45,000+ WP Themes & Website Templates From $2. Check it Out! "}</p>
                           <div className="star-ratings">
@@ -102,7 +102,7 @@ const Search = (props) => {
                             </ul>
                           </div>
                         </div>
-                        <div className="info-block"><a href="#javascript">{"PixelStrap - Portfolio | ThemeForestthemeforest.net › user › "}</a>
+                        <div className="info-block"><a  >{"PixelStrap - Portfolio | ThemeForestthemeforest.net › user › "}</a>
                           <h6>{"PixelStrap - Portfolio | ThemeForest"}</h6>
                           <p>{"The #1 marketplace for premium website templates, including themes for WordPress, Magento, Drupal, Joomla, and more. Create a website, fast."}</p>
                           <div className="star-ratings">
@@ -113,7 +113,7 @@ const Search = (props) => {
                             </ul>
                           </div>
                         </div>
-                        <div className="info-block"><a href="#javascript">{"https://themeforest.net/user/pixelstrap/portfolio"}</a>
+                        <div className="info-block"><a  >{"https://themeforest.net/user/pixelstrap/portfolio"}</a>
                           <h6>{"Morbi feugiat mauris vel semper fringilla."}</h6>
                           <p>{"Cuba introduces a IELTS Coaching, TOEFL Coaching, GRE Coaching, GMAT Coaching, SAT Coaching in Surat."}</p>
                           <div className="star-ratings">
@@ -125,7 +125,7 @@ const Search = (props) => {
                             </ul>
                           </div>
                         </div>
-                        <div className="info-block"><a href="#javascript">{"https://themeforest.net/user/pixelstrap/portfolio"}</a>
+                        <div className="info-block"><a  >{"https://themeforest.net/user/pixelstrap/portfolio"}</a>
                           <h6>{"Morbi feugiat mauris vel semper fringilla."}</h6>
                           <p>{"Cuba introduces a IELTS Coaching, TOEFL Coaching, GRE Coaching, GMAT Coaching, SAT Coaching in Surat."}</p>
                           <div className="star-ratings">
@@ -151,7 +151,7 @@ const Search = (props) => {
                             </div>
                           </div>
                         </div>
-                        <div className="info-block"><a href="#javascript">{"https://themeforest.net/user/pixelstrap/portfolio"}</a>
+                        <div className="info-block"><a  >{"https://themeforest.net/user/pixelstrap/portfolio"}</a>
                           <h6>{"Pixelstrap Website Templates from       ThemeForest"}                                  </h6>
                           <p>{"Get 59 pixelstrap website templates on ThemeForest. Buy pixelstrap website templates from $7. All created by our Global Community of independent Web ..."}</p>
                           <div className="star-ratings">
@@ -163,7 +163,7 @@ const Search = (props) => {
                             </ul>
                           </div>
                         </div>
-                        <div className="info-block"><a href="#javascript">{"https://themeforest.net/user/pixelstrap/portfolio"}</a>
+                        <div className="info-block"><a  >{"https://themeforest.net/user/pixelstrap/portfolio"}</a>
                           <h6>{"Morbi feugiat mauris vel semper fringilla."}</h6>
                           <p>{"Cuba introduces a IELTS Coaching, TOEFL Coaching, GRE Coaching, GMAT Coaching, SAT Coaching in Surat."}</p>
                           <div className="star-ratings">
@@ -180,19 +180,19 @@ const Search = (props) => {
                       <Nav>
                         <Pagination className="pagination-primary">
                           <PaginationItem disabled>
-                            <PaginationLink href="#javascript">{Previous}</PaginationLink>
+                            <PaginationLink  >{Previous}</PaginationLink>
                           </PaginationItem>
                           <PaginationItem>
-                            <PaginationLink href="#javascript">{"1"}</PaginationLink>
+                            <PaginationLink  >{"1"}</PaginationLink>
                           </PaginationItem>
                           <PaginationItem active>
-                            <PaginationLink href="#javascript">{"2"}<span className="sr-only">{"(current)"}</span></PaginationLink>
+                            <PaginationLink  >{"2"}<span className="sr-only">{"(current)"}</span></PaginationLink>
                           </PaginationItem>
                           <PaginationItem>
-                            <PaginationLink href="#javascript">{"3"}</PaginationLink>
+                            <PaginationLink  >{"3"}</PaginationLink>
                           </PaginationItem>
                           <PaginationItem>
-                            <PaginationLink href="#javascript">{Next}</PaginationLink>
+                            <PaginationLink  >{Next}</PaginationLink>
                           </PaginationItem>
                         </Pagination>
                         </Nav>
@@ -204,7 +204,7 @@ const Search = (props) => {
                   <div>
                     <h6 className="mb-2">{"About 12,120 results (0.50 seconds)"}</h6>
                     <div className="my-gallery row gallery-with-description" id="aniimated-thumbnials">
-                      <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia"><a href="#javascript" data-size="1600x950">
+                      <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia"><a   data-size="1600x950">
                         <Media
                           src={require(`../../assets/images/${smallImages[0]}`)}
                           alt="Gallery"
@@ -219,7 +219,7 @@ const Search = (props) => {
                         </div></a>
                         
                       </figure>
-                      <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope=""><a href="#javascript" itemProp="contentUrl" data-size="1600x950">
+                      <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope=""><a   itemProp="contentUrl" data-size="1600x950">
                         <Media
                           src={require(`../../assets/images/${smallImages[1]}`)}
                           alt="Gallery"
@@ -234,7 +234,7 @@ const Search = (props) => {
                         </div></a>
                         
                       </figure>
-                      <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope=""><a href="#javascript" itemProp="contentUrl" data-size="1600x950">
+                      <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope=""><a   itemProp="contentUrl" data-size="1600x950">
                         <Media
                           src={require(`../../assets/images/${smallImages[2]}`)}
                           alt="Gallery"
@@ -249,7 +249,7 @@ const Search = (props) => {
                         </div></a>
                         
                       </figure>
-                      <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope=""><a href="#javascript" itemProp="contentUrl" data-size="1600x950">
+                      <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope=""><a   itemProp="contentUrl" data-size="1600x950">
                         <Media
                           src={require(`../../assets/images/${smallImages[3]}`)}
                           alt="Gallery"
@@ -264,7 +264,7 @@ const Search = (props) => {
                         </div></a>
                         
                       </figure>
-                      <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope=""><a href="#javascript" itemProp="contentUrl" data-size="1600x950">
+                      <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope=""><a   itemProp="contentUrl" data-size="1600x950">
                         <Media
                           src={require(`../../assets/images/${smallImages[4]}`)}
                           alt="Gallery"
@@ -279,7 +279,7 @@ const Search = (props) => {
                         </div></a>
                         
                       </figure>
-                      <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope=""><a href="#javascript" itemProp="contentUrl" data-size="1600x950">
+                      <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope=""><a   itemProp="contentUrl" data-size="1600x950">
                         <Media
                           src={require(`../../assets/images/${smallImages[5]}`)}
                           alt="Gallery"
@@ -294,7 +294,7 @@ const Search = (props) => {
                         </div></a>
                         
                       </figure>
-                      <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope=""><a href="#javascript" itemProp="contentUrl" data-size="1600x950">
+                      <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope=""><a   itemProp="contentUrl" data-size="1600x950">
                         <Media
                           src={require(`../../assets/images/${smallImages[6]}`)}
                           alt="Gallery"
@@ -309,7 +309,7 @@ const Search = (props) => {
                         </div></a>
                         
                       </figure>
-                      <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope=""><a href="#javascript" itemProp="contentUrl" data-size="1600x950">
+                      <figure className="col-xl-3 col-sm-6" itemProp="associatedMedia" itemScope=""><a   itemProp="contentUrl" data-size="1600x950">
                         <Media
                           src={require(`../../assets/images/${smallImages[7]}`)}
                           alt="Gallery"
@@ -330,19 +330,19 @@ const Search = (props) => {
                   <div className="info-block">
                     <Pagination className="pagination-primary">
                       <PaginationItem disabled>
-                        <PaginationLink href="#javascript">{Previous}</PaginationLink>
+                        <PaginationLink  >{Previous}</PaginationLink>
                       </PaginationItem>
                       <PaginationItem>
-                        <PaginationLink href="#javascript">{"1"}</PaginationLink>
+                        <PaginationLink  >{"1"}</PaginationLink>
                       </PaginationItem>
                       <PaginationItem active>
-                        <PaginationLink href="#javascript">{"2"}</PaginationLink>
+                        <PaginationLink  >{"2"}</PaginationLink>
                       </PaginationItem>
                       <PaginationItem>
-                        <PaginationLink href="#javascript">{"3"}</PaginationLink>
+                        <PaginationLink  >{"3"}</PaginationLink>
                       </PaginationItem>
                       <PaginationItem>
-                        <PaginationLink href="#javascript">{Next}</PaginationLink>
+                        <PaginationLink  >{Next}</PaginationLink>
                       </PaginationItem>
                     </Pagination>
                   </div>
@@ -452,19 +452,19 @@ const Search = (props) => {
                       <Nav>
                           <Pagination className="pagination-primary">
                             <PaginationItem disabled>
-                              <PaginationLink href="#javascript">{Previous}</PaginationLink>
+                              <PaginationLink  >{Previous}</PaginationLink>
                             </PaginationItem>
                             <PaginationItem>
-                              <PaginationLink href="#javascript">{"1"}</PaginationLink>
+                              <PaginationLink  >{"1"}</PaginationLink>
                             </PaginationItem>
                             <PaginationItem active>
-                              <PaginationLink href="#javascript">{"2"}</PaginationLink>
+                              <PaginationLink  >{"2"}</PaginationLink>
                             </PaginationItem>
                             <PaginationItem>
-                              <PaginationLink href="#javascript">{"3"}</PaginationLink>
+                              <PaginationLink  >{"3"}</PaginationLink>
                             </PaginationItem>
                             <PaginationItem>
-                              <PaginationLink href="#javascript">{Next}</PaginationLink>
+                              <PaginationLink  >{Next}</PaginationLink>
                             </PaginationItem>
                           </Pagination>
                         </Nav>
@@ -576,19 +576,19 @@ const Search = (props) => {
                     <Nav>
                         <Pagination className="pagination-primary">
                           <PaginationItem disabled>
-                            <PaginationLink href="#javascript">{Previous}</PaginationLink>
+                            <PaginationLink  >{Previous}</PaginationLink>
                           </PaginationItem>
                           <PaginationItem>
-                            <PaginationLink href="#javascript">{"1"}</PaginationLink>
+                            <PaginationLink  >{"1"}</PaginationLink>
                           </PaginationItem>
                           <PaginationItem active>
-                            <PaginationLink href="#javascript">{"2"}</PaginationLink>
+                            <PaginationLink  >{"2"}</PaginationLink>
                           </PaginationItem>
                           <PaginationItem>
-                            <PaginationLink href="#javascript">{"3"}</PaginationLink>
+                            <PaginationLink  >{"3"}</PaginationLink>
                           </PaginationItem>
                           <PaginationItem>
-                            <PaginationLink href="#javascript">{Next}</PaginationLink>
+                            <PaginationLink  >{Next}</PaginationLink>
                           </PaginationItem>
                         </Pagination>
                       </Nav>
@@ -700,19 +700,19 @@ const Search = (props) => {
                     <Nav>
                         <Pagination className="pagination-primary">
                           <PaginationItem disabled>
-                            <PaginationLink href="#javascript">{Previous}</PaginationLink>
+                            <PaginationLink  >{Previous}</PaginationLink>
                           </PaginationItem>
                           <PaginationItem>
-                            <PaginationLink href="#javascript">{"1"}</PaginationLink>
+                            <PaginationLink  >{"1"}</PaginationLink>
                           </PaginationItem>
                           <PaginationItem active>
-                            <PaginationLink href="#javascript">{"2"}</PaginationLink>
+                            <PaginationLink  >{"2"}</PaginationLink>
                           </PaginationItem>
                           <PaginationItem>
-                            <PaginationLink href="#javascript">{"3"}</PaginationLink>
+                            <PaginationLink  >{"3"}</PaginationLink>
                           </PaginationItem>
                           <PaginationItem>
-                            <PaginationLink href="#javascript">{Next}</PaginationLink>
+                            <PaginationLink  >{Next}</PaginationLink>
                           </PaginationItem>
                         </Pagination>
                       </Nav>
@@ -824,19 +824,19 @@ const Search = (props) => {
                     <Nav>
                         <Pagination className="pagination-primary">
                           <PaginationItem disabled>
-                            <PaginationLink href="#javascript">{Previous}</PaginationLink>
+                            <PaginationLink  >{Previous}</PaginationLink>
                           </PaginationItem>
                           <PaginationItem>
-                            <PaginationLink href="#javascript">{"1"}</PaginationLink>
+                            <PaginationLink  >{"1"}</PaginationLink>
                           </PaginationItem>
                           <PaginationItem active>
-                            <PaginationLink href="#javascript">{"2"}</PaginationLink>
+                            <PaginationLink  >{"2"}</PaginationLink>
                           </PaginationItem>
                           <PaginationItem>
-                            <PaginationLink href="#javascript">{"3"}</PaginationLink>
+                            <PaginationLink  >{"3"}</PaginationLink>
                           </PaginationItem>
                           <PaginationItem>
-                            <PaginationLink href="#javascript">{Next}</PaginationLink>
+                            <PaginationLink  >{Next}</PaginationLink>
                           </PaginationItem>
                         </Pagination>
                       </Nav>

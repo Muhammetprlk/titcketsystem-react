@@ -30,7 +30,7 @@ const OrderHistory = (props) =>  {
                           <div className="media"><img className="align-self-center img-fluid img-60" src={require("../../../assets/images/" + items.img) } alt="#"/>
                             <div className="media-body ml-3">
                               <div className="product-name">
-                                <h6><a href="#javascript">{items.product}</a></h6>
+                                <h6><a  >{items.product}</a></h6>
                               </div>
                               <div className="rating">
                                 <i className="fa fa-star"></i>
@@ -67,7 +67,7 @@ const OrderHistory = (props) =>  {
                           <div className="media"><img className="align-self-center img-fluid img-60" src={require("../../../assets/images/" + items.img) } alt="#"/>
                             <div className="media-body ml-3">
                               <div className="product-name">
-                                <h6><a href="#javascript">{items.product}</a></h6>
+                                <h6><a  >{items.product}</a></h6>
                               </div>
                               <div className="rating">
                                 <i className="fa fa-star"></i>
@@ -104,7 +104,7 @@ const OrderHistory = (props) =>  {
                           <div className="media"><img className="align-self-center img-fluid img-60" src={require("../../../assets/images/" + items.img) } alt="#"/>
                             <div className="media-body ml-3">
                               <div className="product-name">
-                                <h6><a href="#javascript">{items.product}</a></h6>
+                                <h6><a  >{items.product}</a></h6>
                               </div>
                               <div className="rating">
                                 <i className="fa fa-star"></i>

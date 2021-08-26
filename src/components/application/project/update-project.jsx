@@ -204,7 +204,7 @@ const UpdateProject = (props) => {
                     </FormGroup>
                   </Form>
                   {foundUsers?.map((user) => {
-                    return <Media>
+                    return <Media key={user.id}>
                       <img className="img-50 rounded-circle m-r-15" src={three} alt="fourteenImg" />
                       <div className="social-status social-online"></div>
                       <Media body>

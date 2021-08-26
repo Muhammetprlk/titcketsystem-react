@@ -94,7 +94,7 @@ const Default = (props) => {
                   <div className="profile-vector"><img className="img-fluid" src={require("../../assets/images/dashboard/welcome.png")} alt="" /></div>
                   <h4 className="f-w-600"><span id="greeting">{daytimes}</span> <span className="right-circle"><i className="fa fa-check-circle f-14 middle"></i></span></h4>
                   <p><span> {"Today's earrning is $405 & your sales increase rate is 3.7 over the last 24 hours"}</span></p>
-                  <div className="whatsnew-btn"><a className="btn btn-primary" href="#javascript">{"Whats New !"}</a></div>
+                  <div className="whatsnew-btn"><a className="btn btn-primary"  >{"Whats New !"}</a></div>
                   <div className="left-icon"><i className="fa fa-bell"> </i></div>
                 </div>
               </CardBody>
@@ -122,7 +122,7 @@ const Default = (props) => {
                         <h5>{"90%"}</h5>
                         <p className="font-roboto">{"This Month Sale"}</p>
                       </Col>
-                      <Col xl="12" className="p-0 left-btn"><a className="btn btn-gradient" href="#javascript">{Summary}</a></Col>
+                      <Col xl="12" className="p-0 left-btn"><a className="btn btn-gradient"  >{Summary}</a></Col>
                     </Row>
                   </Col>
                   <Col xl="9" className="p-0">
@@ -365,7 +365,7 @@ const Default = (props) => {
                 </div>
               </CardBody>
               <div className="card-footer">
-                <div className="bottom-btn"><a href="#javascript">{"More..."}</a></div>
+                <div className="bottom-btn"><a  >{"More..."}</a></div>
               </div>
             </Card>
           </Col>

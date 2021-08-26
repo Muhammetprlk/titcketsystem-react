@@ -183,7 +183,7 @@ const Bookmarks = (props) => {
                                                                 {data.title}
                                                             </Link>
                                                             <span className="pull-right">
-                                                                <a href="#javascript">
+                                                                <a  >
                                                                     <i className="fa fa-star-o mt-1 icon-star" onClick={(e) => addToBookmark(e, data)}></i>
                                                                 </a>
                                                             </span>

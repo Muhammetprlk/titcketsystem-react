@@ -141,11 +141,11 @@ const  Productpage = (props)  => {
                                         <Col md="6">
                                         <div className="product-icon">
                                             <ul className="product-social">
-                                            <li className="d-inline-block"><a href="#javascript"><i className="fa fa-facebook"></i></a></li>
-                                            <li className="d-inline-block"><a href="#javascript"><i className="fa fa-google-plus"></i></a></li>
-                                            <li className="d-inline-block"><a href="#javascript"><i className="fa fa-twitter"></i></a></li>
-                                            <li className="d-inline-block"><a href="#javascript"><i className="fa fa-instagram"></i></a></li>
-                                            <li className="d-inline-block"><a href="#javascript"><i className="fa fa-rss"></i></a></li>
+                                            <li className="d-inline-block"><a  ><i className="fa fa-facebook"></i></a></li>
+                                            <li className="d-inline-block"><a  ><i className="fa fa-google-plus"></i></a></li>
+                                            <li className="d-inline-block"><a  ><i className="fa fa-twitter"></i></a></li>
+                                            <li className="d-inline-block"><a  ><i className="fa fa-instagram"></i></a></li>
+                                            <li className="d-inline-block"><a  ><i className="fa fa-rss"></i></a></li>
                                             </ul>
                                             <form className="d-inline-block f-right"></form>
                                         </div>

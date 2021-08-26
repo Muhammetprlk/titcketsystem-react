@@ -99,7 +99,7 @@ const Tours = (props) => {
                     </Col>
                     <Col sm="12" lg="4" className="order-sm-0 order-xl-1">
                       <div className="user-designation">
-                        <div className="title"><a target="_blank" href="#javascript">{MarkJecno}</a></div>
+                        <div className="title"><a target="_blank"  >{MarkJecno}</a></div>
                         <div className="desc mt-2">{Designer}</div>
                       </div>
                     </Col>
@@ -121,11 +121,11 @@ const Tours = (props) => {
                   <hr />
                   <div className="social-media step4" data-intro="This is your Social details">
                     <ul className="list-inline">
-                      <li className="list-inline-item"><a href="#javascript"><i className="fa fa-facebook"></i></a></li>
-                      <li className="list-inline-item"><a href="#javascript"><i className="fa fa-google-plus"></i></a></li>
-                      <li className="list-inline-item"><a href="#javascript"><i className="fa fa-twitter"></i></a></li>
-                      <li className="list-inline-item"><a href="#javascript"><i className="fa fa-instagram"></i></a></li>
-                      <li className="list-inline-item"><a href="#javascript"><i className="fa fa-rss"></i></a></li>
+                      <li className="list-inline-item"><a  ><i className="fa fa-facebook"></i></a></li>
+                      <li className="list-inline-item"><a  ><i className="fa fa-google-plus"></i></a></li>
+                      <li className="list-inline-item"><a  ><i className="fa fa-twitter"></i></a></li>
+                      <li className="list-inline-item"><a  ><i className="fa fa-instagram"></i></a></li>
+                      <li className="list-inline-item"><a  ><i className="fa fa-rss"></i></a></li>
                     </ul>
                   </div>
                   <div className="follow">
@@ -160,7 +160,7 @@ const Tours = (props) => {
                   <p>{"you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet."}</p>
                   <div className="img-container">
                     <div id="aniimated-thumbnials">
-                      <a href="#javascript">
+                      <a  >
                         <Media className="img-fluid rounded" src={require("../../assets/images/other-images/profile-style-img3.png")} alt="gallery" />
                       </a>
                     </div>
@@ -168,10 +168,10 @@ const Tours = (props) => {
                   <div className="like-comment mt-4">
                     <ul className="list-inline">
                       <li className="list-inline-item border-right pr-3">
-                        <label className="m-0"><a href="#javascript"><i className="fa fa-heart"></i></a>  {Like}</label><span className="ml-2 counter">{"2659"}</span>
+                        <label className="m-0"><a  ><i className="fa fa-heart"></i></a>  {Like}</label><span className="ml-2 counter">{"2659"}</span>
                       </li>
                       <li className="list-inline-item ml-2">
-                        <label className="m-0"><a href="#javascript"><i className="fa fa-comment"></i></a>  {Comment}</label><span className="ml-2 counter">{"569"}</span>
+                        <label className="m-0"><a  ><i className="fa fa-comment"></i></a>  {Comment}</label><span className="ml-2 counter">{"569"}</span>
                       </li>
                     </ul>
                   </div>
@@ -196,20 +196,20 @@ const Tours = (props) => {
                   <hr />
                   <p>{"you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet."}</p>
                   <Row className="mt-4 pictures">
-                    <a className="col-sm-6" href="#javascript">
+                    <a className="col-sm-6"  >
                       <Media body className="img-fluid rounded" src={require("../../assets/images/other-images/profile-style-img.png")} alt="gallery" />
                     </a>
-                    <a className="col-sm-6" href="#javascript">
+                    <a className="col-sm-6"  >
                       <Media body className="img-fluid rounded" src={require("../../assets/images/other-images/profile-style-img.png")} alt="gallery" />
                     </a>
                   </Row>
                   <div className="like-comment mt-4">
                     <ul className="list-inline">
                       <li className="list-inline-item border-right pr-3">
-                        <label className="m-0"><a href="#javascript"><i className="fa fa-heart"></i></a>  {Like}</label><span className="ml-2 counter">{"2659"}</span>
+                        <label className="m-0"><a  ><i className="fa fa-heart"></i></a>  {Like}</label><span className="ml-2 counter">{"2659"}</span>
                       </li>
                       <li className="list-inline-item ml-2">
-                        <label className="m-0"><a href="#javascript"><i className="fa fa-comment"></i></a>  {Comment}</label><span className="ml-2 counter">{"569"}</span>
+                        <label className="m-0"><a  ><i className="fa fa-comment"></i></a>  {Comment}</label><span className="ml-2 counter">{"569"}</span>
                       </li>
                     </ul>
                   </div>
@@ -237,10 +237,10 @@ const Tours = (props) => {
                   <div className="like-comment mt-4">
                     <ul className="list-inline">
                       <li className="list-inline-item border-right pr-3">
-                        <label className="m-0"><a href="#javascript"><i className="fa fa-heart"></i></a>  {Like}</label><span className="ml-2 counter">{"2659"}</span>
+                        <label className="m-0"><a  ><i className="fa fa-heart"></i></a>  {Like}</label><span className="ml-2 counter">{"2659"}</span>
                       </li>
                       <li className="list-inline-item ml-2">
-                        <label className="m-0"><a href="#javascript"><i className="fa fa-comment"></i></a>  {Comment}</label><span className="ml-2 counter">{"569"}</span>
+                        <label className="m-0"><a  ><i className="fa fa-comment"></i></a>  {Comment}</label><span className="ml-2 counter">{"569"}</span>
                       </li>
                     </ul>
                   </div>
@@ -266,14 +266,14 @@ const Tours = (props) => {
                   <hr />
                   <Row>
                     <Col lg="12" xl="4">
-                      <div id="aniimated-thumbnials-3"><a href="#javascript"><Media body className="img-fluid rounded" src={require("../../assets/images/blog/img.png")} alt="gallery" /></a></div>
+                      <div id="aniimated-thumbnials-3"><a  ><Media body className="img-fluid rounded" src={require("../../assets/images/blog/img.png")} alt="gallery" /></a></div>
                       <div className="like-comment mt-4 like-comment-lg-mb">
                         <ul className="list-inline">
                           <li className="list-inline-item border-right pr-3">
-                            <label className="m-0"><a href="#javascript"><i className="fa fa-heart"></i></a>  {Like}</label><span className="ml-2 counter">{"2659"}</span>
+                            <label className="m-0"><a  ><i className="fa fa-heart"></i></a>  {Like}</label><span className="ml-2 counter">{"2659"}</span>
                           </li>
                           <li className="list-inline-item ml-2">
-                            <label className="m-0"><a href="#javascript"><i className="fa fa-comment"></i></a>  {Comment}</label><span className="ml-2 counter">{"569"}</span>
+                            <label className="m-0"><a  ><i className="fa fa-comment"></i></a>  {Comment}</label><span className="ml-2 counter">{"569"}</span>
                           </li>
                         </ul>
                       </div>

@@ -240,22 +240,22 @@ const Bookmarkapp = (props) => {
                           <span className="main-title">{Views}</span>
                         </NavItem>
                         <NavItem>
-                          <a  href="#javaScript" className={activeTab === '1' ? 'active' : ''} onClick={() => setActiveTab('1')}>
+                          <a    className={activeTab === '1' ? 'active' : ''} onClick={() => setActiveTab('1')}>
                             <span className="title"> {CreatedByMe}</span>
                           </a>
                         </NavItem>
                         <NavItem>
-                          <a  href="#javaScript" className={activeTab === '2' ? 'active' : ''} onClick={() => setActiveTab('2')}>
+                          <a    className={activeTab === '2' ? 'active' : ''} onClick={() => setActiveTab('2')}>
                             <span className="title"> {Favourites} ({mybookmarklist.length})</span>
                           </a>
                         </NavItem>
                         <NavItem>
-                          <a  href="#javaScript" className={activeTab === '3' ? 'active' : ''} onClick={() => setActiveTab('3')}>
+                          <a    className={activeTab === '3' ? 'active' : ''} onClick={() => setActiveTab('3')}>
                             <span className="title"> {SharedWithMe}</span>
                           </a>
                         </NavItem>
                         <NavItem>
-                          <a  href="#javaScript" className={activeTab === '4' ? 'active' : ''} onClick={() => setActiveTab('4')}>
+                          <a    className={activeTab === '4' ? 'active' : ''} onClick={() => setActiveTab('4')}>
                             <span className="title"> {MyBookmark}</span>
                           </a>
                         </NavItem>
@@ -284,12 +284,12 @@ const Bookmarkapp = (props) => {
                             </Form>
                           </ModalBody>
                         </Modal>
-                        <NavItem><a href="#javaScript" className={activeTab === '5' ? 'show' : ''} onClick={() => setActiveTab('5')} ><span className="title"> {Notification}</span></a></NavItem>
-                        <NavItem><a href="#javaScript" className={activeTab === '6' ? 'show' : ''} onClick={() => setActiveTab('6')} ><span className="title"> {Newsletter}</span></a></NavItem>
-                        <NavItem><a href="#javaScript" className={activeTab === '7' ? 'show' : ''} onClick={() => setActiveTab('7')} ><span className="title"> {Business}</span></a></NavItem>
-                        <NavItem><a href="#javaScript" className={activeTab === '8' ? 'show' : ''} onClick={() => setActiveTab('8')} ><span className="title">{Holidays}</span></a></NavItem>
-                        <NavItem><a href="#javaScript" className={activeTab === '9' ? 'show' : ''} onClick={() => setActiveTab('9')} ><span className="title"> {Important}</span></a></NavItem>
-                        <NavItem><a href="#javaScript" className={activeTab === '10' ? 'show' : ''} onClick={() => setActiveTab('10')} ><span className="title"> {Orgenization}</span></a></NavItem>
+                        <NavItem><a   className={activeTab === '5' ? 'show' : ''} onClick={() => setActiveTab('5')} ><span className="title"> {Notification}</span></a></NavItem>
+                        <NavItem><a   className={activeTab === '6' ? 'show' : ''} onClick={() => setActiveTab('6')} ><span className="title"> {Newsletter}</span></a></NavItem>
+                        <NavItem><a   className={activeTab === '7' ? 'show' : ''} onClick={() => setActiveTab('7')} ><span className="title"> {Business}</span></a></NavItem>
+                        <NavItem><a   className={activeTab === '8' ? 'show' : ''} onClick={() => setActiveTab('8')} ><span className="title">{Holidays}</span></a></NavItem>
+                        <NavItem><a   className={activeTab === '9' ? 'show' : ''} onClick={() => setActiveTab('9')} ><span className="title"> {Important}</span></a></NavItem>
+                        <NavItem><a   className={activeTab === '10' ? 'show' : ''} onClick={() => setActiveTab('10')} ><span className="title"> {Orgenization}</span></a></NavItem>
                       </Nav>
                     </div>
                   </CardBody>
@@ -306,8 +306,8 @@ const Bookmarkapp = (props) => {
                           <CardHeader className="d-flex">
                             <h6 className="mb-0">{CreatedByMe}</h6>
                             <ul>
-                              <li><a className="grid-bookmark-view" href="#javascript"><Grid onClick={Gridbookmark} /></a></li>
-                              <li><a className="list-layout-view" href="#javascript"><List onClick={Listbookmark} /></a></li>
+                              <li><a className="grid-bookmark-view"  ><Grid onClick={Gridbookmark} /></a></li>
+                              <li><a className="list-layout-view"  ><List onClick={Listbookmark} /></a></li>
                             </ul>
                           </CardHeader>
                           <CardBody className="pb-0">
@@ -320,18 +320,18 @@ const Bookmarkapp = (props) => {
                                         <Card className="card-with-border bookmark-card o-hidden">
                                           <div className="details-website">
                                             <img className="img-fluid" src={require(`../../../assets/images/${data.image}`)} alt="" />
-                                            <div className={`favourite-icon favourite_0 ${data.fillstar ? 'favourite' : ''}`} onClick={(e) => addToFavourites(data)}><a href="#javascript"><i className="fa fa-star" ></i></a></div>
+                                            <div className={`favourite-icon favourite_0 ${data.fillstar ? 'favourite' : ''}`} onClick={(e) => addToFavourites(data)}><a  ><i className="fa fa-star" ></i></a></div>
                                             <div className="desciption-data">
                                               <div className="title-bookmark">
                                                 <h6 className="title_0">{data.title}</h6>
                                                 <p className="weburl_0">{data.website_url}</p>
                                                 <div className="hover-block">
                                                   <ul>
-                                                    <li><a href="#javascript" onClick={() => editbookmarkdata(data)}><Edit2 /></a></li>
-                                                    <li><a href="#javascript"><Link /></a></li>
-                                                    <li><a href="#javascript"><Share2 /></a></li>
-                                                    <li><a href="#javascript" onClick={() => Removefrombookmark(data.id)}><Trash2 /></a></li>
-                                                    <li className="pull-right text-right"><a href="#javascript"><Tag /></a></li>
+                                                    <li><a   onClick={() => editbookmarkdata(data)}><Edit2 /></a></li>
+                                                    <li><a  ><Link /></a></li>
+                                                    <li><a  ><Share2 /></a></li>
+                                                    <li><a   onClick={() => Removefrombookmark(data.id)}><Trash2 /></a></li>
+                                                    <li className="pull-right text-right"><a  ><Tag /></a></li>
                                                   </ul>
                                                 </div>
                                                 <div className="content-general">
@@ -357,8 +357,8 @@ const Bookmarkapp = (props) => {
                           <CardHeader className="d-flex">
                             <h6 className="mb-0">{Favourites}</h6>
                             <ul>
-                            <li><a className="grid-bookmark-view" href="#javascript"><Grid onClick={Gridbookmark} /></a></li>
-                            <li><a className="list-layout-view" href="#javascript"><List onClick={Listbookmark} /></a></li> 
+                            <li><a className="grid-bookmark-view"  ><Grid onClick={Gridbookmark} /></a></li>
+                            <li><a className="list-layout-view"  ><List onClick={Listbookmark} /></a></li> 
                             </ul>
                           </CardHeader>
                           <CardBody>
@@ -371,18 +371,18 @@ const Bookmarkapp = (props) => {
                                         <Card className="card-with-border bookmark-card o-hidden">
                                           <div className="details-website">
                                             <img className="img-fluid" src={require(`../../../assets/images/${mybookdata.image}`)} alt="" />
-                                            <div className={`favourite-icon favourite_0 ${mybookdata.fillstar ? 'favourite' : ''}`}><a href="#javascript"><i className="fa fa-star" onClick={() => Remove_from_favourite(mybookdata)}></i></a></div>
+                                            <div className={`favourite-icon favourite_0 ${mybookdata.fillstar ? 'favourite' : ''}`}><a  ><i className="fa fa-star" onClick={() => Remove_from_favourite(mybookdata)}></i></a></div>
                                             <div className="desciption-data">
                                               <div className="title-bookmark">
                                                 <h6 className="title_0">{mybookdata.title}</h6>
                                                 <p className="weburl_0">{mybookdata.website_url}</p>
                                                 <div className="hover-block">
                                                   <ul>
-                                                    <li><a href="#javascript" onClick={() => editbookmarkdata(mybookdata)}><Edit2 /></a></li>
-                                                    <li><a href="#javascript"><Link /></a></li>
-                                                    <li><a href="#javascript"><Share2 /></a></li>
-                                                    <li><a href="#javascript" onClick={() => Remove_from_my_bookmark(mybookdata.id)}><Trash2 /></a></li>
-                                                    <li className="pull-right text-right"><a href="#javascript"><Tag /></a></li>
+                                                    <li><a   onClick={() => editbookmarkdata(mybookdata)}><Edit2 /></a></li>
+                                                    <li><a  ><Link /></a></li>
+                                                    <li><a  ><Share2 /></a></li>
+                                                    <li><a   onClick={() => Remove_from_my_bookmark(mybookdata.id)}><Trash2 /></a></li>
+                                                    <li className="pull-right text-right"><a  ><Tag /></a></li>
                                                   </ul>
                                                 </div>
                                                 <div className="content-general">
@@ -407,8 +407,8 @@ const Bookmarkapp = (props) => {
                           <CardHeader className="d-flex">
                             <h6 className="mb-0">{SharedWithMe}</h6>
                             <ul>
-                                <li><a className="grid-bookmark-view" href="#javascript"><Grid/></a></li>
-                                <li><a className="list-layout-view" href="#javascript"><List/></a></li>
+                                <li><a className="grid-bookmark-view"  ><Grid/></a></li>
+                                <li><a className="list-layout-view"  ><List/></a></li>
                             </ul>
                           </CardHeader>
                           <CardBody>
@@ -424,8 +424,8 @@ const Bookmarkapp = (props) => {
                           <CardHeader className="d-flex">
                             <h6 className="mb-0">{MyBookmark}</h6>
                             <ul>
-                                <li><a className="grid-bookmark-view" href="#javascript"><Grid onClick={Gridbookmark}/></a></li>
-                                <li><a className="list-layout-view" href="#javascript"><List onClick={Listbookmark}/></a></li>
+                                <li><a className="grid-bookmark-view"  ><Grid onClick={Gridbookmark}/></a></li>
+                                <li><a className="list-layout-view"  ><List onClick={Listbookmark}/></a></li>
                               </ul>
                           </CardHeader>
                           <CardBody>
@@ -438,18 +438,18 @@ const Bookmarkapp = (props) => {
                                           <Card className="card-with-border bookmark-card o-hidden">
                                           <div className="details-website">
                                             <img className="img-fluid" src={require(`../../../assets/images/${data.image}`)} alt="" />
-                                            <div className={`favourite-icon favourite_0 ${data.fillstar ? 'favourite' : ''}`} onClick={(e) => addToFavourites(data)} ><a href="#javascript"><i className="fa fa-star" ></i></a></div>
+                                            <div className={`favourite-icon favourite_0 ${data.fillstar ? 'favourite' : ''}`} onClick={(e) => addToFavourites(data)} ><a  ><i className="fa fa-star" ></i></a></div>
                                             <div className="desciption-data">
                                               <div className="title-bookmark">
                                                 <h6 className="title_0">{data.title}</h6>
                                                 <p className="weburl_0">{data.website_url}</p>
                                                 <div className="hover-block">
                                                   <ul>
-                                                    <li><a href="#javascript" onClick={() => editbookmarkdata(data)}><Edit2 /></a></li>
-                                                    <li><a href="#javascript"><Link /></a></li>
-                                                    <li><a href="#javascript"><Share2 /></a></li>
-                                                    <li><a href="#javascript" onClick={() => Removefrombookmark(data.id)}><Trash2 /></a></li>
-                                                    <li className="pull-right text-right"><a href="#javascript"><Tag /></a></li>
+                                                    <li><a   onClick={() => editbookmarkdata(data)}><Edit2 /></a></li>
+                                                    <li><a  ><Link /></a></li>
+                                                    <li><a  ><Share2 /></a></li>
+                                                    <li><a   onClick={() => Removefrombookmark(data.id)}><Trash2 /></a></li>
+                                                    <li className="pull-right text-right"><a  ><Tag /></a></li>
                                                   </ul>
                                                 </div>
                                                 <div className="content-general">
@@ -475,8 +475,8 @@ const Bookmarkapp = (props) => {
                           <CardHeader className="d-flex">
                             <h6 className="mb-0">{Notification}</h6>
                             <ul>
-                                <li><a className="grid-bookmark-view" href="#javascript"><Grid/></a></li>
-                                <li><a className="list-layout-view" href="#javascript"><List/></a></li>
+                                <li><a className="grid-bookmark-view"  ><Grid/></a></li>
+                                <li><a className="list-layout-view"  ><List/></a></li>
                               </ul>
                           </CardHeader>
                           <CardBody>
@@ -492,8 +492,8 @@ const Bookmarkapp = (props) => {
                           <CardHeader className="d-flex">
                             <h6 className="mb-0">{Newsletter}</h6>
                             <ul>
-                                <li><a className="grid-bookmark-view" href="#javascript"><Grid/></a></li>
-                                <li><a className="list-layout-view" href="#javascript"><List/></a></li>
+                                <li><a className="grid-bookmark-view"  ><Grid/></a></li>
+                                <li><a className="list-layout-view"  ><List/></a></li>
                               </ul>
                           </CardHeader>
                           <CardBody>
@@ -509,8 +509,8 @@ const Bookmarkapp = (props) => {
                           <CardHeader className="d-flex">
                             <h6 className="mb-0">{Business}</h6>
                             <ul>
-                                <li><a className="grid-bookmark-view" href="#javascript"><Grid/></a></li>
-                                <li><a className="list-layout-view" href="#javascript"><List/></a></li>
+                                <li><a className="grid-bookmark-view"  ><Grid/></a></li>
+                                <li><a className="list-layout-view"  ><List/></a></li>
                               </ul>
                           </CardHeader>
                           <CardBody>
@@ -526,8 +526,8 @@ const Bookmarkapp = (props) => {
                           <CardHeader className="d-flex">
                             <h6 className="mb-0">{Holidays}</h6>
                             <ul>
-                                <li><a className="grid-bookmark-view" href="#javascript"><Grid/></a></li>
-                                <li><a className="list-layout-view" href="#javascript"><List/></a></li>
+                                <li><a className="grid-bookmark-view"  ><Grid/></a></li>
+                                <li><a className="list-layout-view"  ><List/></a></li>
                               </ul>
                           </CardHeader>
                           <CardBody>
@@ -543,8 +543,8 @@ const Bookmarkapp = (props) => {
                           <CardHeader className="d-flex">
                             <h6 className="mb-0">{Important}</h6>
                             <ul>
-                                <li><a className="grid-bookmark-view" href="#javascript"><Grid/></a></li>
-                                <li><a className="list-layout-view" href="#javascript"><List/></a></li>
+                                <li><a className="grid-bookmark-view"  ><Grid/></a></li>
+                                <li><a className="list-layout-view"  ><List/></a></li>
                               </ul>
                           </CardHeader>
                           <CardBody>
@@ -560,8 +560,8 @@ const Bookmarkapp = (props) => {
                           <CardHeader className="d-flex">
                             <h6 className="mb-0">{Orgenization}</h6>
                             <ul>
-                                <li><a className="grid-bookmark-view" href="#javascript"><Grid/></a></li>
-                                <li><a className="list-layout-view" href="#javascript"><List/></a></li>
+                                <li><a className="grid-bookmark-view"  ><Grid/></a></li>
+                                <li><a className="list-layout-view"  ><List/></a></li>
                               </ul>
                           </CardHeader>
                           <CardBody>

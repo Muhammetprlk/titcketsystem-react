@@ -45,14 +45,14 @@ const TagAndPills = (props) => {
                     <h5>{TagsWithNumber}</h5>
                   </CardHeader>
                   <CardBody className="card-body digits">
-                      <Badge color="primary" href="#javascript">{"1"}</Badge>
-                      <Badge color="secondary" href="#javascript">{"2"}</Badge>
-                      <Badge color="success" href="#javascript">{"3"}</Badge>
-                      <Badge color="info" href="#javascript">{"4"}</Badge>
-                      <Badge color="warning" href="#javascript">{"5"}</Badge>
-                      <Badge color="danger" href="#javascript">{"6"}</Badge>
-                      <Badge color="light" href="#javascript">{"7"}</Badge>
-                      <Badge color="dark" href="#javascript">{"8"}</Badge>
+                      <Badge color="primary"  >{"1"}</Badge>
+                      <Badge color="secondary"  >{"2"}</Badge>
+                      <Badge color="success"  >{"3"}</Badge>
+                      <Badge color="info"  >{"4"}</Badge>
+                      <Badge color="warning"  >{"5"}</Badge>
+                      <Badge color="danger"  >{"6"}</Badge>
+                      <Badge color="light"  >{"7"}</Badge>
+                      <Badge color="dark"  >{"8"}</Badge>
                 </CardBody>
                 </Card>
               </Col>
@@ -79,14 +79,14 @@ const TagAndPills = (props) => {
                     <h5>{TagsWithIcon}</h5>
                   </CardHeader>
                   <CardBody>
-                      <Badge color="primary" href="#javascript" pill><DollarSign/></Badge>
-                      <Badge color="secondary" href="#javascript" pill><Headphones/></Badge>
-                      <Badge color="success" href="#javascript" pill><Link/></Badge>
-                      <Badge color="info" href="#javascript" pill><GitHub/></Badge>
-                      <Badge color="warning" href="#javascript" pill><Award/></Badge>
-                      <Badge color="danger" href="#javascript" pill><Activity/></Badge>
-                      <Badge color="light" href="#javascript" pill><Heart/></Badge>
-                      <Badge color="dark" href="#javascript" pill><Mail/></Badge>
+                      <Badge color="primary"   pill><DollarSign/></Badge>
+                      <Badge color="secondary"   pill><Headphones/></Badge>
+                      <Badge color="success"   pill><Link/></Badge>
+                      <Badge color="info"   pill><GitHub/></Badge>
+                      <Badge color="warning"   pill><Award/></Badge>
+                      <Badge color="danger"   pill><Activity/></Badge>
+                      <Badge color="light"   pill><Heart/></Badge>
+                      <Badge color="dark"   pill><Mail/></Badge>
                   </CardBody>
                 </Card>
               </Col>
@@ -96,14 +96,14 @@ const TagAndPills = (props) => {
                     <h5>{PillsWithIcon}</h5>
                   </CardHeader>
                   <CardBody>
-                      <Badge color="primary" href="#javascript" pill><DollarSign/></Badge>
-                      <Badge color="secondary" href="#javascript" pill><Headphones/></Badge>
-                      <Badge color="success" href="#javascript" pill><Link/></Badge>
-                      <Badge color="info" href="#javascript" pill><GitHub/></Badge>
-                      <Badge color="warning" href="#javascript" pill><Award/></Badge>
-                      <Badge color="danger" href="#javascript" pill><Activity/></Badge>
-                      <Badge color="light" href="#javascript" pill><Heart/></Badge>
-                      <Badge color="dark" href="#javascript" pill><Mail/></Badge>
+                      <Badge color="primary"   pill><DollarSign/></Badge>
+                      <Badge color="secondary"   pill><Headphones/></Badge>
+                      <Badge color="success"   pill><Link/></Badge>
+                      <Badge color="info"   pill><GitHub/></Badge>
+                      <Badge color="warning"   pill><Award/></Badge>
+                      <Badge color="danger"   pill><Activity/></Badge>
+                      <Badge color="light"   pill><Heart/></Badge>
+                      <Badge color="dark"   pill><Mail/></Badge>
                   </CardBody>
                 </Card>
               </Col>

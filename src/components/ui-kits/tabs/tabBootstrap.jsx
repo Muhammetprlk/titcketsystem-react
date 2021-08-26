@@ -36,27 +36,27 @@ const TabBootstrap = (props) => {
               <CardBody>
                 <Nav tabs>
                   <NavItem>
-                    <NavLink href="#javascript" className={BasicTab === '1' ? 'active' : ''} onClick={() => setBasicTab('1')}>{Hometxt}</NavLink>
+                    <NavLink   className={BasicTab === '1' ? 'active' : ''} onClick={() => setBasicTab('1')}>{Hometxt}</NavLink>
                   </NavItem>
                   <Dropdown className="nav-item" isOpen={dropdownOpen} toggle={toggle}>
                     <NavItem>
-                      <DropdownToggle className="nav-link" tag="a" href="#javascript" color="default" caret>
+                      <DropdownToggle className="nav-link" tag="a"   color="default" caret>
                         {"Dropdown"}
                         </DropdownToggle>
                       <DropdownMenu>
-                        <NavLink href="#javascript" className={BasicTab === '2' ? 'active' : ''} onClick={() => setBasicTab('2')}>{Action}</NavLink>
-                        <DropdownItem href="#javascript">{"Another action"}</DropdownItem>
-                        <DropdownItem href="#javascript">{"Something else here"}</DropdownItem>
+                        <NavLink   className={BasicTab === '2' ? 'active' : ''} onClick={() => setBasicTab('2')}>{Action}</NavLink>
+                        <DropdownItem  >{"Another action"}</DropdownItem>
+                        <DropdownItem  >{"Something else here"}</DropdownItem>
                         <DropdownItem divider />
-                        <DropdownItem href="#javascript">{"Separated link"}</DropdownItem>
+                        <DropdownItem  >{"Separated link"}</DropdownItem>
                       </DropdownMenu>
                     </NavItem>
                   </Dropdown>
                   <NavItem>
-                    <NavLink href="#javascript" className={BasicTab === '3' ? 'active' : ''} onClick={() => setBasicTab('3')}>{Profile}</NavLink>
+                    <NavLink   className={BasicTab === '3' ? 'active' : ''} onClick={() => setBasicTab('3')}>{Profile}</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="#javascript" className={BasicTab === '4' ? 'active' : ''} onClick={() => setBasicTab('4')}>{Contact}</NavLink>
+                    <NavLink   className={BasicTab === '4' ? 'active' : ''} onClick={() => setBasicTab('4')}>{Contact}</NavLink>
                   </NavItem>
                 </Nav>
                 <TabContent activeTab={BasicTab}>
@@ -95,13 +95,13 @@ const TabBootstrap = (props) => {
                 </TabContent>
                 <Nav className="nav nav-tabs nav-bottom" >
                   <NavItem>
-                    <NavLink href="#javascript" className={BottomTab === '1' ? 'active' : ''} onClick={() => setBottomTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
+                    <NavLink   className={BottomTab === '1' ? 'active' : ''} onClick={() => setBottomTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
                   </NavItem>
                   <NavItem >
-                    <NavLink href="#javascript" className={BottomTab === '2' ? 'active' : ''} onClick={() => setBottomTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
+                    <NavLink   className={BottomTab === '2' ? 'active' : ''} onClick={() => setBottomTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="#javascript" className={BottomTab === '3' ? 'active' : ''} onClick={() => setBottomTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
+                    <NavLink   className={BottomTab === '3' ? 'active' : ''} onClick={() => setBottomTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
                   </NavItem>
                 </Nav>
               </CardBody>
@@ -115,13 +115,13 @@ const TabBootstrap = (props) => {
               <CardBody>
                 <Nav tabs>
                   <NavItem>
-                    <NavLink href="#javascript" className={IconWithTab === '1' ? 'active' : ''} onClick={() => setIconWithTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
+                    <NavLink   className={IconWithTab === '1' ? 'active' : ''} onClick={() => setIconWithTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="#javascript" className={IconWithTab === '2' ? 'active' : ''} onClick={() => setIconWithTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
+                    <NavLink   className={IconWithTab === '2' ? 'active' : ''} onClick={() => setIconWithTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="#javascript" className={IconWithTab === '3' ? 'active' : ''} onClick={() => setIconWithTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
+                    <NavLink   className={IconWithTab === '3' ? 'active' : ''} onClick={() => setIconWithTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
                   </NavItem>
                 </Nav>
                 <TabContent activeTab={IconWithTab}>
@@ -146,13 +146,13 @@ const TabBootstrap = (props) => {
               <CardBody>
                 <Nav className="nav nav-tabs nav-right" >
                   <NavItem>
-                    <NavLink href="#javascript" className={RightTab === '1' ? 'active' : ''} onClick={() => setRightTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
+                    <NavLink   className={RightTab === '1' ? 'active' : ''} onClick={() => setRightTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
                   </NavItem>
                   <NavItem >
-                    <NavLink href="#javascript" className={RightTab === '2' ? 'active' : ''} onClick={() => setRightTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
+                    <NavLink   className={RightTab === '2' ? 'active' : ''} onClick={() => setRightTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="#javascript" className={RightTab === '3' ? 'active' : ''} onClick={() => setRightTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
+                    <NavLink   className={RightTab === '3' ? 'active' : ''} onClick={() => setRightTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
                   </NavItem>
                 </Nav>
                 <TabContent activeTab={RightTab}>
@@ -179,16 +179,16 @@ const TabBootstrap = (props) => {
                   <Col sm="3" xs="12">
                     <Nav className="nav flex-column nav-pills">
                       <NavItem>
-                        <NavLink href="#javascript" className={VerticleTab === '1' ? 'active' : ''} onClick={() => setVerticleTab('1')}>{Hometxt}</NavLink>
+                        <NavLink   className={VerticleTab === '1' ? 'active' : ''} onClick={() => setVerticleTab('1')}>{Hometxt}</NavLink>
                       </NavItem>
                       <NavItem>
-                        <NavLink href="#javascript" className={VerticleTab === '2' ? 'active' : ''} onClick={() => setVerticleTab('2')}>{Profile}</NavLink>
+                        <NavLink   className={VerticleTab === '2' ? 'active' : ''} onClick={() => setVerticleTab('2')}>{Profile}</NavLink>
                       </NavItem>
                       <NavItem>
-                        <NavLink href="#javascript" className={VerticleTab === '3' ? 'active' : ''} onClick={() => setVerticleTab('3')}>{Messages}</NavLink>
+                        <NavLink   className={VerticleTab === '3' ? 'active' : ''} onClick={() => setVerticleTab('3')}>{Messages}</NavLink>
                       </NavItem>
                       <NavItem>
-                        <NavLink href="#javascript" className={VerticleTab === '4' ? 'active' : ''} onClick={() => setVerticleTab('4')}>{Settings}</NavLink>
+                        <NavLink   className={VerticleTab === '4' ? 'active' : ''} onClick={() => setVerticleTab('4')}>{Settings}</NavLink>
                       </NavItem>
                     </Nav>
                   </Col>
@@ -220,13 +220,13 @@ const TabBootstrap = (props) => {
               <CardBody>
                 <Nav className="nav-pills">
                   <NavItem>
-                    <NavLink href="#javascript" className={pillTab === '1' ? 'active' : ''} onClick={() => setpillTab('1')}>{Hometxt}</NavLink>
+                    <NavLink   className={pillTab === '1' ? 'active' : ''} onClick={() => setpillTab('1')}>{Hometxt}</NavLink>
                   </NavItem>
                   <NavItem >
-                    <NavLink href="#javascript" className={pillTab === '2' ? 'active' : ''} onClick={() => setpillTab('2')}>{Profile}</NavLink>
+                    <NavLink   className={pillTab === '2' ? 'active' : ''} onClick={() => setpillTab('2')}>{Profile}</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="#javascript" className={pillTab === '3' ? 'active' : ''} onClick={() => setpillTab('3')}>{Contact}</NavLink>
+                    <NavLink   className={pillTab === '3' ? 'active' : ''} onClick={() => setpillTab('3')}>{Contact}</NavLink>
                   </NavItem>
                 </Nav>
                 <TabContent activeTab={pillTab}>
@@ -251,13 +251,13 @@ const TabBootstrap = (props) => {
               <CardBody>
                 <Nav className="nav-pills">
                   <NavItem>
-                    <NavLink href="#javascript" className={pillWithIconTab === '1' ? 'active' : ''} onClick={() => setpillWithIconTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
+                    <NavLink   className={pillWithIconTab === '1' ? 'active' : ''} onClick={() => setpillWithIconTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
                   </NavItem>
                   <NavItem >
-                    <NavLink href="#javascript" className={pillWithIconTab === '2' ? 'active' : ''} onClick={() => setpillWithIconTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
+                    <NavLink   className={pillWithIconTab === '2' ? 'active' : ''} onClick={() => setpillWithIconTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="#javascript" className={pillWithIconTab === '3' ? 'active' : ''} onClick={() => setpillWithIconTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
+                    <NavLink   className={pillWithIconTab === '3' ? 'active' : ''} onClick={() => setpillWithIconTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
                   </NavItem>
                 </Nav>
                 <TabContent activeTab={pillWithIconTab}>
@@ -282,13 +282,13 @@ const TabBootstrap = (props) => {
               <CardBody>
                 <Nav className="nav-dark">
                   <NavItem>
-                    <NavLink href="#javascript" className={pillDarkTab === '1' ? 'active' : ''} onClick={() => setpillDarkTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
+                    <NavLink   className={pillDarkTab === '1' ? 'active' : ''} onClick={() => setpillDarkTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
                   </NavItem>
                   <NavItem >
-                    <NavLink href="#javascript" className={pillDarkTab === '2' ? 'active' : ''} onClick={() => setpillDarkTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
+                    <NavLink   className={pillDarkTab === '2' ? 'active' : ''} onClick={() => setpillDarkTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="#javascript" className={pillDarkTab === '3' ? 'active' : ''} onClick={() => setpillDarkTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
+                    <NavLink   className={pillDarkTab === '3' ? 'active' : ''} onClick={() => setpillDarkTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
                   </NavItem>
                 </Nav>
                 <TabContent activeTab={pillDarkTab}>
@@ -313,13 +313,13 @@ const TabBootstrap = (props) => {
               <CardBody>
                 <Nav className="nav-primary" tabs>
                   <NavItem>
-                    <NavLink href="#javascript" className={primarycolorTab === '1' ? 'active' : ''} onClick={() => setprimarycolorTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
+                    <NavLink   className={primarycolorTab === '1' ? 'active' : ''} onClick={() => setprimarycolorTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
                   </NavItem>
                   <NavItem >
-                    <NavLink href="#javascript" className={primarycolorTab === '2' ? 'active' : ''} onClick={() => setprimarycolorTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
+                    <NavLink   className={primarycolorTab === '2' ? 'active' : ''} onClick={() => setprimarycolorTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="#javascript" className={primarycolorTab === '3' ? 'active' : ''} onClick={() => setprimarycolorTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
+                    <NavLink   className={primarycolorTab === '3' ? 'active' : ''} onClick={() => setprimarycolorTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
                   </NavItem>
                 </Nav>
                 <TabContent activeTab={primarycolorTab}>
@@ -344,13 +344,13 @@ const TabBootstrap = (props) => {
               <CardBody>
                 <Nav className="nav-secondary nav-pills" >
                   <NavItem>
-                    <NavLink href="#javascript" className={secondaryTab === '1' ? 'active' : ''} onClick={() => setsecondaryTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
+                    <NavLink   className={secondaryTab === '1' ? 'active' : ''} onClick={() => setsecondaryTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
                   </NavItem>
                   <NavItem >
-                    <NavLink href="#javascript" className={secondaryTab === '2' ? 'active' : ''} onClick={() => setsecondaryTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
+                    <NavLink   className={secondaryTab === '2' ? 'active' : ''} onClick={() => setsecondaryTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="#javascript" className={secondaryTab === '3' ? 'active' : ''} onClick={() => setsecondaryTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
+                    <NavLink   className={secondaryTab === '3' ? 'active' : ''} onClick={() => setsecondaryTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
                   </NavItem>
                 </Nav>
                 <TabContent activeTab={secondaryTab}>
@@ -375,13 +375,13 @@ const TabBootstrap = (props) => {
               <CardBody>
                 <Nav className="nav-success nav-pills" >
                   <NavItem>
-                    <NavLink href="#javascript" className={successTab === '1' ? 'active' : ''} onClick={() => setsuccessTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
+                    <NavLink   className={successTab === '1' ? 'active' : ''} onClick={() => setsuccessTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
                   </NavItem>
                   <NavItem >
-                    <NavLink href="#javascript" className={successTab === '2' ? 'active' : ''} onClick={() => setsuccessTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
+                    <NavLink   className={successTab === '2' ? 'active' : ''} onClick={() => setsuccessTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="#javascript" className={successTab === '3' ? 'active' : ''} onClick={() => setsuccessTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
+                    <NavLink   className={successTab === '3' ? 'active' : ''} onClick={() => setsuccessTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
                   </NavItem>
                 </Nav>
                 <TabContent activeTab={successTab}>
@@ -406,13 +406,13 @@ const TabBootstrap = (props) => {
               <CardBody>
                 <Nav className="nav-info nav-pills" >
                   <NavItem>
-                    <NavLink href="#javascript" className={infoTab === '1' ? 'active' : ''} onClick={() => setinfoTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
+                    <NavLink   className={infoTab === '1' ? 'active' : ''} onClick={() => setinfoTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
                   </NavItem>
                   <NavItem >
-                    <NavLink href="#javascript" className={infoTab === '2' ? 'active' : ''} onClick={() => setinfoTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
+                    <NavLink   className={infoTab === '2' ? 'active' : ''} onClick={() => setinfoTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="#javascript" className={infoTab === '3' ? 'active' : ''} onClick={() => setinfoTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
+                    <NavLink   className={infoTab === '3' ? 'active' : ''} onClick={() => setinfoTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
                   </NavItem>
                 </Nav>
                 <TabContent activeTab={infoTab}>
@@ -437,13 +437,13 @@ const TabBootstrap = (props) => {
               <CardBody>
                 <Nav className="nav-warning nav-pills" >
                   <NavItem>
-                    <NavLink href="#javascript" className={warningTab === '1' ? 'active' : ''} onClick={() => setwarningTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
+                    <NavLink   className={warningTab === '1' ? 'active' : ''} onClick={() => setwarningTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
                   </NavItem>
                   <NavItem >
-                    <NavLink href="#javascript" className={warningTab === '2' ? 'active' : ''} onClick={() => setwarningTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
+                    <NavLink   className={warningTab === '2' ? 'active' : ''} onClick={() => setwarningTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="#javascript" className={warningTab === '3' ? 'active' : ''} onClick={() => setwarningTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
+                    <NavLink   className={warningTab === '3' ? 'active' : ''} onClick={() => setwarningTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
                   </NavItem>
                 </Nav>
                 <TabContent activeTab={warningTab}>
@@ -468,13 +468,13 @@ const TabBootstrap = (props) => {
               <CardBody>
                 <Nav className="nav-danger nav-pills" >
                   <NavItem>
-                    <NavLink href="#javascript" className={dangerTab === '1' ? 'active' : ''} onClick={() => setdangerTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
+                    <NavLink   className={dangerTab === '1' ? 'active' : ''} onClick={() => setdangerTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
                   </NavItem>
                   <NavItem >
-                    <NavLink href="#javascript" className={dangerTab === '2' ? 'active' : ''} onClick={() => setdangerTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
+                    <NavLink   className={dangerTab === '2' ? 'active' : ''} onClick={() => setdangerTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="#javascript" className={dangerTab === '3' ? 'active' : ''} onClick={() => setdangerTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
+                    <NavLink   className={dangerTab === '3' ? 'active' : ''} onClick={() => setdangerTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
                   </NavItem>
                 </Nav>
                 <TabContent activeTab={dangerTab}>

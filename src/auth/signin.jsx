@@ -89,7 +89,7 @@ const Logins = (props) => {
                         <div className="checkbox ml-3">
                           <Input id="checkbox1" type="checkbox" />
                           <Label className="text-muted" for="checkbox1">{RememberPassword}</Label>
-                        </div><a className="link" href="#javascript">{ForgotPassword}</a>
+                        </div><a className="link"  >{ForgotPassword}</a>
                         <Button color="primary" className="btn-block" onClick={() => loginWithJwt(email, password)}>{LoginWithJWT}</Button>
                       </div>
                       <p className="mt-4 mb-0">{SignInDontHave}<a className="ml-2" href={process.env.PUBLIC_URL + '/register'}>{CreateAccount}</a></p>

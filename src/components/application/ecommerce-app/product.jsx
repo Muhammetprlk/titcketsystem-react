@@ -145,12 +145,12 @@ const Product = (props) => {
             <Row>
               <Col md="6" className="products-total">
                 <div className="square-product-setting d-inline-block">
-                  <a className="icon-grid grid-layout-view" onClick={gridLayout} href="#javascript"  >
+                  <a className="icon-grid grid-layout-view" onClick={gridLayout}    >
                     <Grid />
                   </a>
                 </div>
                 <div className="square-product-setting d-inline-block">
-                  <a className="icon-grid m-0 list-layout-view" onClick={listLayout} href="#javascript" >
+                  <a className="icon-grid m-0 list-layout-view" onClick={listLayout}   >
                     <List />
                   </a>
                 </div>
@@ -164,19 +164,19 @@ const Product = (props) => {
                 <div className="grid-options d-inline-block">
                   <ListGroup as="ul">
                     <li>
-                      <a className="product-2-layout-view" onClick={() => LayoutView(6)} href="#javascript" >
+                      <a className="product-2-layout-view" onClick={() => LayoutView(6)}   >
                         <span className="line-grid line-grid-1 bg-primary"></span>
                         <span className="line-grid line-grid-2 bg-primary"></span>
                       </a>
                     </li>
-                    <li><a className="product-3-layout-view" onClick={() => LayoutView(4)} href="#javascript" >
+                    <li><a className="product-3-layout-view" onClick={() => LayoutView(4)}   >
                       <span className="line-grid line-grid-3 bg-primary"></span>
                       <span className="line-grid line-grid-4 bg-primary"></span>
                       <span className="line-grid line-grid-5 bg-primary"></span>
                     </a>
                     </li>
                     <li>
-                      <a className="product-4-layout-view" onClick={() => LayoutView(3)} href="#javascript" >
+                      <a className="product-4-layout-view" onClick={() => LayoutView(3)}   >
                         <span className="line-grid line-grid-6 bg-primary"></span>
                         <span className="line-grid line-grid-7 bg-primary"></span>
                         <span className="line-grid line-grid-8 bg-primary"></span>
@@ -184,7 +184,7 @@ const Product = (props) => {
                       </a>
                     </li>
                     <li>
-                      <a className="product-6-layout-view" onClick={() => LayoutView(2)} href="#javascript">
+                      <a className="product-6-layout-view" onClick={() => LayoutView(2)}  >
                         <span className="line-grid line-grid-10 bg-primary"></span>
                         <span className="line-grid line-grid-11 bg-primary"></span>
                         <span className="line-grid line-grid-12 bg-primary"></span>

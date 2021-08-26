@@ -32,10 +32,10 @@ class CreatedByme extends Component {
                           <p className="task_desc_0">{tasklistdata.desc}</p>
                         </td>
                         <td>
-                          <a className="mr-2" href="#javascript"><Link /></a>
-                          <a href="#javascript"><MoreHorizontal /></a>
+                          <a className="mr-2"  ><Link /></a>
+                          <a  ><MoreHorizontal /></a>
                         </td>
-                        <td><a href="#javascript" onClick={() => RemoveTask(tasklistdata.id)}><Trash2 /></a></td>
+                        <td><a   onClick={() => RemoveTask(tasklistdata.id)}><Trash2 /></a></td>
                       </tr>
                     )
                   })
@@ -161,42 +161,42 @@ const Task = (props) => {
                           <span className="main-title">{Views}</span>
                         </NavItem>
                         <NavItem>
-                          <a href="#javaScript" className={activeTab === '1' ? 'active' : ''} onClick={() => setActiveTab('1')}>
+                          <a   className={activeTab === '1' ? 'active' : ''} onClick={() => setActiveTab('1')}>
                             <span className="title"> {CreatedByMe}</span>
                           </a>
                         </NavItem>
                         <NavItem>
-                          <a href="#javaScript" className={activeTab === '2' ? 'active' : ''} onClick={() => setActiveTab('2')}>
+                          <a   className={activeTab === '2' ? 'active' : ''} onClick={() => setActiveTab('2')}>
                             <span className="title"> {TodayTasks}</span>
                           </a>
                         </NavItem>
                         <NavItem>
-                          <a href="#javaScript" className={activeTab === '3' ? 'active' : ''} onClick={() => setActiveTab('3')}>
+                          <a   className={activeTab === '3' ? 'active' : ''} onClick={() => setActiveTab('3')}>
                             <span className="title"> {DelayedTasks}</span>
                           </a>
                         </NavItem>
                         <NavItem>
-                          <a href="#javaScript" className={activeTab === '4' ? 'active' : ''} onClick={() => setActiveTab('4')}>
+                          <a   className={activeTab === '4' ? 'active' : ''} onClick={() => setActiveTab('4')}>
                             <span className="title"> {UpcomingTasks}</span>
                           </a>
                         </NavItem>
                         <NavItem>
-                          <a href="#javaScript" className={activeTab === '5' ? 'active' : ''} onClick={() => setActiveTab('5')}>
+                          <a   className={activeTab === '5' ? 'active' : ''} onClick={() => setActiveTab('5')}>
                             <span className="title"> {ThisWeekTask}</span>
                           </a>
                         </NavItem>
                         <NavItem>
-                          <a href="#javaScript" className={activeTab === '6' ? 'active' : ''} onClick={() => setActiveTab('6')}>
+                          <a   className={activeTab === '6' ? 'active' : ''} onClick={() => setActiveTab('6')}>
                             <span className="title"> {ThisMonthTasks}</span>
                           </a>
                         </NavItem>
                         <NavItem>
-                          <a href="#javaScript" className={activeTab === '7' ? 'active' : ''} onClick={() => setActiveTab('7')}>
+                          <a   className={activeTab === '7' ? 'active' : ''} onClick={() => setActiveTab('7')}>
                             <span className="title"> {AssignedToMe} ({newtaskdata.length})</span>
                           </a>
                         </NavItem>
                         <NavItem>
-                          <a href="#javaScript" className={activeTab === '8' ? 'active' : ''} onClick={() => setActiveTab('8')}>
+                          <a   className={activeTab === '8' ? 'active' : ''} onClick={() => setActiveTab('8')}>
                             <span className="title"> {MyTasks} ({newtaskdata.length})</span>
                           </a>
                         </NavItem>
@@ -225,10 +225,10 @@ const Task = (props) => {
                             </Form>
                           </ModalBody>
                         </Modal>
-                        <NavItem><a href="#javaScript" className={activeTab === '9' ? 'show' : ''} onClick={() => setActiveTab('9')} ><span className="title"> {Notification}</span></a></NavItem>
-                        <NavItem><a href="#javaScript" className={activeTab === '10' ? 'show' : ''} onClick={() => setActiveTab('10')} ><span className="title"> {Newsletter}</span></a></NavItem>
-                        <NavItem><a href="#javaScript" className={activeTab === '11' ? 'show' : ''} onClick={() => setActiveTab('11')} ><span className="title"> {Business}</span></a></NavItem>
-                        <NavItem><a href="#javaScript" className={activeTab === '12' ? 'show' : ''} onClick={() => setActiveTab('12')} ><span className="title">{Holidays}</span></a></NavItem>
+                        <NavItem><a   className={activeTab === '9' ? 'show' : ''} onClick={() => setActiveTab('9')} ><span className="title"> {Notification}</span></a></NavItem>
+                        <NavItem><a   className={activeTab === '10' ? 'show' : ''} onClick={() => setActiveTab('10')} ><span className="title"> {Newsletter}</span></a></NavItem>
+                        <NavItem><a   className={activeTab === '11' ? 'show' : ''} onClick={() => setActiveTab('11')} ><span className="title"> {Business}</span></a></NavItem>
+                        <NavItem><a   className={activeTab === '12' ? 'show' : ''} onClick={() => setActiveTab('12')} ><span className="title">{Holidays}</span></a></NavItem>
                       </Nav>
                     </div>
                   </CardBody>
@@ -246,7 +246,7 @@ const Task = (props) => {
                             <h6 className="mb-0 f-w-600" >{CreatedByMe}</h6>
                             <ReactToPrint
                               trigger={() => (
-                                  <a href="#javascript"><Printer className="mr-2" />{Print}</a>
+                                  <a  ><Printer className="mr-2" />{Print}</a>
                               )}
                               content={() => componentRef.current}
                               />
@@ -259,7 +259,7 @@ const Task = (props) => {
                       <TabPane tabId="2">
                         <Card className="mb-0">
                           <CardHeader className="d-flex">
-                            <h6 className="mb-0">{TodayTasks}</h6><a href="#javascript"><Printer className="mr-2" />{Print}</a>
+                            <h6 className="mb-0">{TodayTasks}</h6><a  ><Printer className="mr-2" />{Print}</a>
                           </CardHeader>
                           <CardBody>
                             <div className="details-bookmark text-center">
@@ -272,7 +272,7 @@ const Task = (props) => {
                       <TabPane tabId="3">
                         <Card className="mb-0">
                           <CardHeader className="d-flex">
-                            <h6 className="mb-0">{DelayedTasks}</h6><a href="#javascript"><Printer className="mr-2" />{Print}</a>
+                            <h6 className="mb-0">{DelayedTasks}</h6><a  ><Printer className="mr-2" />{Print}</a>
                           </CardHeader>
                           <CardBody>
                             <div className="details-bookmark text-center">
@@ -285,7 +285,7 @@ const Task = (props) => {
                       <TabPane tabId="4">
                         <Card className="mb-0">
                           <CardHeader className="d-flex">
-                            <h6 className="mb-0">{UpcomingTasks}</h6><a href="#javascript"><Printer className="mr-2" />{Print}</a>
+                            <h6 className="mb-0">{UpcomingTasks}</h6><a  ><Printer className="mr-2" />{Print}</a>
                           </CardHeader>
                           <CardBody>
                             <div className="details-bookmark text-center">
@@ -298,7 +298,7 @@ const Task = (props) => {
                       <TabPane tabId="5">
                         <Card className="mb-0">
                           <CardHeader className="d-flex">
-                            <h6 className="mb-0">{ThisWeekTask}</h6><a href="#javascript"><Printer className="mr-2" />{Print}</a>
+                            <h6 className="mb-0">{ThisWeekTask}</h6><a  ><Printer className="mr-2" />{Print}</a>
                           </CardHeader>
                           <CardBody>
                             <div className="details-bookmark text-center">
@@ -311,7 +311,7 @@ const Task = (props) => {
                       <TabPane tabId="6">
                         <Card className="mb-0">
                           <CardHeader className="d-flex">
-                            <h6 className="mb-0">{ThisMonthTasks}</h6><a href="#javascript"><Printer className="mr-2" />{Print}</a>
+                            <h6 className="mb-0">{ThisMonthTasks}</h6><a  ><Printer className="mr-2" />{Print}</a>
                           </CardHeader>
                           <CardBody>
                             <div className="details-bookmark text-center">
@@ -325,7 +325,7 @@ const Task = (props) => {
                         <Card className="mb-0">
                           <CardHeader className="d-flex">
                             <h6 className="mb-0 f-w-600">{AssignedToMe}</h6>
-                            <a href="#javascript"><Printer className="mr-2" />{Print}</a>
+                            <a  ><Printer className="mr-2" />{Print}</a>
                           </CardHeader>
                           <CardBody className="p-0">
                             <div className="taskadd">
@@ -345,10 +345,10 @@ const Task = (props) => {
                                               <p className="task_desc_0">{taskdata.desc}</p>
                                             </td>
                                             <td>
-                                              <a className="mr-2" href="#javascript"><Link /></a>
-                                              <a href="#javascript"><MoreHorizontal /></a>
+                                              <a className="mr-2"  ><Link /></a>
+                                              <a  ><MoreHorizontal /></a>
                                             </td>
-                                            <td><a href="#javascript" onClick={() => RemoveTask(taskdata.id)}><Trash2 /></a></td>
+                                            <td><a   onClick={() => RemoveTask(taskdata.id)}><Trash2 /></a></td>
                                           </tr>
                                         )
                                       })
@@ -365,7 +365,7 @@ const Task = (props) => {
                         <Card className="mb-0">
                           <CardHeader className="d-flex">
                             <h6 className="mb-0 f-w-600">{MyTasks}</h6>
-                            <a href="#javascript"><Printer className="mr-2" />{Print}</a>
+                            <a  ><Printer className="mr-2" />{Print}</a>
                           </CardHeader>
                           <CardBody className="p-0">
                             <div className="taskadd">
@@ -385,10 +385,10 @@ const Task = (props) => {
                                               <p className="task_desc_0">{taskdata.desc}</p>
                                             </td>
                                             <td>
-                                              <a className="mr-2" href="#javascript"><Link /></a>
-                                              <a href="#javascript"><MoreHorizontal /></a>
+                                              <a className="mr-2"  ><Link /></a>
+                                              <a  ><MoreHorizontal /></a>
                                             </td>
-                                            <td><a href="#javascript" onClick={() => RemoveTask(taskdata.id)}><Trash2 /></a></td>
+                                            <td><a   onClick={() => RemoveTask(taskdata.id)}><Trash2 /></a></td>
                                           </tr>
                                         )
                                       })
@@ -404,7 +404,7 @@ const Task = (props) => {
                       <TabPane tabId="9">
                         <Card className="mb-0">
                           <CardHeader className="d-flex">
-                            <h6 className="mb-0">{Notification}</h6><a href="#javascript"><Printer className="mr-2" />{Print}</a>
+                            <h6 className="mb-0">{Notification}</h6><a  ><Printer className="mr-2" />{Print}</a>
                           </CardHeader>
                           <CardBody>
                             <div className="details-bookmark text-center">
@@ -417,7 +417,7 @@ const Task = (props) => {
                       <TabPane tabId="10">
                         <Card className="mb-0">
                           <CardHeader className="d-flex">
-                            <h6 className="mb-0">{Newsletter}</h6><a href="#javascript"><Printer className="mr-2" />{Print}</a>
+                            <h6 className="mb-0">{Newsletter}</h6><a  ><Printer className="mr-2" />{Print}</a>
                           </CardHeader>
                           <CardBody>
                             <div className="details-bookmark text-center">
@@ -430,7 +430,7 @@ const Task = (props) => {
                       <TabPane tabId="11">
                         <Card className="mb-0">
                           <CardHeader className="d-flex">
-                            <h6 className="mb-0">{Business}</h6><a href="#javascript"><Printer className="mr-2" />{Print}</a>
+                            <h6 className="mb-0">{Business}</h6><a  ><Printer className="mr-2" />{Print}</a>
                           </CardHeader>
                           <CardBody>
                             <div className="details-bookmark text-center">
@@ -443,7 +443,7 @@ const Task = (props) => {
                       <TabPane tabId="12">
                         <Card className="mb-0">
                           <CardHeader className="d-flex">
-                            <h6 className="mb-0">{Holidays}</h6><a href="#javascript"><Printer className="mr-2" />{Print}</a>
+                            <h6 className="mb-0">{Holidays}</h6><a  ><Printer className="mr-2" />{Print}</a>
                           </CardHeader>
                           <CardBody>
                             <div className="details-bookmark text-center">

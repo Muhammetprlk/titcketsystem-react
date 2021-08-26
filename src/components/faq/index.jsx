@@ -285,22 +285,22 @@ const FaqComponent = () => {
                                                     <h5>{Navigation}</h5><Settings />
                                                 </CardHeader>
                                                 <CardBody className="faq-body">
-                                                    <div className="navigation-btn"><a className="btn btn-primary" style={{color:"#fff"}}  href="#javascript">
+                                                    <div className="navigation-btn"><a className="btn btn-primary" style={{color:"#fff"}}   >
                                                         <MessageSquare className="m-r-10" />{AskQuestion}</a></div>
                                                     <div className="navigation-option">
                                                         <ul>
-                                                            <li><a href="#javascript"><Edit />{Tutorials}</a></li>
-                                                            <li><a href="#javascript"><Globe />{HelpCenter}</a></li>
-                                                            <li><a href="#javascript"><BookOpen />{Knowledgebase}</a></li>
-                                                            <li><a href="#javascript"><FileText />{Articles}</a><span className="badge badge-primary badge-pill pull-right">{"42"}</span></li>
-                                                            <li><a href="#javascript"><Youtube />{VideoTutorials}</a><span className="badge badge-primary badge-pill pull-right">{"648"}</span></li>
-                                                            <li><a href="#javascript"><MessageCircle />{AskOurCommunity}</a></li>
-                                                            <li><a href="#javascript"><Mail />{ContactUs}</a></li>
+                                                            <li><a  ><Edit />{Tutorials}</a></li>
+                                                            <li><a  ><Globe />{HelpCenter}</a></li>
+                                                            <li><a  ><BookOpen />{Knowledgebase}</a></li>
+                                                            <li><a  ><FileText />{Articles}</a><span className="badge badge-primary badge-pill pull-right">{"42"}</span></li>
+                                                            <li><a  ><Youtube />{VideoTutorials}</a><span className="badge badge-primary badge-pill pull-right">{"648"}</span></li>
+                                                            <li><a  ><MessageCircle />{AskOurCommunity}</a></li>
+                                                            <li><a  ><Mail />{ContactUs}</a></li>
                                                         </ul>
                                                         <hr />
                                                         <ul>
-                                                            <li><a href="#javascript"><MessageCircle />{AskOurCommunity}</a></li>
-                                                            <li><a href="#javascript"><Mail />{ContactUs}</a></li>
+                                                            <li><a  ><MessageCircle />{AskOurCommunity}</a></li>
+                                                            <li><a  ><Mail />{ContactUs}</a></li>
                                                         </ul>
                                                     </div>
                                                 </CardBody>
@@ -315,7 +315,7 @@ const FaqComponent = () => {
                                                     <Media className="updates-faq-main">
                                                         <div className="updates-faq"><RotateCcw className="font-primary" /></div>
                                                         <Media body className="updates-bottom-time">
-                                                            <p><a href="#javascript">{DavidLinner} </a>{"requested money back for a double debit card charge"}</p>
+                                                            <p><a  >{DavidLinner} </a>{"requested money back for a double debit card charge"}</p>
                                                             <p>{"10 minutes ago"}</p>
                                                         </Media>
                                                     </Media>
@@ -329,14 +329,14 @@ const FaqComponent = () => {
                                                     <Media className="updates-faq-main">
                                                         <div className="updates-faq"><Link className="font-primary" /></div>
                                                         <Media body className="updates-bottom-time">
-                                                            <p>{UserChristopher} <a href="#javascript">{"Wallace"}</a> {"is on hold and awaiting for staff reply"}</p>
+                                                            <p>{UserChristopher} <a  >{"Wallace"}</a> {"is on hold and awaiting for staff reply"}</p>
                                                             <p>{"45 minutes ago"}</p>
                                                         </Media>
                                                     </Media>
                                                     <Media className="updates-faq-main">
                                                         <div className="updates-faq"><Check className="font-primary" /></div>
                                                         <Media body className="updates-bottom-time">
-                                                            <p>{"Ticket #43683 has been closed by"} <a href="#javascript">{VictoriaWilson}</a></p>
+                                                            <p>{"Ticket #43683 has been closed by"} <a  >{VictoriaWilson}</a></p>
                                                             <p>{"Dec 7, 11:48"}</p>
                                                         </Media>
                                                     </Media>

@@ -132,8 +132,16 @@
       img {
         height: 100px;
       }
+      
+      .update-profile{
+        position: absolute;
+        right:30px;
+		    top: 15px;
+        cursor: pointer;
+      }
 
       .media-body {
+
         h5 {
           margin-bottom: 5px;
         }

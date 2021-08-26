@@ -39,7 +39,7 @@ const Wishlist = (props) => {
                         <img className="align-self-center img-fluid img-60" src={require("../../../assets/images/" + item.img)} alt="#"/>
                         <div className="media-body ml-3">
                           <div className="product-name">
-                            <h6><a href="#javascript">{item.name}</a></h6>
+                            <h6><a  >{item.name}</a></h6>
                           </div>
                           <div className="rating">
                             <i className="fa fa-star"></i>

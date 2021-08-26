@@ -31,7 +31,7 @@ const DefaultBoard = (props) => {
                                     allowAddCard={{ on: 'top' }}
                                         renderCard={({ title, date, priority, img, company, rate, customer_img1, customer_img2, customer_img3 }) => (
                                             <div className="kanban-item">
-                                                <a className="kanban-box" href="#javascript">
+                                                <a className="kanban-box"  >
                                                     <span className="date">{date}</span>
                                                     <span className={`badge ${priority === "Argent" ? "badge-danger" : "badge-primary"} f-right`}>{priority}</span>
                                                     <h6>{title}</h6>

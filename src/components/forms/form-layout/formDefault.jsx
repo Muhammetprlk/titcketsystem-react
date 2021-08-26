@@ -13,7 +13,7 @@ const FormDefault = () => {
               <Col sm="12">
                 <Card>
                   <CardHeader>
-                    <h5>{DefaultFormLayout}</h5><span>{"Using the"} <a href="#javascript">{"card"}</a> {"component, you can extend the default collapse behavior to create an accordion."}</span>
+                    <h5>{DefaultFormLayout}</h5><span>{"Using the"} <a  >{"card"}</a> {"component, you can extend the default collapse behavior to create an accordion."}</span>
                   </CardHeader>
                   <CardBody>
                     <Form className="theme-form">
@@ -41,7 +41,7 @@ const FormDefault = () => {
               <Col sm="12">
                 <Card>
                   <CardHeader>
-                    <h5>{HorizontalFormLayout}</h5><span>{"Using the"} <a href="#javascript">{"card"}</a> {"component, you can extend the default collapse behavior to create an accordion."}</span>
+                    <h5>{HorizontalFormLayout}</h5><span>{"Using the"} <a  >{"card"}</a> {"component, you can extend the default collapse behavior to create an accordion."}</span>
                   </CardHeader>
                   <CardBody>
                     <Form className="theme-form">

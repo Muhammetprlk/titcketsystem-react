@@ -20,7 +20,7 @@ const Resetpwd = (props) => {
           <Col xs="12">     
             <div className="login-card">
               <div>
-                <div><a className="logo" href="#javascript"><img className="img-fluid for-light" src={require("../../assets/images/logo/login.png")} alt="looginpage"/><img className="img-fluid for-dark" src={require("../../assets/images/logo/logo_dark.png")} alt="looginpage"/></a></div>
+                <div><a className="logo"  ><img className="img-fluid for-light" src={require("../../assets/images/logo/login.png")} alt="looginpage"/><img className="img-fluid for-dark" src={require("../../assets/images/logo/logo_dark.png")} alt="looginpage"/></a></div>
                 <div className="login-main"> 
                   <Form className="theme-form">
                     <h4>{"Create Your Password"}</h4>
@@ -40,7 +40,7 @@ const Resetpwd = (props) => {
                       </div>
                       <Button color="primary" className="btn-block" type="submit">{Done}</Button>
                     </FormGroup>
-                    <p className="mt-4 mb-0">{"Don't have account?"}<a className="ml-2" href="#javascript">{CreateAccount}</a></p>
+                    <p className="mt-4 mb-0">{"Don't have account?"}<a className="ml-2"  >{CreateAccount}</a></p>
                   </Form>
                 </div>
               </div>

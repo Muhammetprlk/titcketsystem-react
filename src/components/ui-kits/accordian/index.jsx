@@ -15,7 +15,7 @@ const Accordian = (props) => {
             <Accordion defaultActiveKey="0">
               <Card>
                 <CardHeader>
-                  <h5>{BasicAccordion}</h5><span>{"Using the"} <a href="#javascript">{"card"}</a> {"component, you can extend the default collapse behavior to create an accordion."}</span>
+                  <h5>{BasicAccordion}</h5><span>{"Using the"} <a  >{"card"}</a> {"component, you can extend the default collapse behavior to create an accordion."}</span>
                 </CardHeader>
                 <CardBody>
                   <div className="default-according" id="accordion">
@@ -71,7 +71,7 @@ const Accordian = (props) => {
             <Accordion>
               <Card>
                 <CardHeader>
-                  <h5>{AllCloseAccordion}</h5><span>{"Using the"} <a href="#javascript">{"card"}</a> {"component, you can extend the default collapse behavior to create an accordion."}</span>
+                  <h5>{AllCloseAccordion}</h5><span>{"Using the"} <a  >{"card"}</a> {"component, you can extend the default collapse behavior to create an accordion."}</span>
                 </CardHeader>
                 <CardBody>
                   <div className="default-according" id="accordionclose">

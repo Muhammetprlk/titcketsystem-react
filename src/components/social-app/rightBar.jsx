@@ -72,23 +72,23 @@ const RightBar = () => {
                         <CardBody className="social-list filter-cards-view">
                             <Media>
                                 <img className="img-50 img-fluid m-r-20 rounded-circle" alt="twoImg" src={two} />
-                                <Media body><span className="d-block">{BuckyBarnes}</span><a href="#javascript">{AddFriend}</a></Media>
+                                <Media body><span className="d-block">{BuckyBarnes}</span><a  >{AddFriend}</a></Media>
                             </Media>
                             <Media>
                                 <img className="img-50 img-fluid m-r-20 rounded-circle" alt="threeImg" src={three} />
-                                <Media body><span className="d-block">{SarahLoren}</span><a href="#javascript">{AddFriend}</a></Media>
+                                <Media body><span className="d-block">{SarahLoren}</span><a  >{AddFriend}</a></Media>
                             </Media>
                             <Media>
                                 <img className="img-50 img-fluid m-r-20 rounded-circle" alt="threeImg" src={three} />
-                                <Media body><span className="d-block">{JasonBorne}</span><a href="#javascript">{AddFriend}</a></Media>
+                                <Media body><span className="d-block">{JasonBorne}</span><a  >{AddFriend}</a></Media>
                             </Media>
                             <Media>
                                 <img className="img-50 img-fluid m-r-20 rounded-circle" alt="tenImg" src={ten} />
-                                <Media body><span className="d-block">{ComerenDiaz}</span><a href="#javascript">{AddFriend}</a></Media>
+                                <Media body><span className="d-block">{ComerenDiaz}</span><a  >{AddFriend}</a></Media>
                             </Media>
                             <Media>
                                 <img className="img-50 img-fluid m-r-20 rounded-circle" alt="elevenImg" src={eleven} />
-                                <Media body><span className="d-block">{AndewJon}</span><a href="#javascript">{AddFriend}</a></Media>
+                                <Media body><span className="d-block">{AndewJon}</span><a  >{AddFriend}</a></Media>
                             </Media>
                         </CardBody>
                     </Collapse>
@@ -106,23 +106,23 @@ const RightBar = () => {
                         <CardBody className="social-list filter-cards-view">
                             <Media>
                                 <img className="img-50 img-fluid m-r-20 rounded-circle" alt="" src={three} />
-                                <Media body><span className="d-block">{SarahLoren}</span><a href="#javascript">{AddFriend}</a></Media>
+                                <Media body><span className="d-block">{SarahLoren}</span><a  >{AddFriend}</a></Media>
                             </Media>
                             <Media>
                                 <img className="img-50 img-fluid m-r-20 rounded-circle" alt="" src={two} />
-                                <Media body><span className="d-block">{BuckyBarnes}</span><a href="#javascript">{AddFriend}</a></Media>
+                                <Media body><span className="d-block">{BuckyBarnes}</span><a  >{AddFriend}</a></Media>
                             </Media>
                             <Media>
                                 <img className="img-50 img-fluid m-r-20 rounded-circle" alt="ten" src={ten} />
-                                <Media body><span className="d-block">{ComerenDiaz}</span><a href="#javascript">{AddFriend}</a></Media>
+                                <Media body><span className="d-block">{ComerenDiaz}</span><a  >{AddFriend}</a></Media>
                             </Media>
                             <Media>
                                 <img className="img-50 img-fluid m-r-20 rounded-circle" alt="threeImg" src={three} />
-                                <Media body><span className="d-block">{JasonBorne}</span><a href="#javascript">{AddFriend}</a></Media>
+                                <Media body><span className="d-block">{JasonBorne}</span><a  >{AddFriend}</a></Media>
                             </Media>
                             <Media>
                                 <img className="img-50 img-fluid m-r-20 rounded-circle" alt="elevenImg" src={eleven} />
-                                <Media body><span className="d-block">{AndewJon}</span><a href="#javascript">{AddFriend}</a></Media>
+                                <Media body><span className="d-block">{AndewJon}</span><a  >{AddFriend}</a></Media>
                             </Media>
                         </CardBody>
                     </Collapse>

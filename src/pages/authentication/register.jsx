@@ -21,7 +21,7 @@ const Register = (props) => {
         <Col xs="12">     
           <div className="login-card">
             <div>
-              <div><a className="logo" href="#javascript"><img className="img-fluid for-light" src={require("../../assets/images/logo/login.png")} alt="looginpage"/><img className="img-fluid for-dark" src={require("../../assets/images/logo/logo_dark.png")} alt="looginpage"/></a></div>
+              <div><a className="logo"  ><img className="img-fluid for-light" src={require("../../assets/images/logo/login.png")} alt="looginpage"/><img className="img-fluid for-dark" src={require("../../assets/images/logo/logo_dark.png")} alt="looginpage"/></a></div>
               <div className="login-main"> 
                 <Form className="theme-form">
                   <h4>{"Create your account"}</h4>
@@ -49,7 +49,7 @@ const Register = (props) => {
                   <div className="form-group mb-0">
                     <div className="checkbox ml-3">
                       <Input id="checkbox1" type="checkbox"/>
-                      <Label className="text-muted" for="checkbox1">{"Agree with"}<a className="ml-2" href="#javascript">{PrivacyPolicy}</a></Label>
+                      <Label className="text-muted" for="checkbox1">{"Agree with"}<a className="ml-2"  >{PrivacyPolicy}</a></Label>
                     </div>
                     <Button color="primary" className="btn-block" type="submit">{CreateAccount}</Button>
                   </div>
@@ -70,7 +70,7 @@ const Register = (props) => {
                       </Button>
                     </div>
                   </div>
-                  <p className="mt-4 mb-0">{"Already have an account?"}<a className="ml-2" href="#javascript">{SignIn}</a></p>
+                  <p className="mt-4 mb-0">{"Already have an account?"}<a className="ml-2"  >{SignIn}</a></p>
                 </Form>
               </div>
             </div>

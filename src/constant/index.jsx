@@ -24,6 +24,8 @@ export const Done =  "Done"
 export const Open =  "Open"
 export const Closed =  "Closed"
 export const Doing =  "Doing"
+export const Canceled="Canceled"
+
 export const Smooth =  "Smooth"
 export const Running =  "Running"
 export const Cancel =  "Cancel"
@@ -1445,6 +1447,7 @@ export const CreateEmployeeSuccessMessage="Employee successfuly added";
 //Employee List Page
 
 export const EmployeeListTitle="Employee List";
+export const EmployeeListPasswordOptional="Password (Optional)";
 
 
 //Menu Items
@@ -1466,7 +1469,9 @@ export const menuitemEmployees="Employee";
 export const menuitemEmployeesNew="Create New Employee";
 export const menuitemEmployeesList="Employees";
 
+export const menuitemCompany="Company";
 export const menuitemCreateCompany="Create Company";
+export const menuitemListCompany="Company List";
 
 
 // New Issue
@@ -1481,13 +1486,13 @@ export const IssueList="Issue List"
 export const CreateNewIssue="Create New Issue"
 
 // Project 
-export const CreateProjectSearchCollaborators="Search Epmloyees..."
+export const CreateProjectSearchCollaborators="Search Employees"
 export const CreateProjectConfirmationHeader="Confirmation"
 export const CreateProjectConfimationMessage="Are you sure?"
 export const CreateProjectSuccesMessage="Project successfuly added"
 export const CreateProjectSelectEmployeeMessage="Please select minimum 1 employee"
 export const CreateProject =  "Create New"
-export const UpdateProjectSearchCollaborators="Search Collaborators..."
+export const UpdateProjectSearchCollaborators="Search Collaborators"
 export const UpdateProjectConfirmationHeader="Confirmation"
 export const UpdateProjectConfimationMessage="Are you sure?"
 export const UpdateProjectSuccesMessage="Project successfuly updated"
@@ -1499,8 +1504,21 @@ export const ProjectList="Project List"
 //UserProfile
 export const Role="Role";
 
+export const EmployeeName="Employee Name"
+
 
 //project detail
 
 export const ProjectDetailTitle="Project Detail";
 export const ProjectDetailParent="Project";
+export const ProjectDetailSearchCollaborators="Search Employees";
+export const ProjectDetailUpdateSuccessMessage="Issue status successfuly updated";
+
+//Dadhboard
+export const DashboardIssueCount="Issue Count"
+export const DashboardCommentCount="Comment Count"
+
+//Copmany List
+
+export const CListEmployeeCount="Employee Count"
+export const CListEmployees="Employees"

@@ -27,13 +27,13 @@ const TabLine = (props) => {
                   <CardBody>
                      <Nav className="border-tab" tabs>
                        <NavItem>
-                           <NavLink href="#javascript"  className={BasicLineTab === '1' ? 'active' : ''} onClick={() => setBasicLineTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
+                           <NavLink    className={BasicLineTab === '1' ? 'active' : ''} onClick={() => setBasicLineTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
                        </NavItem>
                        <NavItem>
-                         <NavLink href="#javascript" className={BasicLineTab === '2' ? 'active' : ''} onClick={() => setBasicLineTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
+                         <NavLink   className={BasicLineTab === '2' ? 'active' : ''} onClick={() => setBasicLineTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
                        </NavItem>
                        <NavItem>
-                         <NavLink href="#javascript" className={BasicLineTab === '3' ? 'active' : ''} onClick={() => setBasicLineTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
+                         <NavLink   className={BasicLineTab === '3' ? 'active' : ''} onClick={() => setBasicLineTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
                        </NavItem>
                      </Nav>
                      <TabContent activeTab={BasicLineTab}>
@@ -69,13 +69,13 @@ const TabLine = (props) => {
                      </TabContent> 
                      <Nav className="border-tab" tabs>
                        <NavItem>
-                           <NavLink href="#javascript"  className={BottomLineTab === '1' ? 'active' : ''} onClick={() => setBottomLineTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
+                           <NavLink    className={BottomLineTab === '1' ? 'active' : ''} onClick={() => setBottomLineTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
                        </NavItem>
                        <NavItem>
-                         <NavLink href="#javascript" className={BottomLineTab === '2' ? 'active' : ''} onClick={() => setBottomLineTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
+                         <NavLink   className={BottomLineTab === '2' ? 'active' : ''} onClick={() => setBottomLineTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
                        </NavItem>
                        <NavItem>
-                         <NavLink href="#javascript" className={BottomLineTab === '3' ? 'active' : ''} onClick={() => setBottomLineTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
+                         <NavLink   className={BottomLineTab === '3' ? 'active' : ''} onClick={() => setBottomLineTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
                        </NavItem>
                      </Nav>
                   </CardBody>
@@ -91,16 +91,16 @@ const TabLine = (props) => {
                       <Col sm="3"className="tabs-responsive-side">
                       <Nav className="flex-column nav-pills border-tab nav-left" >
                       <NavItem>
-                          <NavLink href="#javascript"  className={LeftLineTab === '1' ? 'active' : ''} onClick={() => setLeftLineTab('1')}>{Hometxt}</NavLink>
+                          <NavLink    className={LeftLineTab === '1' ? 'active' : ''} onClick={() => setLeftLineTab('1')}>{Hometxt}</NavLink>
                       </NavItem>
                       <NavItem >
-                        <NavLink href="#javascript" className={LeftLineTab === '2' ? 'active' : ''} onClick={() => setLeftLineTab('2')}>{Profile}</NavLink>
+                        <NavLink   className={LeftLineTab === '2' ? 'active' : ''} onClick={() => setLeftLineTab('2')}>{Profile}</NavLink>
                       </NavItem>
                       <NavItem>
-                        <NavLink href="#javascript" className={LeftLineTab === '3' ? 'active' : ''} onClick={() => setLeftLineTab('3')}>{Inbox}</NavLink>
+                        <NavLink   className={LeftLineTab === '3' ? 'active' : ''} onClick={() => setLeftLineTab('3')}>{Inbox}</NavLink>
                       </NavItem>
                       <NavItem>
-                        <NavLink href="#javascript" className={LeftLineTab === '4' ? 'active' : ''} onClick={() => setLeftLineTab('4')}>{Settings}</NavLink>
+                        <NavLink   className={LeftLineTab === '4' ? 'active' : ''} onClick={() => setLeftLineTab('4')}>{Settings}</NavLink>
                       </NavItem>
                     </Nav>
                     </Col>
@@ -150,16 +150,16 @@ const TabLine = (props) => {
                       <Col sm="3"className="tabs-responsive-side">
                       <Nav className="flex-column border-tab nav-right" >
                       <NavItem>
-                          <NavLink href="#javascript"  className={RightLineTab === '1' ? 'active' : ''} onClick={() => setRightLineTab('1')}>{Hometxt}</NavLink>
+                          <NavLink    className={RightLineTab === '1' ? 'active' : ''} onClick={() => setRightLineTab('1')}>{Hometxt}</NavLink>
                       </NavItem>
                       <NavItem >
-                        <NavLink href="#javascript" className={RightLineTab === '2' ? 'active' : ''} onClick={() => setRightLineTab('2')}>{Profile}</NavLink>
+                        <NavLink   className={RightLineTab === '2' ? 'active' : ''} onClick={() => setRightLineTab('2')}>{Profile}</NavLink>
                       </NavItem>
                       <NavItem>
-                        <NavLink href="#javascript" className={RightLineTab === '3' ? 'active' : ''} onClick={() => setRightLineTab('3')}>{Inbox}</NavLink>
+                        <NavLink   className={RightLineTab === '3' ? 'active' : ''} onClick={() => setRightLineTab('3')}>{Inbox}</NavLink>
                       </NavItem>
                       <NavItem>
-                        <NavLink href="#javascript" className={RightLineTab === '4' ? 'active' : ''} onClick={() => setRightLineTab('4')}>{Settings}</NavLink>
+                        <NavLink   className={RightLineTab === '4' ? 'active' : ''} onClick={() => setRightLineTab('4')}>{Settings}</NavLink>
                       </NavItem>
                     </Nav>
                     </Col>
@@ -175,13 +175,13 @@ const TabLine = (props) => {
                   <CardBody>
                      <Nav className="border-tab nav-primary" tabs>
                        <NavItem>
-                           <NavLink href="#javascript"  className={PrimarycolorLineTab === '1' ? 'active' : ''} onClick={() => setPrimarycolorLineTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
+                           <NavLink    className={PrimarycolorLineTab === '1' ? 'active' : ''} onClick={() => setPrimarycolorLineTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
                        </NavItem>
                        <NavItem>
-                         <NavLink href="#javascript" className={PrimarycolorLineTab === '2' ? 'active' : ''} onClick={() => setPrimarycolorLineTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
+                         <NavLink   className={PrimarycolorLineTab === '2' ? 'active' : ''} onClick={() => setPrimarycolorLineTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
                        </NavItem>
                        <NavItem>
-                         <NavLink href="#javascript" className={PrimarycolorLineTab === '3' ? 'active' : ''} onClick={() => setPrimarycolorLineTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
+                         <NavLink   className={PrimarycolorLineTab === '3' ? 'active' : ''} onClick={() => setPrimarycolorLineTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
                        </NavItem>
                      </Nav>
                      <TabContent activeTab={PrimarycolorLineTab}>
@@ -206,13 +206,13 @@ const TabLine = (props) => {
                   <CardBody>
                      <Nav className="border-tab nav-secondary" tabs>
                        <NavItem>
-                           <NavLink href="#javascript"  className={SecondarycolorLineTab === '1' ? 'active' : ''} onClick={() => setSecondarycolorLineTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
+                           <NavLink    className={SecondarycolorLineTab === '1' ? 'active' : ''} onClick={() => setSecondarycolorLineTab('1')}><i className="icofont icofont-ui-home"></i>{Hometxt}</NavLink>
                        </NavItem>
                        <NavItem>
-                         <NavLink href="#javascript" className={SecondarycolorLineTab === '2' ? 'active' : ''} onClick={() => setSecondarycolorLineTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
+                         <NavLink   className={SecondarycolorLineTab === '2' ? 'active' : ''} onClick={() => setSecondarycolorLineTab('2')}><i className="icofont icofont-man-in-glasses"></i>{Profile}</NavLink>
                        </NavItem>
                        <NavItem>
-                         <NavLink href="#javascript" className={SecondarycolorLineTab === '3' ? 'active' : ''} onClick={() => setSecondarycolorLineTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
+                         <NavLink   className={SecondarycolorLineTab === '3' ? 'active' : ''} onClick={() => setSecondarycolorLineTab('3')}><i className="icofont icofont-contacts"></i>{Contact}</NavLink>
                        </NavItem>
                      </Nav>
                      <TabContent activeTab={SecondarycolorLineTab}>
@@ -239,13 +239,13 @@ const TabLine = (props) => {
                       <Col sm="3" className="tabs-responsive-side">
                       <Nav className="flex-column nav-success border-tab nav-left">
                       
-                        <NavLink href="#javascript"  className={SuccessLeftLineTab === '1' ? 'active' : ''} onClick={() => setSuccessLeftLineTab('1')}>{Hometxt}</NavLink>
+                        <NavLink    className={SuccessLeftLineTab === '1' ? 'active' : ''} onClick={() => setSuccessLeftLineTab('1')}>{Hometxt}</NavLink>
                      
-                        <NavLink href="#javascript" className={SuccessLeftLineTab === '2' ? 'active' : ''} onClick={() => setSuccessLeftLineTab('2')}>{Profile}</NavLink>
+                        <NavLink   className={SuccessLeftLineTab === '2' ? 'active' : ''} onClick={() => setSuccessLeftLineTab('2')}>{Profile}</NavLink>
                     
-                        <NavLink href="#javascript" className={SuccessLeftLineTab === '3' ? 'active' : ''} onClick={() => setSuccessLeftLineTab('3')}>{Inbox}</NavLink>
+                        <NavLink   className={SuccessLeftLineTab === '3' ? 'active' : ''} onClick={() => setSuccessLeftLineTab('3')}>{Inbox}</NavLink>
                     
-                        <NavLink href="#javascript" className={SuccessLeftLineTab === '4' ? 'active' : ''} onClick={() => setSuccessLeftLineTab('4')}>{Settings}</NavLink>
+                        <NavLink   className={SuccessLeftLineTab === '4' ? 'active' : ''} onClick={() => setSuccessLeftLineTab('4')}>{Settings}</NavLink>
                       
                        </Nav>
                     </Col>
@@ -295,13 +295,13 @@ const TabLine = (props) => {
                       <Col sm="3" className="tabs-responsive-side">
                       <Nav className="nav flex-column nav-info border-tab nav-right" >
                      
-                        <NavLink href="#javascript"  className={InfoRightLineTab === '1' ? 'active' : ''} onClick={() => setInfoRightLineTab('1')}>{Hometxt}</NavLink>
+                        <NavLink    className={InfoRightLineTab === '1' ? 'active' : ''} onClick={() => setInfoRightLineTab('1')}>{Hometxt}</NavLink>
 
-                        <NavLink href="#javascript" className={InfoRightLineTab === '2' ? 'active' : ''} onClick={() => setInfoRightLineTab('2')}>{Profile}</NavLink>
+                        <NavLink   className={InfoRightLineTab === '2' ? 'active' : ''} onClick={() => setInfoRightLineTab('2')}>{Profile}</NavLink>
 
-                        <NavLink href="#javascript" className={InfoRightLineTab === '3' ? 'active' : ''} onClick={() => setInfoRightLineTab('3')}>{Inbox}</NavLink>
+                        <NavLink   className={InfoRightLineTab === '3' ? 'active' : ''} onClick={() => setInfoRightLineTab('3')}>{Inbox}</NavLink>
 
-                        <NavLink href="#javascript" className={InfoRightLineTab === '4' ? 'active' : ''} onClick={() => setInfoRightLineTab('4')}>{Settings}</NavLink>
+                        <NavLink   className={InfoRightLineTab === '4' ? 'active' : ''} onClick={() => setInfoRightLineTab('4')}>{Settings}</NavLink>
 
                       </Nav>
                     </Col>

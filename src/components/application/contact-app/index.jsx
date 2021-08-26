@@ -212,7 +212,7 @@ const Newcontact = (props) => {
                           </Modal>
                         </NavItem>
                         <NavItem><span className="main-title"> {Views}</span></NavItem>
-                        <NavItem><a href="#javascript"  className={activeTab === '1' ? 'active' : ''} onClick={() => setActiveTab('1')}><span className="title"> {Personal}</span></a></NavItem>
+                        <NavItem><a    className={activeTab === '1' ? 'active' : ''} onClick={() => setActiveTab('1')}><span className="title"> {Personal}</span></a></NavItem>
                         <li>
                             <button className="btn btn-category" onClick={categoryToggle}><span className="title"> + {AddCategory}</span></button>
                             <Modal isOpen={categoryModal} toggle={categoryToggle}>
@@ -230,13 +230,13 @@ const Newcontact = (props) => {
                               </ModalBody>
                             </Modal>
                         </li>
-                        <NavItem><a href="#javascript"  className={activeTab === '2' ? 'active' : ''} onClick={() => setActiveTab('2')}><span className="title"> {Orgenization}</span></a></NavItem>
-                        <NavItem><a href="#javascript"  className={activeTab === '3' ? 'active' : ''} onClick={() => setActiveTab('3')}><span className="title">{FollowUp}</span></a></NavItem>
-                        <NavItem><a href="#javascript"  className={activeTab === '4' ? 'active' : ''} onClick={() => setActiveTab('4')}><span className="title">{Favourites}</span></a></NavItem>
-                        <NavItem><a href="#javascript"  className={activeTab === '5' ? 'active' : ''} onClick={() => setActiveTab('5')}><span className="title">{Ideas}</span></a></NavItem>
-                        <NavItem><a href="#javascript"  className={activeTab === '6' ? 'active' : ''} onClick={() => setActiveTab('6')}><span className="title">{Important}</span></a></NavItem>
-                        <NavItem><a href="#javascript"  className={activeTab === '7' ? 'active' : ''} onClick={() => setActiveTab('7')}><span className="title">{Business}</span></a></NavItem>
-                        <NavItem><a href="#javascript"  className={activeTab === '8' ? 'active' : ''} onClick={() => setActiveTab('8')}><span className="title">{Holidays}</span></a></NavItem>
+                        <NavItem><a    className={activeTab === '2' ? 'active' : ''} onClick={() => setActiveTab('2')}><span className="title"> {Orgenization}</span></a></NavItem>
+                        <NavItem><a    className={activeTab === '3' ? 'active' : ''} onClick={() => setActiveTab('3')}><span className="title">{FollowUp}</span></a></NavItem>
+                        <NavItem><a    className={activeTab === '4' ? 'active' : ''} onClick={() => setActiveTab('4')}><span className="title">{Favourites}</span></a></NavItem>
+                        <NavItem><a    className={activeTab === '5' ? 'active' : ''} onClick={() => setActiveTab('5')}><span className="title">{Ideas}</span></a></NavItem>
+                        <NavItem><a    className={activeTab === '6' ? 'active' : ''} onClick={() => setActiveTab('6')}><span className="title">{Important}</span></a></NavItem>
+                        <NavItem><a    className={activeTab === '7' ? 'active' : ''} onClick={() => setActiveTab('7')}><span className="title">{Business}</span></a></NavItem>
+                        <NavItem><a    className={activeTab === '8' ? 'active' : ''} onClick={() => setActiveTab('8')}><span className="title">{Holidays}</span></a></NavItem>
                       </Nav>
                     </div>
                   </CardBody>
@@ -343,10 +343,10 @@ const Newcontact = (props) => {
                                             <h5><span className="first_name_0">{selectedUser.name}</span><span className="last_name_0">{selectedUser.surname}</span></h5>
                                             <p className="email_add_0">{selectedUser.name}{"@gmail.com"}</p>
                                             <ul>
-                                              <li><a href="#javaScript" onClick={() => EditUSers(selectedUser)}>{Edit}</a></li>
-                                              <li><a href="#javaScript" onClick={() => deleteUser(selectedUser.id)}>{Delete}</a></li>
-                                              <li><a href="#javaScript" onClick={() => history()}>{History}</a></li>
-                                              <li><a href="#javaScript" onClick={() => printModalToggle()} data-toggle="modal" data-target="#printModal">{Print}</a></li>
+                                              <li><a   onClick={() => EditUSers(selectedUser)}>{Edit}</a></li>
+                                              <li><a   onClick={() => deleteUser(selectedUser.id)}>{Delete}</a></li>
+                                              <li><a   onClick={() => history()}>{History}</a></li>
+                                              <li><a   onClick={() => printModalToggle()} data-toggle="modal" data-target="#printModal">{Print}</a></li>
                                             </ul>
                                           </div>
                                         </div>
@@ -390,7 +390,7 @@ const Newcontact = (props) => {
                               <Col xl="4 xl-50" md="5">
                                 <Nav className="flex-column nav-pills" id="v-pills-tab1" role="tablist" aria-orientation="vertical">
                                   <NavItem id="myTab" role="tablist">
-                                    <NavLink  href="#javaScript" className={orgactiveTab === '1' ? 'active' : ''} onClick={() => setorgActiveTab('1')}>
+                                    <NavLink    className={orgactiveTab === '1' ? 'active' : ''} onClick={() => setorgActiveTab('1')}>
                                       <div className="media">
                                         <img className="img-50 img-fluid m-r-20 rounded-circle" src={require("../../../assets/images/user/user.png")} alt="" />
                                         <div className="media-body">
@@ -401,7 +401,7 @@ const Newcontact = (props) => {
                                     </NavLink>
                                   </NavItem>
                                   <NavItem id="myTab" role="tablist">
-                                    <NavLink  href="#javaScript" className={orgactiveTab === '2' ? 'active' : ''} onClick={() => setorgActiveTab('2')}>
+                                    <NavLink    className={orgactiveTab === '2' ? 'active' : ''} onClick={() => setorgActiveTab('2')}>
                                       <div className="media"><img className="img-50 img-fluid m-r-20 rounded-circle" src={require("../../../assets/images/user/3.jpg")} alt="" />
                                         <div className="media-body">
                                           <h6>{JasonBorne}</h6>
@@ -411,7 +411,7 @@ const Newcontact = (props) => {
                                     </NavLink>
                                   </NavItem>
                                   <NavItem id="myTab" role="tablist">
-                                    <a  href="#javaScript" className={orgactiveTab === '3' ? 'active' : ''} onClick={() => setorgActiveTab('3')}>
+                                    <a    className={orgactiveTab === '3' ? 'active' : ''} onClick={() => setorgActiveTab('3')}>
                                       <div className="media"><img className="img-50 img-fluid m-r-20 rounded-circle" src={require("../../../assets/images/user/4.jpg")} alt="" />
                                         <div className="media-body">
                                           <h6>{SarahLoren}</h6>
@@ -421,7 +421,7 @@ const Newcontact = (props) => {
                                     </a>
                                   </NavItem>
                                   <NavItem id="myTab" role="tablist">
-                                    <a  href="#javaScript" className={orgactiveTab === '4' ? 'active' : ''} onClick={() => setorgActiveTab('4')}>
+                                    <a    className={orgactiveTab === '4' ? 'active' : ''} onClick={() => setorgActiveTab('4')}>
                                       <div className="media"><img className="img-50 img-fluid m-r-20 rounded-circle" src={require("../../../assets/images/user/10.jpg")} alt="" />
                                         <div className="media-body">
                                           <h6>{AndewJon}</h6>
@@ -441,7 +441,7 @@ const Newcontact = (props) => {
                                           <h5><span className="first_name_5">{"Mark"} </span><span className="last_name_5">{"jecno"}</span></h5>
                                           <p className="email_add_5">{MARKJENCOEMAIL}</p>
                                           <ul>
-                                            <li><a href="#javaScript" data-toggle="modal" data-target="#printModal">{Print}</a></li>
+                                            <li><a   data-toggle="modal" data-target="#printModal">{Print}</a></li>
                                           </ul>
                                         </div>
                                       </div>
@@ -462,7 +462,7 @@ const Newcontact = (props) => {
                                           <h5><span className="first_name_6">{"Jason"} </span><span className="last_name_6">{"Borne"}</span></h5>
                                           <p className="email_add_6">{"jasonb@gmail.com"}</p>
                                           <ul>
-                                            <li><a href="#javaScript" data-toggle="modal" data-target="#printModal">{Print}</a></li>
+                                            <li><a   data-toggle="modal" data-target="#printModal">{Print}</a></li>
                                           </ul>
                                         </div>
                                       </div>
@@ -483,7 +483,7 @@ const Newcontact = (props) => {
                                           <h5> <span className="first_name_7">{"Sarah"} </span><span className="last_name_7">{"Loren"}</span></h5>
                                           <p className="email_add_7">{"barnes@gmail.com"}</p>
                                           <ul>
-                                            <li><a href="#javaScript" data-toggle="modal" data-target="#printModal">{Print}</a></li>
+                                            <li><a   data-toggle="modal" data-target="#printModal">{Print}</a></li>
                                           </ul>
                                         </div>
                                       </div>
@@ -504,7 +504,7 @@ const Newcontact = (props) => {
                                           <h5> <span className="first_name_8">{"Andew"} </span><span className="last_name_8">{"Jon"}</span></h5>
                                           <p className="email_add_8">{"andrewj@gmail.com"}</p>
                                           <ul>
-                                            <li><a href="#javaScript" data-toggle="modal" data-target="#printModal">{Print}</a></li>
+                                            <li><a   data-toggle="modal" data-target="#printModal">{Print}</a></li>
                                           </ul>
                                         </div>
                                       </div>
@@ -595,7 +595,7 @@ const Newcontact = (props) => {
                         <div className="modal-header p-l-20 p-r-20">
                           <h6 className="modal-title w-100">{ContactHistory}
                                 <span className="pull-right">
-                              <a className="closehistory" href="#javaScript" onClick={closehistory}>
+                              <a className="closehistory"   onClick={closehistory}>
                                 <i className="icofont icofont-close"></i>
                               </a>
                             </span>
