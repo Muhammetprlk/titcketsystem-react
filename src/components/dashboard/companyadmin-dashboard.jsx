@@ -1,6 +1,6 @@
 import React, { useState, Fragment, useEffect } from 'react'
 import Breadcrumb from '../../layout/breadcrumb'
-import { Container, Row, Col, Card, CardBody, CardHeader, Button, CardFooter, Table, Input, Label, Form, FormGroup } from 'reactstrap'
+import { Container, Row, Col, Card, CardBody, CardHeader, Table} from 'reactstrap'
 import {Box,Users ,CheckCircle,Info,Circle,XCircle} from 'react-feather';
 import CountUp from 'react-countup';
 import {  Done, Doing, ToDo, Canceled, DashboardIssueCount, DashboardCommentCount, menuitemDashboard } from '../../constant'

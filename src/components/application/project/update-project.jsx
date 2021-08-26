@@ -1,17 +1,12 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Breadcrumb from '../../../layout/breadcrumb'
-import Dropzone from 'react-dropzone-uploader'
-import { Container, Row, Col, Card, CardBody, Form, Modal, ModalHeader, ModalBody, ModalFooter, Media, FormGroup, Label, Input, Button } from 'reactstrap'
-import DatePicker from "react-datepicker";
+import { Container, Row, Col, Card, CardBody, Form, Media, FormGroup, Label, Input, Button } from 'reactstrap'
 import { useForm } from 'react-hook-form'
-import { addNewProject } from '../../../redux/project-app/action'
-import { useDispatch } from 'react-redux';
-import { withRouter, Link ,useLocation} from 'react-router-dom'
-import { ProjectTitle, UpdateProjectSuccesMessage,menuitemProject, UpdateProjectConfirmationHeader, Update,UpdateProjectConfimationMessage, Yes, Cancel, ProjectStatus, Open, Closed, EnterSomeDetails, Add, UpdateProjectTitle, UpdateProjectSearchCollaborators } from '../../../constant'
+import { withRouter,useLocation} from 'react-router-dom'
+import { ProjectTitle, UpdateProjectSuccesMessage,menuitemProject,  Update,UpdateProjectConfimationMessage, Yes, Cancel, ProjectStatus, Open, Closed, EnterSomeDetails, UpdateProjectTitle, UpdateProjectSearchCollaborators } from '../../../constant'
 import * as API from '../../../api/apiurls';
 import axios from 'axios'
 import { toast } from 'react-toastify';
-import one from "../../../assets/images/user/1.jpg";
 import three from "../../../assets/images/user/3.jpg";
 import ScrollArea from 'react-scrollbar';
 import SweetAlert from 'sweetalert2'
@@ -23,7 +18,6 @@ const UpdateProject = (props) => {
         window.location.replace(`${process.env.PUBLIC_URL}/app/project/project-list/`);
     }
     console.log(query);
-  const dispatch = useDispatch()
   const { register, handleSubmit, errors } = useForm();
   const [ projectTitle, setProjectTitle ] = useState(query.title);
   const project_id = query.id;

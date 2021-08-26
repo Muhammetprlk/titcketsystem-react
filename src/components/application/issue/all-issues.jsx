@@ -3,19 +3,13 @@ import Breadcrumb from '../../../layout/breadcrumb'
 import { Container, Row, Col, Card, CardBody,Button,Input, FormGroup,Modal,ModalBody,ModalFooter,ModalHeader, Nav, NavItem, NavLink, TabContent, TabPane } from 'reactstrap'
 import { Target, Info, CheckCircle, PlusCircle, Circle,XCircle } from 'react-feather';
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux';
-import { Done, All, Doing, CreateNewProject,Canceled, ProjectDetailUpdateSuccessMessage,menuitemIssue,Cancel,SaveChanges, ToDo, Comments, IssueList, CreateNewIssue } from '../../../constant'
-import { DefaultLayout } from '../../../layout/theme-customizer';
+import { Done, All, Doing,Canceled, ProjectDetailUpdateSuccessMessage,menuitemIssue,Cancel,SaveChanges, ToDo, Comments, IssueList, CreateNewIssue } from '../../../constant'
 import * as API from '../../../api/apiurls';
 import axios from 'axios'
-import { SwitchTransition } from 'react-transition-group';
 import { toast } from 'react-toastify';
 
 
 const AllIssues = (props) => {
-    const id = window.location.pathname.split('/').pop()
-    const defaultLayout = Object.keys(DefaultLayout);
-    const layout = id ? id : defaultLayout
     const [activeTab, setActiveTab] = useState("1")
     const [issues, setIssues] = useState([]);
     const { user_role } = JSON.parse(localStorage.getItem('authenticatedUser'));

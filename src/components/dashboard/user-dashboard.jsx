@@ -1,8 +1,8 @@
 import React, { useState, Fragment, useEffect } from 'react'
 import Breadcrumb from '../../layout/breadcrumb'
-import { Canceled, DashboardIssueCount, Doing, Done, menuitemDashboard, Name, ToDo } from '../../constant'
-import { Container, Row, Col, Card, CardBody, CardHeader, Button, CardFooter, Table, Input, Label, Form, FormGroup } from 'reactstrap'
-import { Database, ShoppingBag,Activity, MessageCircle, UserPlus, Layers, ShoppingCart, DollarSign, ArrowDown, ArrowUp, CloudDrizzle,Box,Users ,CheckCircle,Info,Circle,XCircle} from 'react-feather';
+import { Canceled, DashboardIssueCount, Doing, Done, menuitemDashboard, ToDo } from '../../constant'
+import { Container, Row, Col, Card, CardBody } from 'reactstrap'
+import {Activity, MessageCircle, Box,CheckCircle,Info,Circle,XCircle} from 'react-feather';
 import * as API from '../../api/apiurls'
 import axios from 'axios';
 import CountUp from 'react-countup';

@@ -1,10 +1,8 @@
 import React, { Fragment, useState,useEffect } from 'react';
 import Breadcrumb from '../../../layout/breadcrumb'
-import Ckeditor from 'react-ckeditor-component'
-import { Typeahead } from 'react-bootstrap-typeahead';
-import Dropzone from 'react-dropzone-uploader'
-import { Container, Row, Col, Card, CardHeader, CardBody, Form, FormGroup, Label, Input, Button } from "reactstrap"
-import { PostEdit, Title, Type, Category,NewIssueSuccessMessage,NewIssueTitle,menuitemIssue, Content,NewIssueContent, Post, Discard,NewIssueProject, Text, Audio,NewIssueHeader, Video, Image, Add, Cancel } from "../../../constant";
+// import Dropzone from 'react-dropzone-uploader'
+import { Container, Row, Col, Card, CardBody, Form, FormGroup, Label, Input, Button } from "reactstrap"
+import { NewIssueSuccessMessage,NewIssueTitle,menuitemIssue, NewIssueContent,NewIssueProject,NewIssueHeader, Add, Cancel } from "../../../constant";
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import * as API from '../../../api/apiurls'
@@ -21,10 +19,7 @@ const NewIssue = (props) => {
   const [issueContent, setIssueContent] = useState("")
   const [issueProjectId, setIssueProjectId] = useState(-1)
   const [projects, setProjects] = useState()
-  const [authenticatedUser, setAuthenticatedUser] = useState(JSON.parse(localStorage.getItem('authenticatedUser')));
-
-
-  const data = [{ name: 'Lifestyle' }, { name: 'Travel' }]
+  const authenticatedUser =JSON.parse(localStorage.getItem('authenticatedUser'));
 
   useEffect(() => {
     axios.get(API.getProjects,API.getHeader()).then(response=>{
@@ -38,8 +33,8 @@ const NewIssue = (props) => {
     setIssueContent(content)
   }
 
-  const getUploadParams = ({ meta }) => { return { url: 'https://httpbin.org/post' } }
-  const handleChangeStatus = ({ meta, file }, status) => { }
+  // const getUploadParams = ({ meta }) => { return { url: 'https://httpbin.org/post' } }
+  // const handleChangeStatus = ({ meta, file }, status) => { }
 
   const CreateIssue = data => {
     if (data !== '' && issueContent !== '') {
@@ -109,7 +104,7 @@ const NewIssue = (props) => {
                       </FormGroup>
                     </Col>
                   </Row>
-                  <Row>
+                  {/* <Row>
                     <Col>
                       <FormGroup className="m-b-20" >
                         <div className="m-0 dz-message needsclick">
@@ -128,7 +123,7 @@ const NewIssue = (props) => {
                         </div>
                       </FormGroup>
                     </Col>
-                  </Row>
+                  </Row> */}
                   <Row>
                     <Col>
                       <FormGroup className="mb-0">

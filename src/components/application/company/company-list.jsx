@@ -1,8 +1,7 @@
-import React, { Fragment, useState, useEffect, useRef } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import Breadcrumb from '../../../layout/breadcrumb'
-import { Container, Row, Col, Card, CardHeader, CardBody, Nav, NavItem, NavLink, TabContent, TabPane, Modal, ModalFooter, ModalHeader, Table, ModalBody, Label, Input, FormGroup, Form, Button } from 'reactstrap'
-import SweetAlert from 'sweetalert2'
-import { Username, EmailAddress, EmployeeListTitle, menuitemEmployees, menuitemCompany, menuitemListCompany, General, Cancel, SaveChanges, EmployeeName, FirstName, LastName, SetClassicTheme, Website, Email, Phone, Admin, FullName, CListEmployeeCount, CListEmployees, ProjectList } from '../../../constant'
+import { Container, Row, Col, Card, CardHeader, CardBody, Nav, NavItem, NavLink, TabContent, TabPane, Table, } from 'reactstrap'
+import { Username,  menuitemListCompany, Website, Email, Phone, Admin, FullName, CListEmployeeCount, CListEmployees, ProjectList } from '../../../constant'
 import axios from 'axios';
 import * as API from '../../../api/apiurls';
 import { toast } from 'react-toastify';
@@ -13,23 +12,6 @@ import { Link } from 'react-router-dom';
 const CompanyList = (props) => {
     const [orgactiveTab, setorgActiveTab] = useState();
     const [companys, setCompanys] = useState([]);
-
-    const [togglePassword, setTogglePassword] = useState(false)
-    const [name, setName] = useState("")
-    const [surname, setSurname] = useState("")
-    const [username, setUsername] = useState("")
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-
-    const [updateEmployeeModal, setUpdateEmployeeModal] = useState(false);
-    const [employee, setEmployee] = useState({})
-    const updateEmployeeToggle = () => {
-        if (updateEmployeeModal) {
-            ClearForm();
-            setEmployee({});
-        }
-        setUpdateEmployeeModal(!updateEmployeeModal);
-    }
 
     useEffect(() => {
         axios.get(API.dashboardSuperUser, API.getHeader()).then(response => {
@@ -45,63 +27,6 @@ const CompanyList = (props) => {
     }, []);
 
 
-    const HideShowPassword = (tPassword) => {
-        setTogglePassword(!tPassword)
-    }
-
-    const deleteUser = (userId) => {
-
-        SweetAlert.fire({
-            title: 'Are you sure?',
-            text: "Once deleted, you will not be able to recover this imaginary file!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Ok',
-            cancelButtonText: 'cancel',
-            reverseButtons: true
-        }).then((result) => {
-            if (result.value) {
-                // deletedUser(userId);
-                SweetAlert.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                )
-            }
-            else {
-                SweetAlert.fire(
-                    'Your imaginary file is safe!'
-                )
-            }
-        })
-    }
-
-    const UpdateEmployee = () => {
-        const updatedUser = { id: employee.id, firstname: name, lastname: surname, email: email, password: password, username: username }
-        axios.post(API.employeeUpdate, updatedUser, API.getHeader()).then(response => {
-            console.log(response);
-        }).catch(error => {
-            toast.error(error.response.data.error);
-        })
-        updateEmployeeToggle();
-    }
-
-    const ClearForm = () => {
-        setName("");
-        setSurname("");
-        setUsername("");
-        setEmail("");
-        setPassword("");
-    }
-
-    const FillForm = (user) => {
-        setEmployee(user);
-        setName(user.first_name);
-        setSurname(user.last_name);
-        setUsername(user.username);
-        setEmail(user.email);
-        updateEmployeeToggle();
-    }
 
     return (
         <Fragment>
@@ -203,41 +128,6 @@ const CompanyList = (props) => {
                         </Col>
                     </Row>
                 </div>
-                <Modal isOpen={updateEmployeeModal} toggle={updateEmployeeToggle} centered>
-                    <ModalHeader toggle={updateEmployeeToggle}>
-                        {employee.first_name + " " + employee.last_name}
-                    </ModalHeader>
-                    <ModalBody>
-                        <FormGroup>
-                            <Label className="col-form-label pt-0">{EmployeeName}</Label>
-                            <div className="form-row">
-                                <Col xs="6">
-                                    <Input className="form-control" type="text" required="" placeholder={FirstName} onChange={e => setName(e.target.value)} defaultValue={name} />
-                                </Col>
-                                <Col xs="6">
-                                    <Input className="form-control" type="text" required="" placeholder={LastName} onChange={e => setSurname(e.target.value)} defaultValue={surname} />
-                                </Col>
-                            </div>
-                        </FormGroup>
-                        <FormGroup>
-                            <Label className="col-form-label">{Username}</Label>
-                            <Input className="form-control" type="text" required="" placeholder={Username} onChange={e => setUsername(e.target.value)} defaultValue={username} />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label className="col-form-label">{"EmailAddress"}</Label>
-                            <Input className="form-control" type="email" required="" placeholder="Test@gmail.com" onChange={e => setEmail(e.target.value)} defaultValue={email} />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label className="col-form-label">{"Password"}</Label>
-                            <Input className="form-control" type={togglePassword ? "text" : "password"} name="login[password]" onChange={e => setPassword(e.target.value)} defaultValue={password} required="" placeholder="*********" />
-                            <div className="show-hide2" onClick={() => HideShowPassword(togglePassword)}><span className={togglePassword ? "" : "show"}></span></div>
-                        </FormGroup>
-                    </ModalBody>
-                    <ModalFooter>
-                        <Button color="secondary" onClick={updateEmployeeToggle}>{Cancel}</Button>
-                        <Button color="primary" onClick={UpdateEmployee}>{SaveChanges}</Button>
-                    </ModalFooter>
-                </Modal>
             </Container>
         </Fragment>
     );

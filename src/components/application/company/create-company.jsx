@@ -1,7 +1,6 @@
 import React,{useState,Fragment} from 'react';
 import {Container,Row,Col,Form,FormGroup,Input,Label,Button,Card,CardBody} from 'reactstrap'
-import {Password,SignIn, EmailAddress,Phone ,CCopmanySuccessMessage,menuitemCreateCompany,menuitemCompany,CreateAccount,CCompanyName, YourName, PrivacyPolicy,Username ,CCompanyCreate,RegisterPersonalDetails,FirstName,LastName,CCopmanyAdminName,CCopmanyAdminUsername,CCopmanyAdminEmail,CCopmanyPhone,CCopmanyWebsite,CCopmanyEmail,CCopmanyAdminLastname} from '../../../constant';
-import { Twitter, Facebook,GitHub } from 'react-feather';
+import {Password,CCopmanySuccessMessage,menuitemCreateCompany,menuitemCompany,CCompanyName, CCompanyCreate,CCopmanyAdminName,CCopmanyAdminUsername,CCopmanyAdminEmail,CCopmanyPhone,CCopmanyWebsite,CCopmanyEmail,CCopmanyAdminLastname} from '../../../constant';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import Breadcrumb from '../../../layout/breadcrumb'
@@ -14,25 +13,6 @@ const CreateCompany = (props) => {
     const HideShowPassword  = (tPassword) => {
       setTogglePassword(!tPassword)
     }
-
-    // const CreateComp=(companyname,user_name,user_surname,user_username,user_email,user_phone,user_password)=>{
-    //     let  company={
-    //         company_name:companyname,
-    //         first_name: user_name,
-    //         last_name: user_surname,
-    //         username: user_username,
-    //         phone:user_phone,
-    //         email: user_email,
-    //         password: user_password,
-    //     }
-    //     axios.post("/api",company).then(response=>{
-    //         console.log(response);
-    //         return response.data.token
-    //       }).catch((error)=>{
-    //           console.log(error.response);
-    //         // toast.error();
-    //       })
-    // }
 
     const create=(company)=>{
       axios.post(API.createCompany,company,API.getHeader()).then(response=>{

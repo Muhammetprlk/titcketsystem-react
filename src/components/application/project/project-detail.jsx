@@ -1,24 +1,17 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Breadcrumb from '../../../layout/breadcrumb'
 import { Container, Row, Col, Card, CardBody, FormGroup, Nav, NavItem, NavLink, TabContent, TabPane, Media, Form, Input, Modal, ModalBody, ModalHeader, ModalFooter, Button } from 'reactstrap'
-import { Target, Info, CheckCircle, PlusCircle, Circle ,XCircle} from 'react-feather';
+import { Target, Info, CheckCircle,  Circle ,XCircle} from 'react-feather';
 import { Link, useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux';
-import { Done, All, Doing, Canceled, CreateNewProject, ProjectDetailUpdateSuccessMessage, menuitemIssue, ToDo, Comments, SaveChanges, Cancel, IssueList, ProjectDetailTitle, ProjectDetailParent, ProjectDetailSearchCollaborators, CreateNewIssue } from '../../../constant'
-import { DefaultLayout } from '../../../layout/theme-customizer';
+import { Done, All, Doing, Canceled,  ProjectDetailUpdateSuccessMessage,  ToDo, Comments, SaveChanges, Cancel, ProjectDetailTitle, ProjectDetailParent, ProjectDetailSearchCollaborators } from '../../../constant'
 import * as API from '../../../api/apiurls';
 import axios from 'axios'
-import { SwitchTransition } from 'react-transition-group';
 import { toast } from 'react-toastify';
 import ScrollArea from 'react-scrollbar';
 import three from "../../../assets/images/user/3.jpg";
-import SweetAlert from 'sweetalert2'
 
 
 const ProjectDetail = (props) => {
-    const id = window.location.pathname.split('/').pop()
-    const defaultLayout = Object.keys(DefaultLayout);
-    const layout = id ? id : defaultLayout
     const [activeTab, setActiveTab] = useState("1")
     const [issues, setIssues] = useState([]);
     const [searchbar, setSearchbar] = useState("");

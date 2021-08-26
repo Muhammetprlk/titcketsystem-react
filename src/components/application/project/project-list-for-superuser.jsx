@@ -1,11 +1,9 @@
 import React, { Fragment, useState,useEffect } from 'react';
 import Breadcrumb from '../../../layout/breadcrumb'
-import { Container, Row, Col, Card, CardBody, FormGroup, Progress, Nav, NavItem, NavLink, TabContent, TabPane,Button } from 'reactstrap'
+import { Container, Row, Col, Card, CardBody, FormGroup, Progress, Nav, NavItem, NavLink, TabContent, TabPane } from 'reactstrap'
 import { Target, Info, CheckCircle, PlusCircle } from 'react-feather';
 import {Link,useParams} from 'react-router-dom'
-import { useSelector } from 'react-redux';
-import {Issues,Resolved,Comment,menuitemProject,Done,All,Doing,CreateNewProject,ProjectList,Open,Closed} from '../../../constant'
-import { DefaultLayout } from '../../../layout/theme-customizer';
+import {Issues,Resolved,menuitemProject,Done,All,Doing,CreateNewProject,ProjectList,Open,Closed} from '../../../constant'
 import * as API from '../../../api/apiurls';
 import axios from 'axios'
 

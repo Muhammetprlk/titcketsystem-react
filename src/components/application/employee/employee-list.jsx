@@ -1,8 +1,8 @@
-import React, { Fragment, useState, useEffect, useRef } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import Breadcrumb from '../../../layout/breadcrumb'
-import { Container, Row, Col, Card, CardHeader, CardBody, Nav, NavItem, NavLink, TabContent, TabPane, Modal, ModalFooter, ModalHeader, ModalBody, Label, Input, FormGroup, Form, Button } from 'reactstrap'
+import { Container, Row, Col, Card, CardHeader, CardBody, Nav, NavItem, NavLink, TabContent, TabPane, Modal, ModalFooter, ModalHeader, ModalBody, Label, Input, FormGroup,  Button } from 'reactstrap'
 import SweetAlert from 'sweetalert2'
-import { Username, EmailAddress, EmployeeListTitle, EmployeeListPasswordOptional,menuitemEmployees, General, Cancel, SaveChanges, EmployeeName, FirstName, LastName, SetClassicTheme } from '../../../constant'
+import { Username, EmailAddress, EmployeeListTitle, EmployeeListPasswordOptional,menuitemEmployees, General, Cancel, SaveChanges, EmployeeName, FirstName, LastName } from '../../../constant'
 import axios from 'axios';
 import * as API from '../../../api/apiurls';
 import { toast } from 'react-toastify';
@@ -46,33 +46,6 @@ const EmployeeList = (props) => {
 
     const HideShowPassword = (tPassword) => {
         setTogglePassword(!tPassword)
-    }
-
-    const deleteUser = (userId) => {
-
-        SweetAlert.fire({
-            title: 'Are you sure?',
-            text: "Once deleted, you will not be able to recover this imaginary file!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Ok',
-            cancelButtonText: 'cancel',
-            reverseButtons: true
-        }).then((result) => {
-            if (result.value) {
-                // deletedUser(userId);
-                SweetAlert.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                )
-            }
-            else {
-                SweetAlert.fire(
-                    'Your imaginary file is safe!'
-                )
-            }
-        })
     }
 
     const UpdateEmployee = () => {

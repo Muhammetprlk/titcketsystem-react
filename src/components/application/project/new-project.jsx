@@ -1,25 +1,18 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Breadcrumb from '../../../layout/breadcrumb'
-import Dropzone from 'react-dropzone-uploader'
-import { Container, Row, Col, Card, CardBody, Form, Modal, ModalHeader, ModalBody, ModalFooter, Media, FormGroup, Label, Input, Button } from 'reactstrap'
-import DatePicker from "react-datepicker";
+import { Container, Row, Col, Card, CardBody, Form, Media, FormGroup, Label, Input, Button } from 'reactstrap'
 import { useForm } from 'react-hook-form'
-import { addNewProject } from '../../../redux/project-app/action'
-import { useDispatch } from 'react-redux';
-import { withRouter, Link } from 'react-router-dom'
-import { ProjectTitle, CreateProjectSuccesMessage, menuitemProject, CreateProjectSelectEmployeeMessage, CreateProjectConfirmationHeader, CreateProjectConfimationMessage, Yes, Cancel, ProjectStatus, Open, Closed, EnterSomeDetails, Add, CreateProject, CreateProjectSearchCollaborators } from '../../../constant'
+import { withRouter } from 'react-router-dom'
+import { ProjectTitle, CreateProjectSuccesMessage, menuitemProject, CreateProjectSelectEmployeeMessage,  CreateProjectConfimationMessage, Yes, Cancel, ProjectStatus, Open, Closed, EnterSomeDetails, Add, CreateProject, CreateProjectSearchCollaborators } from '../../../constant'
 import * as API from '../../../api/apiurls';
 import axios from 'axios'
 import { toast } from 'react-toastify';
-import one from "../../../assets/images/user/1.jpg";
 import three from "../../../assets/images/user/3.jpg";
 import ScrollArea from 'react-scrollbar';
 import SweetAlert from 'sweetalert2'
 
 
 const Newproject = (props) => {
-
-  const dispatch = useDispatch()
   const { register, handleSubmit, errors } = useForm();
   const [projectTitle, setProjectTitle] = useState("");
   const [projectDescription, setProjectDescription] = useState("");
@@ -27,7 +20,6 @@ const Newproject = (props) => {
   const [searchbar, setSearchbar] = useState("");
   const [users, setUsers] = useState([]);
   const [foundUsers, setFoundUsers] = useState([]);
-  const [authenticatedUser, setAuthenticatedUser] = useState(JSON.parse(localStorage.getItem('authenticatedUser')));
 
   useEffect(() => {
     axios.get(API.getCompany, API.getHeader()).then(response => {

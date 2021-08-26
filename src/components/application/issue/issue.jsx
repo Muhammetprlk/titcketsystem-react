@@ -1,19 +1,12 @@
-import React, { Fragment, useState, useMemo, useEffect } from 'react';
-import Breadcrumb from '../../../layout/breadcrumb'
-import blogSingle from "../../../assets/images/blog/blog-single.jpg";
+import React, { Fragment, useState, useEffect } from 'react';
 import comment from "../../../assets/images/blog/comment.jpg";
-import nine from "../../../assets/images/blog/9.jpg";
-import four from "../../../assets/images/blog/4.jpg";
-import twelve from "../../../assets/images/blog/12.png";
-import fourteen from "../../../assets/images/blog/14.png";
-import { Container, Row, Col, Media, Button, FormGroup } from "reactstrap";
-import { Comments, JolioMark } from "../../../constant";
+import { Container, Row, Col, Media, Button } from "reactstrap";
+import { Comments } from "../../../constant";
 import SimpleMDE from "react-simplemde-editor";
-import DOMPurify from 'dompurify'
 import ReactDOMServer from "react-dom/server";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from 'remark-gfm';
-import { Link, useParams, useLocation, useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import * as API from '../../../api/apiurls';
 import { toast } from 'react-toastify';
@@ -26,8 +19,6 @@ const Issue = () => {
     const handleChange = (text) => {
         setText(text);
     }
-    const [authenticatedUser, setAuthenticatedUser] = useState(JSON.parse(localStorage.getItem('authenticatedUser')));
-
     const { issueid } = useParams();
 
     useEffect(() => {
@@ -57,7 +48,6 @@ const Issue = () => {
 
     return (
         <Fragment>
-            {/* <Breadcrumb parent="Blog" title="Issue"/> */}
             <Container fluid={false}>
                 <Row>
 

@@ -1,11 +1,9 @@
 import React, { Fragment, useState,useEffect } from 'react';
 import Breadcrumb from '../../../layout/breadcrumb'
-import { Container, Row, Col, Card, CardBody, FormGroup, Progress, Nav, NavItem, NavLink, TabContent, TabPane,Button } from 'reactstrap'
+import { Container, Row, Col, Card, CardBody, FormGroup, Progress, Nav, NavItem, NavLink, TabContent, TabPane } from 'reactstrap'
 import { Target, Info, CheckCircle, PlusCircle } from 'react-feather';
 import {Link} from 'react-router-dom'
-import { useSelector } from 'react-redux';
-import {Issues,Resolved,Comment,menuitemProject,Done,All,Doing,CreateNewProject,ProjectList,Open,Closed} from '../../../constant'
-import { DefaultLayout } from '../../../layout/theme-customizer';
+import {Issues,Resolved,menuitemProject,Done,All,Doing,CreateNewProject,ProjectList,Open,Closed} from '../../../constant'
 import * as API from '../../../api/apiurls';
 import axios from 'axios'
 
@@ -72,16 +70,6 @@ const Project = (props) => {
                               <Col xs="6"> <span>{Resolved}</span></Col>
                               <Col xs="6" className={item.badge === "Done" ? 'text-success' : 'text-primary'}>{item.issues_resolved}</Col>
                             </Row>
-                            {/* <div className="customers">
-                              <ul>
-                                <li className="d-inline-block"><img className="img-30 rounded-circle" src={require(`../../../assets/images/${item.customers_img1}`)} alt="" /></li>
-                                <li className="d-inline-block"><img className="img-30 rounded-circle" src={require(`../../../assets/images/${item.customers_img2}`)} alt="" /></li>
-                                <li className="d-inline-block"><img className="img-30 rounded-circle" src={require(`../../../assets/images/${item.customers_img3}`)} alt="" /></li>
-                                <li className="d-inline-block ml-2">
-                                  <p className="f-12">{`+${item.like} More`}</p>
-                                </li>
-                              </ul>
-                            </div> */}
                             <div className="project-status mt-4">
                               <div className="media mb-0">
                                 <p>{getProgress(item.issues_count,item.issues_resolved)}% </p>
@@ -108,24 +96,6 @@ const Project = (props) => {
                             <h6>{item.title}</h6>
                             <p>{new Date(item.created_date).toLocaleDateString()+" "+new Date(item.created_date).toLocaleTimeString()}</p>
                             <p>{item.content}</p>
-                            {/* <Row className="details">
-                              <Col xs="6"><Link to={`${process.env.PUBLIC_URL}/app/kanban-board/${layout}`}> <span>{Issues}</span></Link></Col>
-                              <Col xs="6" className={item.badge === "Done" ? 'text-success' : 'text-primary'}>{item.issue}</Col>
-                              <Col xs="6"> <span>{Resolved}</span></Col>
-                              <Col xs="6" className={item.badge === "Done" ? 'text-success' : 'text-primary'}>{item.resolved}</Col>
-                              <Col xs="6"> <span>{Comment}</span></Col>
-                              <Col xs="6" className={item.badge === "Done" ? 'text-success' : 'text-primary'}>{item.comment}</Col>
-                            </Row> */}
-                            {/* <div className="customers">
-                              <ul>
-                                <li className="d-inline-block"><img className="img-30 rounded-circle" src={require(`../../../assets/images/${item.customers_img1}`)} alt="" /></li>
-                                <li className="d-inline-block"><img className="img-30 rounded-circle" src={require(`../../../assets/images/${item.customers_img2}`)} alt="" /></li>
-                                <li className="d-inline-block"><img className="img-30 rounded-circle" src={require(`../../../assets/images/${item.customers_img3}`)} alt="" /></li>
-                                <li className="d-inline-block ml-2">
-                                  <p className="f-12">{`+${item.like} More`}</p>
-                                </li>
-                              </ul>
-                            </div> */}
                             <div className="project-status mt-4">
                               <div className="media mb-0">
                                 <p>{getProgress(item.issues_count,item.issues_resolved)}% </p>
@@ -151,24 +121,6 @@ const Project = (props) => {
                             <h6>{item.title}</h6>
                             <p>{new Date(item.created_date).toLocaleDateString()+" "+new Date(item.created_date).toLocaleTimeString()}</p>
                             <p>{item.content}</p>
-                            {/* <Row className="details">
-                              <Col xs="6"><Link to={`${process.env.PUBLIC_URL}/app/kanban-board/${layout}`}> <span>{Issues}</span></Link></Col>
-                              <Col xs="6" className={item.badge === "Done" ? 'text-success' : 'text-primary'}>{item.issue}</Col>
-                              <Col xs="6"> <span>{Resolved}</span></Col>
-                              <Col xs="6" className={item.badge === "Done" ? 'text-success' : 'text-primary'}>{item.resolved}</Col>
-                              <Col xs="6"> <span>{Comment}</span></Col>
-                              <Col xs="6" className={item.badge === "Done" ? 'text-success' : 'text-primary'}>{item.comment}</Col>
-                            </Row> */}
-                            {/* <div className="customers">
-                              <ul>
-                                <li className="d-inline-block"><img className="img-30 rounded-circle" src={require(`../../../assets/images/${item.customers_img1}`)} alt="" /></li>
-                                <li className="d-inline-block"><img className="img-30 rounded-circle" src={require(`../../../assets/images/${item.customers_img2}`)} alt="" /></li>
-                                <li className="d-inline-block"><img className="img-30 rounded-circle" src={require(`../../../assets/images/${item.customers_img3}`)} alt="" /></li>
-                                <li className="d-inline-block ml-2">
-                                  <p className="f-12">{`+${item.like} More`}</p>
-                                </li>
-                              </ul>
-                            </div> */}
                             <div className="project-status mt-4">
                               <div className="media mb-0">
                                 <p>{getProgress(item.issues_count,item.issues_resolved)}% </p>

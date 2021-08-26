@@ -11,7 +11,7 @@ import { useForm } from 'react-hook-form'
 
 const NewEmployee = (props) => {
 
-  const { register, handleSubmit, errors } = useForm();   
+  const { register, handleSubmit } = useForm();   
   const [togglePassword, setTogglePassword] = useState(false)
   const [name, setName] = useState("Muhammet")
   const [surname, setSurname] = useState("Parlak")
