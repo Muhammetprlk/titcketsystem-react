@@ -13,7 +13,7 @@ import { translate } from 'react-switch-lang';
 const AllIssues = (props) => {
     const [activeTab, setActiveTab] = useState("1")
     const [issues, setIssues] = useState([]);
-    const { user_role } = JSON.parse(localStorage.getItem('authenticatedUser'));
+    const { user_role } = JSON.parse(localStorage.getItem('authenticatedUser')!==null?localStorage.getItem('authenticatedUser'):"{}");
 
     const [changeStatus, setChangeStatus] = useState(false);
     const [issueStatus, setIssueStatus] = useState({})

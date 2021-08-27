@@ -11,7 +11,7 @@ import { translate } from 'react-switch-lang';
 const Project = (props) => {
   const [activeTab,setActiveTab] = useState("1")
   const [projects,setProjects] = useState()
-  const { user_role } = JSON.parse(localStorage.getItem('authenticatedUser'));
+  const { user_role } = JSON.parse(localStorage.getItem('authenticatedUser')!==null?localStorage.getItem('authenticatedUser'):"{}");
   useEffect(() => {
     axios.get(API.getProjects,API.getHeader()).then(response=>{
       setProjects(response.data.projects)

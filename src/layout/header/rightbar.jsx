@@ -41,7 +41,7 @@ const Rightbar = (props) => {
   const {logout} = useAuth0()
   const authenticated = JSON.parse(localStorage.getItem("authenticated"));
   const auth0_profile = JSON.parse(localStorage.getItem("auth0_profile"));
-  const { username,company } = JSON.parse(localStorage.getItem('authenticatedUser'));
+  const { username,company } = JSON.parse(localStorage.getItem('authenticatedUser')!==null?localStorage.getItem('authenticatedUser'):"{}");
 
 
   const handleSetLanguage = (key) => {

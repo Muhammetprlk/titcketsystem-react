@@ -17,7 +17,7 @@ const Sidebar = (props) => {
   const [margin, setMargin] = useState(0);
   const [width, setWidth] = useState(0);
   const [sidebartoogle, setSidebartoogle] = useState(true)
-  const { user_role } = JSON.parse(localStorage.getItem('authenticatedUser'));
+  const { user_role } = JSON.parse(localStorage.getItem('authenticatedUser')!==null?localStorage.getItem('authenticatedUser'):"{}");
 
 
   const wrapper = useSelector(content => content.Customizer.sidebar_types.type) || configDB.data.settings.sidebar.type;

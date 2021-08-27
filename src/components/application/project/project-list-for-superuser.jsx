@@ -13,7 +13,7 @@ const ProjectListForSuperuser = (props) => {
   const [activeTab,setActiveTab] = useState("1")
   const { companyid } = useParams();
   const [projects,setProjects] = useState()
-  const { user_role } = JSON.parse(localStorage.getItem('authenticatedUser'));
+  const { user_role } = JSON.parse(localStorage.getItem('authenticatedUser')!==null?localStorage.getItem('authenticatedUser'):"{}");
   useEffect(() => {
     axios.post(API.getCompanyProjects,{id:companyid},API.getHeader()).then(response=>{
       setProjects(response.data.Projects)

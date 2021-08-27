@@ -20,7 +20,7 @@ const ProjectDetail = (props) => {
     const [foundUsers, setFoundUsers] = useState([]);
     const [projectInfo, setProjectInfo] = useState({});
     // const [authenticatedUser, setAuthenticatedUser] = useState(JSON.parse(localStorage.getItem('authenticatedUser')));
-    const { user_role } = JSON.parse(localStorage.getItem('authenticatedUser'));
+    const { user_role } = JSON.parse(localStorage.getItem('authenticatedUser')!==null?localStorage.getItem('authenticatedUser'):"{}");
     const { projectid } = useParams();
     const [issueStatus, setIssueStatus] = useState({})
     const [changeStatus, setChangeStatus] = useState(false);
