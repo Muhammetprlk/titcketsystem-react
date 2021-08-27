@@ -11,6 +11,7 @@ import SimpleMDE from "react-simplemde-editor";
 import ReactDOMServer from "react-dom/server";
 import remarkGfm from 'remark-gfm';
 import { toast } from 'react-toastify';
+import { translate } from 'react-switch-lang';
 
 
 const NewIssue = (props) => {
@@ -45,7 +46,7 @@ const NewIssue = (props) => {
         user_id:authenticatedUser.user_id
       }
       axios.post(API.createIssue,issue,API.getHeader()).then(response=>{
-        toast.success(NewIssueSuccessMessage);
+        toast.success(props.t(NewIssueSuccessMessage));
       }).then(error=>{
         toast.error(error.response.data.error);
       })
@@ -57,7 +58,7 @@ const NewIssue = (props) => {
 
   return (
     <Fragment>
-      <Breadcrumb parent={menuitemIssue} title={NewIssueHeader} />
+      <Breadcrumb parent={props.t(menuitemIssue)} title={props.t(NewIssueHeader)} />
       <Container fluid={true}>
         <Row>
           <Col sm="12">
@@ -67,7 +68,7 @@ const NewIssue = (props) => {
                   <Row>
                     <Col >
                       <FormGroup>
-                        <Label>{NewIssueProject}</Label>
+                        <Label>{props.t(NewIssueProject)}</Label>
                         <Input type="select" name="issue_projectid" className="form-control digits" innerRef={register({ required: true })} onChange={e => setIssueProjectId(e.target.value)} value={issueProjectId} >
                           {projects?.map(project=>
                             project.status===1?  <option key={project.id} value={project.id} >{project.title}</option>:null
@@ -79,7 +80,7 @@ const NewIssue = (props) => {
                   <Row>
                     <Col>
                       <FormGroup>
-                        <Label>{NewIssueTitle}</Label>
+                        <Label>{props.t(NewIssueTitle)}</Label>
                         <Input className="form-control" type="text" name="issue_title" innerRef={register({ required: true })} onChange={e => setIssueTitle(e.target.value)} value={issueTitle} />
                         <span style={{ color: "red" }}>{errors.title && 'Title is required'}</span>
                       </FormGroup>
@@ -88,7 +89,7 @@ const NewIssue = (props) => {
                   <Row>
                     <Col>
                       <FormGroup>
-                        <Label>{NewIssueContent}</Label>
+                        <Label>{props.t(NewIssueContent)}</Label>
                         <div className="add-comment" >
                                 <SimpleMDE
                                     id="editor_container"
@@ -127,8 +128,8 @@ const NewIssue = (props) => {
                   <Row>
                     <Col>
                       <FormGroup className="mb-0">
-                        <Button color="primary" className="mr-3">{Add}</Button>
-                        <Button color="light">{Cancel}</Button>
+                        <Button color="primary" className="mr-3">{props.t(Add)}</Button>
+                        <Button color="light">{props.t(Cancel)}</Button>
                       </FormGroup>
                     </Col>
                   </Row>
@@ -142,4 +143,4 @@ const NewIssue = (props) => {
   );
 }
 
-export default NewIssue;
+export default translate(NewIssue);

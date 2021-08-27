@@ -1,17 +1,15 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import ReactDOM from 'react-dom';
 import './index.scss';
-import { firebase_app, auth0 } from './data/config';
+import { firebase_app} from './data/config';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import { Auth0Provider } from '@auth0/auth0-react'
 import store from './store'
 import App from './components/app'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { routes } from './route';
 import ConfigDB from './data/customizer/config'
-import { configureFakeBackend, Auth, handleResponse } from './services/fack.backend'
 import { VerifyToken } from './services/auth'
 
 // Signin page
@@ -47,11 +45,9 @@ import ComingsoonVideo from "./pages/comingSoon/comingsoonVideo"
 import Maintenance from "./pages/maintenance"
 
 import Callback from './auth/callback'
-import { classes } from './data/layouts';
 
 
 // setup fake backend
-configureFakeBackend();
 
 
 const Root = (props) => {
@@ -60,10 +56,7 @@ const Root = (props) => {
   const abortController = new AbortController();
   const [currentUser, setCurrentUser] = useState(false);
   const [authenticated, setAuthenticated] = useState(false)
-  const jwt_token = localStorage.getItem('token');
   const { user_role } = JSON.parse(localStorage.getItem('authenticatedUser'));
-  const defaultLayoutObj = classes.find(item => Object.values(item).pop(1) === 'compact-wrapper');
-  const layout = localStorage.getItem('layout') || Object.keys(defaultLayoutObj).pop();
 
   useEffect(() => {
     VerifyToken();

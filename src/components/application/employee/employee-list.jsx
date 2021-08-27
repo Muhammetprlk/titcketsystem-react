@@ -1,12 +1,12 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Breadcrumb from '../../../layout/breadcrumb'
 import { Container, Row, Col, Card, CardHeader, CardBody, Nav, NavItem, NavLink, TabContent, TabPane, Modal, ModalFooter, ModalHeader, ModalBody, Label, Input, FormGroup,  Button } from 'reactstrap'
-import SweetAlert from 'sweetalert2'
-import { Username, EmailAddress, EmployeeListTitle, EmployeeListPasswordOptional,menuitemEmployees, General, Cancel, SaveChanges, EmployeeName, FirstName, LastName } from '../../../constant'
+import { Username, EmailAddress, EmployeeListTitle, EmployeeListPasswordOptional,menuitemEmployees, General, Cancel, SaveChanges, EmployeeName, FirstName, LastName, Employees } from '../../../constant'
 import axios from 'axios';
 import * as API from '../../../api/apiurls';
 import { toast } from 'react-toastify';
 import ScrollArea from 'react-scrollbar';
+import { translate } from 'react-switch-lang';
 
 
 const EmployeeList = (props) => {
@@ -83,7 +83,7 @@ const EmployeeList = (props) => {
 
     return (
         <Fragment>
-            <Breadcrumb parent={menuitemEmployees} title={EmployeeListTitle} />
+            <Breadcrumb parent={props.t(menuitemEmployees)} title={props.t(EmployeeListTitle)} />
             <Container fluid={true}>
                 <div className="email-wrap bookmark-wrap">
                     <Row>
@@ -93,7 +93,7 @@ const EmployeeList = (props) => {
                                     <div className="pl-0">
                                         <Card className="mb-0">
                                             <CardHeader className="d-flex">
-                                                <h5>{"Employees"}</h5><span className="f-14 pull-right mt-0"></span>
+                                                <h5>{props.t(Employees)}</h5><span className="f-14 pull-right mt-0"></span>
                                             </CardHeader>
                                             <CardBody className="p-0">
                                                 <Row className="list-persons" >
@@ -129,9 +129,9 @@ const EmployeeList = (props) => {
                                                                             <div className="update-profile" onClick={() => { FillForm(user)}} ><div className="icon-wrapper"><i className="font-primary icofont icofont-pencil-alt-5"></i></div></div>
                                                                         </div>
                                                                         <div className="email-general">
-                                                                            <h6>{General}</h6>
-                                                                            <p>{Username}: <span className="font-primary">{user.username}</span></p>
-                                                                            <p>{EmailAddress}: <span className="font-primary email_add_5">{user.email}</span></p>
+                                                                            <h6>{props.t(General)}</h6>
+                                                                            <p>{props.t(Username)}: <span className="font-primary">{user.username}</span></p>
+                                                                            <p>{props.t(EmailAddress)}: <span className="font-primary email_add_5">{user.email}</span></p>
                                                                         </div>
                                                                     </div>
                                                                 </TabPane>
@@ -154,37 +154,37 @@ const EmployeeList = (props) => {
                     </ModalHeader>
                     <ModalBody>
                         <FormGroup>
-                            <Label className="col-form-label pt-0">{EmployeeName}</Label>
+                            <Label className="col-form-label pt-0">{props.t(EmployeeName)}</Label>
                             <div className="form-row">
                                 <Col xs="6">
-                                    <Input className="form-control" type="text" required="" placeholder={FirstName} onChange={e => setName(e.target.value)} defaultValue={name} />
+                                    <Input className="form-control" type="text" required="" placeholder={props.t(FirstName)} onChange={e => setName(e.target.value)} defaultValue={name} />
                                 </Col>
                                 <Col xs="6">
-                                    <Input className="form-control" type="text" required="" placeholder={LastName} onChange={e => setSurname(e.target.value)} defaultValue={surname} />
+                                    <Input className="form-control" type="text" required="" placeholder={props.t(LastName)} onChange={e => setSurname(e.target.value)} defaultValue={surname} />
                                 </Col>
                             </div>
                         </FormGroup>
                         <FormGroup>
-                            <Label className="col-form-label">{Username}</Label>
-                            <Input className="form-control" type="text" required="" placeholder={Username} onChange={e => setUsername(e.target.value)} defaultValue={username} />
+                            <Label className="col-form-label">{props.t(Username)}</Label>
+                            <Input className="form-control" type="text" required="" placeholder={props.t(Username)} onChange={e => setUsername(e.target.value)} defaultValue={username} />
                         </FormGroup>
                         <FormGroup>
-                            <Label className="col-form-label">{EmailAddress}</Label>
+                            <Label className="col-form-label">{props.t(EmailAddress)}</Label>
                             <Input className="form-control" type="email" required="" placeholder="Test@gmail.com" onChange={e => setEmail(e.target.value)} defaultValue={email} />
                         </FormGroup>
                         <FormGroup>
-                            <Label className="col-form-label">{EmployeeListPasswordOptional}</Label>
+                            <Label className="col-form-label">{props.t(EmployeeListPasswordOptional)}</Label>
                             <Input className="form-control" type={togglePassword ? "text" : "password"} name="login[password]" onChange={e => setPassword(e.target.value)} defaultValue={password} required="" placeholder="*********" />
                             <div className="show-hide2" onClick={() => HideShowPassword(togglePassword)}><span className={togglePassword ? "" : "show"}></span></div>
                         </FormGroup>
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="secondary" onClick={updateEmployeeToggle}>{Cancel}</Button>
-                        <Button color="primary" onClick={UpdateEmployee}>{SaveChanges}</Button>
+                        <Button color="secondary" onClick={updateEmployeeToggle}>{props.t(Cancel)}</Button>
+                        <Button color="primary" onClick={UpdateEmployee}>{props.t(SaveChanges)}</Button>
                     </ModalFooter>
                 </Modal>
             </Container>
         </Fragment>
     );
 }
-export default EmployeeList;
+export default translate(EmployeeList);

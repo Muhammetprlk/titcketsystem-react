@@ -1,11 +1,9 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import man from '../../assets/images/dashboard/profile.jpg'
-import { FileText, LogIn, Mail, User, MessageSquare, Bell, Minimize, Search, ShoppingCart, Minus, Plus, X } from 'react-feather';
+import { LogIn,  User, Minimize } from 'react-feather';
 import { useHistory } from 'react-router-dom'
 import { firebase_app } from '../../data/config'
 import {useAuth0} from '@auth0/auth0-react'
-import Bookmark from "../../layout/bookmark"
-import {Link} from 'react-router-dom'
 import {
   setTranslations,
   setDefaultLanguage,
@@ -14,19 +12,19 @@ import {
   translate,
 } from 'react-switch-lang';
 
-import {English,Deutsch,Español,Français,Português,简体中文,Notification,DeliveryProcessing,OrderComplete,TicketsGenerated,DeliveryComplete,CheckAllNotification,ViewAll,MessageBox,EricaHughes,KoriThomas,Admin,Account,Inbox,Taskboard,LogOut,AinChavez,CheckOut,ShopingBag,OrderTotal,GoToShopingBag} from '../../constant'
+import {English,Turkish,Account,LogOut} from '../../constant'
 
 import en from '../../assets/i18n/en.json';
-import es from '../../assets/i18n/es.json';
-import pt from '../../assets/i18n/pt.json';
-import fr from '../../assets/i18n/fr.json';
-import du from '../../assets/i18n/du.json';
-import cn from '../../assets/i18n/cn.json';
-import ae from '../../assets/i18n/ae.json';
-import { InputGroup, InputGroupAddon, Button } from 'reactstrap';
+// import es from '../../assets/i18n/es.json';
+// import pt from '../../assets/i18n/pt.json';
+// import fr from '../../assets/i18n/fr.json';
+// import du from '../../assets/i18n/du.json';
+// import cn from '../../assets/i18n/cn.json';
+// import ae from '../../assets/i18n/ae.json';
+import tr from '../../assets/i18n/tr.json';
 
-setTranslations({ en, es, pt, fr, du, cn, ae });
-setDefaultLanguage('en');
+setTranslations({ en, tr });
+setDefaultLanguage('tr');
 setLanguageCookie();
 
 const Rightbar = (props) => {    
@@ -35,13 +33,9 @@ const Rightbar = (props) => {
   const history = useHistory();
   const [profile, setProfile] = useState('');
   const [name, setName] = useState('')
-  const [searchresponsive, setSearchresponsive] = useState(false)
   const [langdropdown, setLangdropdown] = useState(false)
   const [moonlight, setMoonlight] = useState(false)
-  const [selected, setSelected] = useState("en")
-  const [cartDropdown, setCartDropDown] = useState(false)
-  const [notificationDropDown, setNotificationDropDown] = useState(false)
-  const [chatDropDown, setChatDropDown] = useState(false)
+  const [selected, setSelected] = useState("tr")
   
   // auth0 profile
   const {logout} = useAuth0()
@@ -77,13 +71,6 @@ const Rightbar = (props) => {
     logout()
   }
 
-  const RedirectToChats = () => {
-    history.push(`${process.env.PUBLIC_URL}/app/chat-app`)
-  }
-
-  const RedirectToCart = () => {
-    history.push(`${process.env.PUBLIC_URL}/app/ecommerce/cart`)
-  }
 
   const UserMenuRedirect = (redirect) => {
     history.push(redirect)
@@ -108,17 +95,6 @@ const Rightbar = (props) => {
       } else if (document.webkitCancelFullScreen) {
         document.webkitCancelFullScreen();
       }
-    }
-  }
-
-  const SeacrhResposive = (searchresponsive) => {
-    if (searchresponsive) {
-      setSearchresponsive(!searchresponsive)
-      document.querySelector(".search-full").classList.add("open");
-      document.querySelector(".more_lang").classList.remove("active");
-    } else {
-      setSearchresponsive(!searchresponsive)
-      document.querySelector(".search-full").classList.remove("open");
     }
   }
 
@@ -156,56 +132,20 @@ const Rightbar = (props) => {
               </div>
               <div className={`more_lang ${langdropdown ? 'active' : ''}`}>
                 <div className="lang" onClick={() => handleSetLanguage('en')}><i className="flag-icon flag-icon-us"></i><span className="lang-txt">{English}<span> {"(US)"}</span></span></div>
-                <div className="lang" onClick={() => handleSetLanguage('du')}><i className="flag-icon flag-icon-de"></i><span className="lang-txt">{Deutsch}</span></div>
+                <div className="lang" onClick={() => handleSetLanguage('tr')}><i className="flag-icon flag-icon-tr"></i><span className="lang-txt">{Turkish}</span></div>
+                {/* <div className="lang" onClick={() => handleSetLanguage('du')}><i className="flag-icon flag-icon-de"></i><span className="lang-txt">{Deutsch}</span></div>
                 <div className="lang" onClick={() => handleSetLanguage('es')}><i className="flag-icon flag-icon-es"></i><span className="lang-txt">{Español}</span></div>
                 <div className="lang" onClick={() => handleSetLanguage('fr')}><i className="flag-icon flag-icon-fr"></i><span className="lang-txt">{Français}</span></div>
                 <div className="lang" onClick={() => handleSetLanguage('pt')}><i className="flag-icon flag-icon-pt"></i><span className="lang-txt">{Português}<span> {"(BR)"}</span></span></div>
                 <div className="lang" onClick={() => handleSetLanguage('cn')}><i className="flag-icon flag-icon-cn"></i><span className="lang-txt">{简体中文}</span></div>
-                <div className="lang" onClick={() => handleSetLanguage('ae')}><i className="flag-icon flag-icon-ae"></i><span className="lang-txt">{"لعربية"}<span> {"(ae)"}</span></span></div>
+                <div className="lang" onClick={() => handleSetLanguage('ae')}><i className="flag-icon flag-icon-ae"></i><span className="lang-txt">{"لعربية"}<span> {"(ae)"}</span></span></div> */}
               </div>
             </div>
           </li>
-          <li><span className="header-search"><Search onClick={() => SeacrhResposive(searchresponsive)} /></span></li>
           <li>
             <div className="mode" onClick={() => MoonlightToggle(moonlight)}><i className={`fa ${moonlight ? 'fa-lightbulb-o' : 'fa-moon-o'}`}></i></div>
           </li>
-          <li className="onhover-dropdown" onClick={() => setChatDropDown(!chatDropDown)}><MessageSquare />
-            <ul className={`chat-dropdown onhover-show-div ${chatDropDown ? "active" : ""}`}>
-              <li>
-                <MessageSquare />
-                <h6 className="f-18 mb-0">{MessageBox}</h6>
-              </li>
-              <li onClick={RedirectToChats}>
-                <div className="media"><img className="img-fluid rounded-circle mr-3" src={require("../../assets/images/user/1.jpg")} alt="" />
-                  <div className="status-circle online"></div>
-                  <div className="media-body"><span>{EricaHughes}</span>
-                    <p>{"Lorem Ipsum is simply dummy..."}</p>
-                  </div>
-                  <p className="f-12 font-success">{"58 mins ago"}</p>
-                </div>
-              </li>
-              <li onClick={RedirectToChats}>
-                <div className="media"><img className="img-fluid rounded-circle mr-3" src={require("../../assets/images/user/2.jpg")} alt="" />
-                  <div className="status-circle online"></div>
-                  <div className="media-body"><span>{KoriThomas}</span>
-                    <p>{"Lorem Ipsum is simply dummy..."}</p>
-                  </div>
-                  <p className="f-12 font-success">{"1 hr ago"}</p>
-                </div>
-              </li>
-              <li onClick={RedirectToChats}>
-                <div className="media"><img className="img-fluid rounded-circle mr-3" src={require("../../assets/images/user/4.jpg")} alt="" />
-                  <div className="status-circle offline"></div>
-                  <div className="media-body"><span>{AinChavez}</span>
-                    <p>{"Lorem Ipsum is simply dummy..."}</p>
-                  </div>
-                  <p className="f-12 font-danger">{"32 mins ago"}</p>
-                </div>
-              </li>
-              <li className="text-center"> <button className="btn btn-primary">{ViewAll}     </button></li>
-            </ul>
-          </li>
-          <li className="maximize"><a className="text-dark"   onClick={goFull}><Minimize /></a></li>
+          <li className="maximize"><a className="text-dark"  href="#javascript" onClick={goFull}><Minimize /></a></li>
           <li className="profile-nav onhover-dropdown p-0">
             <div className="media profile-media">
               <img className="b-r-10" src={authenticated ? auth0_profile.picture : profile} alt="" />
@@ -214,10 +154,8 @@ const Rightbar = (props) => {
               </div>
             </div>
             <ul className="profile-dropdown onhover-show-div">
-              <li onClick={() => UserMenuRedirect(`${process.env.PUBLIC_URL}/app/user/userprofile`)}><User /><span>{Account} </span></li>
-              {/* <li onClick={() => UserMenuRedirect(`${process.env.PUBLIC_URL}/app/email-app`)}><Mail /><span>{Inbox}</span></li>
-              <li onClick={() => UserMenuRedirect(`${process.env.PUBLIC_URL}/app/todo-app/todo`)}><FileText /><span>{Taskboard}</span></li> */}
-              <li onClick={authenticated ? Logout_From_Auth0 : Logout_From_Firebase}><LogIn /><span>{LogOut}</span></li>
+              <li onClick={() => UserMenuRedirect(`${process.env.PUBLIC_URL}/app/user/userprofile`)}><User /><span>{props.t(Account)} </span></li>
+              <li onClick={authenticated ? Logout_From_Auth0 : Logout_From_Firebase}><LogIn /><span>{props.t(LogOut)}</span></li>
             </ul>
           </li>
         </ul>

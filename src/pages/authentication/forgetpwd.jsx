@@ -20,7 +20,7 @@ const Forgetpwd = (props) => {
           <Col xs="12">     
             <div className="login-card">
               <div>
-                <div><a className="logo"  ><img className="img-fluid for-light" src={require("../../assets/images/logo/login.png")} alt="looginpage"/><img className="img-fluid for-dark" src={require("../../assets/images/logo/logo_dark.png")} alt="looginpage"/></a></div>
+                <div><a className="logo" href="#javascript" ><img className="img-fluid for-light" src={require("../../assets/images/logo/login.png")} alt="looginpage"/><img className="img-fluid for-dark" src={require("../../assets/images/logo/logo_dark.png")} alt="looginpage"/></a></div>
                 <div className="login-main"> 
                   <Form className="theme-form">
                     <h4>{ResetPassword}</h4>
@@ -38,7 +38,7 @@ const Forgetpwd = (props) => {
                         </Col>
                       </Row>
                     </FormGroup>
-                    <div className="text-center mt-4 mb-4"><span className="reset-password-link">{"If don't receive OTP?"}  <a className="btn-link text-danger"  >{Resend}</a></span></div>
+                    <div className="text-center mt-4 mb-4"><span className="reset-password-link">{"If don't receive OTP?"}  <a className="btn-link text-danger" href="#javascript" >{Resend}</a></span></div>
                     <FormGroup>
                       <Label className="col-form-label pt-0">{EnterOTP}</Label>
                       <Row>
@@ -70,7 +70,7 @@ const Forgetpwd = (props) => {
                       </div>
                       <Button color="primary" className="btn-block" type="submit">{Done}</Button>
                     </FormGroup>
-                    <p className="mt-4 mb-0">{"Already have an password?"}<a className="ml-2"  >{SignIn}</a></p>
+                    <p className="mt-4 mb-0">{"Already have an password?"}<a className="ml-2" href="#javascript" >{SignIn}</a></p>
                   </Form>
                 </div>
               </div>

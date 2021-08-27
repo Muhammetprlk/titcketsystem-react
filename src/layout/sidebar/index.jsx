@@ -199,7 +199,7 @@ const Sidebar = (props) => {
       <div className={`bg-overlay1`} onClick={() => { closeOverlay() }} ></div>
       <div className="sidebar-wrapper" id="sidebar-wrapper">
         <div className="logo-wrapper">
-          <Link to={`${process.env.PUBLIC_URL}/dashboard/default/`}>
+          <Link to={`${process.env.PUBLIC_URL}/dashboard/`}>
             <img className="img-fluid for-light" src={require("../../assets/images/logo/logo.png")} alt="" />
             <img className="img-fluid for-dark" src={require("../../assets/images/logo/logo_dark.png")} alt="" />
           </Link>
@@ -207,7 +207,7 @@ const Sidebar = (props) => {
           <div className="toggle-sidebar" onClick={() => openCloseSidebar(sidebartoogle)}><Grid className="status_toggle middle sidebar-toggle" /></div>
         </div>
         <div className="logo-icon-wrapper">
-          <Link to={`${process.env.PUBLIC_URL}/dashboard/default/`}><img className="img-fluid" src={require("../../assets/images/logo/logo-icon.png")} alt="" /></Link>
+          <Link to={`${process.env.PUBLIC_URL}/dashboard/`}><img className="img-fluid" src={require("../../assets/images/logo/logo-icon.png")} alt="" /></Link>
         </div>
         <nav className="sidebar-main" id="sidebar-main">
           <div className="left-arrow" onClick={scrollToLeft}><ArrowLeft /></div>
@@ -295,7 +295,11 @@ const Sidebar = (props) => {
                                     </li>
                                   )
                                 }
-                              })}
+                                else{
+                                  return null;
+                                }
+                              }
+                              )}
                             </ul>
                             : ''}
                         </li> : '')}

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import man from '../assets/images/dashboard/profile.jpg';
 import { Container, Row, Col, Form, FormGroup, Input, Label, Button, NavItem, NavLink, Nav, TabContent, TabPane } from 'reactstrap'
-import { handleResponse } from '../services/fack.backend'
 import { useAuth0 } from '@auth0/auth0-react'
 import { withRouter } from 'react-router-dom'
 import { Password, EmailAddress, RememberPassword, ForgotPassword, CreateAccount, AUTH0, JWT, LoginWithJWT, SignInHeader, SignInSubHeader, SignInDontHave, SignInErrorMessage } from '../constant';
-import { getHeader, getToken, getUserDetail } from '../api/apiurls';
+import { getToken, getUserDetail } from '../api/apiurls';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
@@ -89,7 +88,7 @@ const Logins = (props) => {
                         <div className="checkbox ml-3">
                           <Input id="checkbox1" type="checkbox" />
                           <Label className="text-muted" for="checkbox1">{RememberPassword}</Label>
-                        </div><a className="link"  >{ForgotPassword}</a>
+                        </div><a className="link" href="@#javascript"  >{ForgotPassword}</a>
                         <Button color="primary" className="btn-block" onClick={() => loginWithJwt(email, password)}>{LoginWithJWT}</Button>
                       </div>
                       <p className="mt-4 mb-0">{SignInDontHave}<a className="ml-2" href={process.env.PUBLIC_URL + '/register'}>{CreateAccount}</a></p>

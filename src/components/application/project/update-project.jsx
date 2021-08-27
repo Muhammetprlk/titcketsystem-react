@@ -10,6 +10,7 @@ import { toast } from 'react-toastify';
 import three from "../../../assets/images/user/3.jpg";
 import ScrollArea from 'react-scrollbar';
 import SweetAlert from 'sweetalert2'
+import { translate } from 'react-switch-lang';
 
 
 const UpdateProject = (props) => {
@@ -22,7 +23,7 @@ const UpdateProject = (props) => {
   const [ projectTitle, setProjectTitle ] = useState(query.title);
   const project_id = query.id;
   const [ projectDescription, setProjectDescription ] = useState(query.content);
-  const [ projectStatus, setProjectStatus ] = useState(query.status===1?Open:Closed);
+  const [ projectStatus, setProjectStatus ] = useState(query.status===1?props.t(Open):props.t(Closed));
   const [ searchbar, setSearchbar ] = useState("");
   const [users, setUsers] = useState([]);
   const [foundUsers, setFoundUsers] = useState([]);
@@ -33,21 +34,22 @@ const UpdateProject = (props) => {
       const employees = [];
       response.data.employee.map(e => {
         employees.push({ ...e, isSelect: query.employees.includes(e.id)?true:false });
+        return '';
       });
       console.log(employees);
       setUsers(employees);
       setFoundUsers(employees);
     });
-  }, []);
+  }, [query.employees]);
 
 
   const handleAddUser = (user) => {
     user.isSelect = !user.isSelect;
     if (!user.isSelect) {
       SweetAlert.fire({
-        title: UpdateProjectConfimationMessage,
-        cancelButtonText: Cancel,
-        confirmButtonText: Yes,
+        title: props.t(UpdateProjectConfimationMessage),
+        cancelButtonText: props.t(Cancel),
+        confirmButtonText: props.t(Yes),
         reverseButtons: true,
         showCancelButton: true,
       }).then(result => {
@@ -70,6 +72,7 @@ const UpdateProject = (props) => {
       else {
         list.push(u);
       }
+      return ''
     })
     setUsers(list);
   }
@@ -88,7 +91,7 @@ const UpdateProject = (props) => {
   }
 
   const ClearForm=()=>{
-    setProjectStatus(Open);
+    setProjectStatus(props.t(Open));
     setProjectTitle("");
     setProjectDescription("");
 
@@ -96,6 +99,7 @@ const UpdateProject = (props) => {
     users.map(u => {
       u.isSelect=false;
       list.push(u);
+      return ''
     })
 
     setUsers(list);
@@ -113,6 +117,7 @@ const UpdateProject = (props) => {
         if (u.isSelect) {
           collaborators.push(u.id);
         }
+        return ''
       });
 
       const project = {
@@ -120,12 +125,12 @@ const UpdateProject = (props) => {
         employees: collaborators,
         title: data.project_title,
         content: data.project_description,
-        status: data.project_status !== Closed ? 1 : 2,
+        status: data.project_status !== props.t(Closed) ? 1 : 2,
       }
 
       console.log(project);
       axios.post(API.updateProjectApi, project,API.getHeader()).then(response => {
-        toast.success(UpdateProjectSuccesMessage);
+        toast.success(props.t(UpdateProjectSuccesMessage));
         ClearForm();
         window.location.replace(`${process.env.PUBLIC_URL}/app/project/project-list/`);
       }).catch(error => {
@@ -140,7 +145,7 @@ const UpdateProject = (props) => {
 
   return (
     <Fragment>
-      <Breadcrumb parent={menuitemProject} title={UpdateProjectTitle} />
+      <Breadcrumb parent={props.t(menuitemProject)} title={props.t(UpdateProjectTitle)} />
       <Container fluid={true}>
         <Row>
           <Col sm="7">
@@ -150,7 +155,7 @@ const UpdateProject = (props) => {
                   <Row>
                     <Col>
                       <FormGroup>
-                        <Label>{ProjectTitle}</Label>
+                        <Label>{props.t(ProjectTitle)}</Label>
                         <Input className="form-control" type="text" name="project_title" innerRef={register({ required: true })}  onChange={e => setProjectTitle(e.target.value)} value={projectTitle} />
                         <span style={{ color: "red" }}>{errors.title && 'Title is required'}</span>
                       </FormGroup>
@@ -159,7 +164,7 @@ const UpdateProject = (props) => {
                   <Row>
                     <Col>
                       <FormGroup>
-                        <Label>{EnterSomeDetails}</Label>
+                        <Label>{props.t(EnterSomeDetails)}</Label>
                         <Input type="textarea" className="form-control" name="project_description" rows="3" innerRef={register({ required: true })}  onChange={e => setProjectDescription(e.target.value)} value={projectDescription} />
                         <span style={{ color: "red" }}>{errors.description && 'Some Details is required'}</span>
                       </FormGroup>
@@ -168,10 +173,10 @@ const UpdateProject = (props) => {
                   <Row>
                     <Col >
                       <FormGroup>
-                        <Label>{ProjectStatus}</Label>
+                        <Label>{props.t(ProjectStatus)}</Label>
                         <Input type="select" name="project_status" className="form-control digits" innerRef={register({ required: true })}  onChange={e => setProjectStatus(e.target.value)} value={projectStatus} >
-                          <option value={Open}>{Open}</option>
-                          <option value={Closed}>{Closed}</option>
+                          <option value={props.t(Open)}>{props.t(Open)}</option>
+                          <option value={props.t(Closed)}>{props.t(Closed)}</option>
                         </Input>
                       </FormGroup>
                     </Col>
@@ -179,8 +184,8 @@ const UpdateProject = (props) => {
                   <Row>
                     <Col>
                       <FormGroup className="mb-0">
-                        <Button color="primary" className="mr-3">{Update}</Button>
-                          <Button color="light" onClick={()=>{cancel()}} >{Cancel}</Button>
+                        <Button color="primary" className="mr-3">{props.t(Update)}</Button>
+                          <Button color="light" onClick={()=>{cancel()}} >{props.t(Cancel)}</Button>
                       </FormGroup>
                     </Col>
                   </Row>
@@ -194,7 +199,7 @@ const UpdateProject = (props) => {
                 <ScrollArea horizontal={false} vertical={true} >
                   <Form>
                     <FormGroup className="m-0">
-                      <Input className="form-control-social" value={searchbar} onChange={filter} type="search" placeholder={UpdateProjectSearchCollaborators} />
+                      <Input className="form-control-social" value={searchbar} onChange={filter} type="search" placeholder={props.t(UpdateProjectSearchCollaborators)} />
                     </FormGroup>
                   </Form>
                   {foundUsers?.map((user) => {
@@ -208,6 +213,7 @@ const UpdateProject = (props) => {
                         <div className="product-icon">
                           <ul className="product-social">
                             <li className="d-inline-block" >
+                            {/* eslint-disable-next-line */}
                               <a onClick={() => { handleAddUser(user) }} >{user.isSelect ? <i style={{ color: "#dc3545" }} className="fa fa-minus"></i> : <i style={{ color: "#51bb25" }} className="fa fa-plus"></i>}</a>
                             </li>
                           </ul>
@@ -225,4 +231,4 @@ const UpdateProject = (props) => {
   );
 }
 
-export default withRouter(UpdateProject);
+export default withRouter(translate(UpdateProject));

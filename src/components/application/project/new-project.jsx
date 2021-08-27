@@ -1,15 +1,15 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Breadcrumb from '../../../layout/breadcrumb'
-import { Container, Row, Col, Card, CardBody, Form, Media, FormGroup, Label, Input, Button } from 'reactstrap'
+import { Container, Row, Col, Card, CardBody, Form, Media, FormGroup, Label, Input, Button, Modal, ModalBody, ModalFooter } from 'reactstrap'
 import { useForm } from 'react-hook-form'
 import { withRouter } from 'react-router-dom'
-import { ProjectTitle, CreateProjectSuccesMessage, menuitemProject, CreateProjectSelectEmployeeMessage,  CreateProjectConfimationMessage, Yes, Cancel, ProjectStatus, Open, Closed, EnterSomeDetails, Add, CreateProject, CreateProjectSearchCollaborators } from '../../../constant'
+import { ProjectTitle, CreateProjectSuccesMessage, menuitemProject, CreateProjectSelectEmployeeMessage, CreateProjectConfimationMessage, Yes, Cancel, ProjectStatus, Open, Closed, EnterSomeDetails, Add, CreateProject, CreateProjectSearchCollaborators } from '../../../constant'
 import * as API from '../../../api/apiurls';
 import axios from 'axios'
 import { toast } from 'react-toastify';
 import three from "../../../assets/images/user/3.jpg";
 import ScrollArea from 'react-scrollbar';
-import SweetAlert from 'sweetalert2'
+import { translate } from 'react-switch-lang';
 
 
 const Newproject = (props) => {
@@ -20,6 +20,8 @@ const Newproject = (props) => {
   const [searchbar, setSearchbar] = useState("");
   const [users, setUsers] = useState([]);
   const [foundUsers, setFoundUsers] = useState([]);
+  const [removeUserIsOpen, setRemoveUserIsOpen] = useState(false)
+  const [removeUserUser, setRemoveUserUser] = useState({})
 
   useEffect(() => {
     axios.get(API.getCompany, API.getHeader()).then(response => {
@@ -27,6 +29,7 @@ const Newproject = (props) => {
       const employees = [];
       response.data.employee.map(e => {
         employees.push({ ...e, isSelect: false });
+        return '';
       });
       console.log(employees);
       setUsers(employees);
@@ -34,23 +37,21 @@ const Newproject = (props) => {
     });
   }, []);
 
+  const ToggleRemoveUser = () => {
+    if (removeUserIsOpen) {
+      setRemoveUserUser({});
+    }
+    setRemoveUserIsOpen(!removeUserIsOpen);
+  }
+
 
   const handleAddUser = (user) => {
-    user.isSelect = !user.isSelect;
-    if (!user.isSelect) {
-      SweetAlert.fire({
-        title: CreateProjectConfimationMessage,
-        cancelButtonText: Cancel,
-        confirmButtonText: Yes,
-        reverseButtons: true,
-        showCancelButton: true,
-      }).then(result => {
-        if (result.value) {
-          changeSpesificUser(user);
-        }
-      })
+    if (user.isSelect) {
+      setRemoveUserUser(user);
+      ToggleRemoveUser();
     }
     else {
+      user.isSelect = !user.isSelect;
       changeSpesificUser(user);
     }
   }
@@ -64,6 +65,7 @@ const Newproject = (props) => {
       else {
         list.push(u);
       }
+      return ''
     })
     setUsers(list);
   }
@@ -82,7 +84,7 @@ const Newproject = (props) => {
   }
 
   const ClearForm = () => {
-    setProjectStatus(Open);
+    setProjectStatus(props.t(Open));
     setProjectTitle("");
     setProjectDescription("");
 
@@ -90,6 +92,7 @@ const Newproject = (props) => {
     users.map(u => {
       u.isSelect = false;
       list.push(u);
+      return ''
     })
 
     setUsers(list);
@@ -103,6 +106,7 @@ const Newproject = (props) => {
         if (u.isSelect) {
           collaborators.push(u.id);
         }
+        return ''
       });
 
       if (collaborators.length > 0) {
@@ -110,19 +114,19 @@ const Newproject = (props) => {
           employees: collaborators,
           title: data.project_title,
           content: data.project_description,
-          status: data.project_status !== Closed ? 1 : 2,
+          status: data.project_status !== props.t(Closed) ? 1 : 2,
         }
 
         console.log(project);
         axios.post(API.createProject, project, API.getHeader()).then(response => {
-          toast.success(CreateProjectSuccesMessage);
+          toast.success(props.t(CreateProjectSuccesMessage));
           ClearForm();
         }).catch(error => {
           toast.error(error.response.data.error);
         });
       }
       else {
-        toast.warning(CreateProjectSelectEmployeeMessage);
+        toast.warning(props.t(CreateProjectSelectEmployeeMessage));
       }
 
 
@@ -132,9 +136,16 @@ const Newproject = (props) => {
     }
   };
 
+  const ConfirmationConfirm = (user) => {
+    user.isSelect = !user.isSelect;
+    changeSpesificUser(user);
+    setRemoveUserUser({});
+    ToggleRemoveUser();
+  }
+
   return (
     <Fragment>
-      <Breadcrumb parent={menuitemProject} title={CreateProject} />
+      <Breadcrumb parent={props.t(menuitemProject)} title={props.t(CreateProject)} />
       <Container fluid={true}>
         <Row>
           <Col sm="7">
@@ -144,7 +155,7 @@ const Newproject = (props) => {
                   <Row>
                     <Col>
                       <FormGroup>
-                        <Label>{ProjectTitle}</Label>
+                        <Label>{props.t(ProjectTitle)}</Label>
                         <Input className="form-control" type="text" name="project_title" innerRef={register({ required: true })} onChange={e => setProjectTitle(e.target.value)} value={projectTitle} />
                         <span style={{ color: "red" }}>{errors.title && 'Title is required'}</span>
                       </FormGroup>
@@ -153,7 +164,7 @@ const Newproject = (props) => {
                   <Row>
                     <Col>
                       <FormGroup>
-                        <Label>{EnterSomeDetails}</Label>
+                        <Label>{props.t(EnterSomeDetails)}</Label>
                         <Input type="textarea" className="form-control" name="project_description" rows="3" innerRef={register({ required: true })} onChange={e => setProjectDescription(e.target.value)} value={projectDescription} />
                         <span style={{ color: "red" }}>{errors.description && 'Some Details is required'}</span>
                       </FormGroup>
@@ -162,10 +173,10 @@ const Newproject = (props) => {
                   <Row>
                     <Col >
                       <FormGroup>
-                        <Label>{ProjectStatus}</Label>
+                        <Label>{props.t(ProjectStatus)}</Label>
                         <Input type="select" name="project_status" className="form-control digits" innerRef={register({ required: true })} onChange={e => setProjectStatus(e.target.value)} value={projectStatus} >
-                          <option value={Open}>{Open}</option>
-                          <option value={Closed}>{Closed}</option>
+                          <option value={props.t(Open)}>{props.t(Open)}</option>
+                          <option value={props.t(Closed)}>{props.t(Closed)}</option>
                         </Input>
                       </FormGroup>
                     </Col>
@@ -173,8 +184,8 @@ const Newproject = (props) => {
                   <Row>
                     <Col>
                       <FormGroup className="mb-0">
-                        <Button color="primary" className="mr-3">{Add}</Button>
-                        <Button color="light" onClick={() => { ClearForm() }} >{Cancel}</Button>
+                        <Button color="primary" className="mr-3">{props.t(Add)}</Button>
+                        <Button color="light" onClick={() => { ClearForm() }} >{props.t(Cancel)}</Button>
                       </FormGroup>
                     </Col>
                   </Row>
@@ -188,7 +199,7 @@ const Newproject = (props) => {
                 <ScrollArea horizontal={false} vertical={true} >
                   <Form>
                     <FormGroup className="m-0">
-                      <Input className="form-control-social" value={searchbar} onChange={filter} type="search" placeholder={CreateProjectSearchCollaborators} />
+                      <Input className="form-control-social" value={searchbar} onChange={filter} type="search" placeholder={props.t(CreateProjectSearchCollaborators)} />
                     </FormGroup>
                   </Form>
                   {foundUsers?.map((user) => {
@@ -201,6 +212,7 @@ const Newproject = (props) => {
                         <div className="product-icon">
                           <ul className="product-social">
                             <li className="d-inline-block" >
+                              {/* eslint-disable-next-line */}
                               <a onClick={() => { handleAddUser(user) }} >{user.isSelect ? <i style={{ color: "#dc3545" }} className="fa fa-minus"></i> : <i style={{ color: "#51bb25" }} className="fa fa-plus"></i>}</a>
                             </li>
                           </ul>
@@ -213,9 +225,18 @@ const Newproject = (props) => {
             </Card>
           </Col>
         </Row>
+        <Modal isOpen={removeUserIsOpen} toggle={ToggleRemoveUser} size="sm" centered>
+          <ModalBody>
+            <h6>{props.t(CreateProjectConfimationMessage)}</h6>
+          </ModalBody>
+          <ModalFooter>
+            <Button color="secondary" onClick={ToggleRemoveUser}>{props.t(Cancel)}</Button>
+            <Button color="primary" onClick={() => ConfirmationConfirm(removeUserUser)}>{props.t(Yes)}</Button>
+          </ModalFooter>
+        </Modal>
       </Container>
     </Fragment>
   );
 }
 
-export default withRouter(Newproject);
+export default withRouter(translate(Newproject));

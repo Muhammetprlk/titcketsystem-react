@@ -7,18 +7,19 @@ import { toast } from 'react-toastify';
 import { Fragment } from 'react';
 import * as API from '../../../api/apiurls'
 import { useForm } from 'react-hook-form'
+import { translate } from 'react-switch-lang';
 
 
 const NewEmployee = (props) => {
 
   const { register, handleSubmit } = useForm();   
   const [togglePassword, setTogglePassword] = useState(false)
-  const [name, setName] = useState("Muhammet")
-  const [surname, setSurname] = useState("Parlak")
-  const [username, setUsername] = useState("muha")
-  const [email, setEmail] = useState("muh@gmail.com")
-  const [phone, setPhone] = useState("5555555555")
-  const [password, setPassword] = useState("123123")
+  const [name, setName] = useState("")
+  const [surname, setSurname] = useState("")
+  const [username, setUsername] = useState("")
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
+  const [password, setPassword] = useState("")
 
   const HideShowPassword = (tPassword) => {
     setTogglePassword(!tPassword)
@@ -37,7 +38,7 @@ const NewEmployee = (props) => {
   const addnewemployee = (data) => {
     console.log(data);
     axios.post(API.employeeCreate, data,API.getHeader()).then(response => {
-      toast.success(CreateEmployeeSuccessMessage);
+      toast.success(props.t(CreateEmployeeSuccessMessage));
       ClearForm();
       return response.data.token
     }).catch((error) => {
@@ -47,7 +48,7 @@ const NewEmployee = (props) => {
 
   return (
     <Fragment>
-    <Breadcrumb parent={menuitemEmployees} title={menuitemEmployeesNew}  /> 
+    <Breadcrumb parent={props.t(menuitemEmployees)} title={props.t(menuitemEmployeesNew)}  /> 
     <Container fluid={true}>
         <Row>
           <Col sm="12">
@@ -57,13 +58,13 @@ const NewEmployee = (props) => {
                   <Row>
                     <Col sm="6">
                       <FormGroup>
-                        <Label>{FirstName}</Label>
+                        <Label>{props.t(FirstName)}</Label>
                         <Input className="form-control" type="text" name="first_name" placeholder="" innerRef={register({ required: true })} onChange={e => setName(e.target.value)} value={name} />
                       </FormGroup>
                     </Col>
                     <Col sm="6">
                       <FormGroup>
-                        <Label>{LastName}</Label>
+                        <Label>{props.t(LastName)}</Label>
                         <Input className="form-control" type="text" name="last_name" placeholder="" innerRef={register({ required: true })} onChange={e => setSurname(e.target.value)} value={surname} />
                       </FormGroup>
                     </Col>
@@ -71,13 +72,13 @@ const NewEmployee = (props) => {
                   <Row>
                     <Col sm="6">
                       <FormGroup>
-                        <Label>{EmailAddress}</Label>
+                        <Label>{props.t(EmailAddress)}</Label>
                         <Input className="form-control" type="text" name="email" placeholder="" innerRef={register({ required: true })} onChange={e => setEmail(e.target.value)} value={email} />
                       </FormGroup>
                     </Col>
                     <Col sm="6">
                       <FormGroup>
-                        <Label>{Phone}</Label>
+                        <Label>{props.t(Phone)}</Label>
                         <Input className="form-control" type="text" name="phone" placeholder="" innerRef={register({ required: true })} onChange={e => setPhone(e.target.value)} value={phone} />
                       </FormGroup>
                     </Col>
@@ -85,14 +86,14 @@ const NewEmployee = (props) => {
                   <Row>
                     <Col sm="6">
                       <FormGroup>
-                        <Label>{Username}</Label>
+                        <Label>{props.t(Username)}</Label>
                         <Input className="form-control" type="text" name="username" placeholder="" innerRef={register({ required: true })} onChange={e => setUsername(e.target.value)} value={username} />
                       </FormGroup>
                     </Col>
                     <Col sm="6">
                       <FormGroup>
-                        <Label>{Password}</Label>
-                        <Input className="form-control" type={togglePassword ? "text" : "password"} name="password" onChange={e => setPassword(e.target.value)} innerRef={register({ required: true })} required="" placeholder="*********" onChange={e => setPassword(e.target.value)} value={password} />
+                        <Label>{props.t(Password)}</Label>
+                        <Input className="form-control" type={togglePassword ? "text" : "password"} name="password" innerRef={register({ required: true })} required="" placeholder="*********" onChange={e => setPassword(e.target.value)} value={password} />
                         <div className="show-hide" onClick={() => HideShowPassword(togglePassword)}><span className={togglePassword ? "" : "show"}></span></div>
                       </FormGroup>
                     </Col>
@@ -100,7 +101,7 @@ const NewEmployee = (props) => {
                   <Row>
                     <Col>
                       <FormGroup className="mb-0">
-                          <Button color="primary" className="mr-3">{CreateEmployeeCreate}</Button>
+                          <Button color="primary" className="mr-3">{props.t(CreateEmployeeCreate)}</Button>
                       </FormGroup>
                     </Col>
                   </Row>
@@ -114,4 +115,4 @@ const NewEmployee = (props) => {
   );
 }
 
-export default NewEmployee;
+export default translate(NewEmployee);

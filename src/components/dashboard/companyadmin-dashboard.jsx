@@ -3,12 +3,13 @@ import Breadcrumb from '../../layout/breadcrumb'
 import { Container, Row, Col, Card, CardBody, CardHeader, Table} from 'reactstrap'
 import {Box,Users ,CheckCircle,Info,Circle,XCircle} from 'react-feather';
 import CountUp from 'react-countup';
-import {  Done, Doing, ToDo, Canceled, DashboardIssueCount, DashboardCommentCount, menuitemDashboard } from '../../constant'
+import { DashboardCommentCount, menuitemDashboard, DashboardTotalClosedProject, DashboardTotalOpenProject, DashboardTotalProjectEmployee, DashboardDoneIssueCount, DashboardDoingIssueCount, DashboardToDoIssueCount, DashboardCanceledIssueCount } from '../../constant'
 import { Employee_Status, Name } from "../../constant";
 import axios from 'axios'
 import * as API from '../../api/apiurls'
+import { translate } from 'react-switch-lang';
 
-const CompanyAdminDashboard = () => {
+const CompanyAdminDashboard = (props) => {
     const [generalData, setGeneralData] = useState(null);
 
     useEffect(() => {
@@ -18,7 +19,7 @@ const CompanyAdminDashboard = () => {
 
     return (
         <Fragment>
-            <Breadcrumb parent={menuitemDashboard} />
+            <Breadcrumb parent={props.t(menuitemDashboard)} />
             {generalData!==null?
                 <Container fluid={true}>
                     <Row>
@@ -27,7 +28,7 @@ const CompanyAdminDashboard = () => {
                                 <CardBody className="bg-primary b-r-4 card-body">
                                     <div className="media static-top-widget">
                                         <div className="align-self-center text-center"><Box /></div>
-                                        <div className="media-body"><span className="m-0">{"Total Open Project"}</span>
+                                        <div className="media-body"><span className="m-0">{props.t(DashboardTotalOpenProject)}</span>
                                             <h4 className="mb-0 counter"><CountUp end={generalData.total_open_project} /></h4><Box className="icon-bg" />
                                         </div>
                                     </div>
@@ -39,7 +40,7 @@ const CompanyAdminDashboard = () => {
                                 <div className="bg-primary b-r-4 card-body">
                                     <div className="media static-top-widget">
                                         <div className="align-self-center text-center"><Box /></div>
-                                        <div className="media-body"><span className="m-0">{"Total Closed Project"}</span>
+                                        <div className="media-body"><span className="m-0">{props.t(DashboardTotalClosedProject)}</span>
                                             <h4 className="mb-0 counter"><CountUp end={generalData.total_closed_project} /></h4><Box className="icon-bg" />
                                         </div>
                                     </div>
@@ -51,7 +52,7 @@ const CompanyAdminDashboard = () => {
                                 <CardBody className="bg-primary b-r-4">
                                     <div className="media static-top-widget">
                                         <div className="align-self-center text-center"><Users /></div>
-                                        <div className="media-body"><span className="m-0">{"Total Project Employee"}</span>
+                                        <div className="media-body"><span className="m-0">{props.t(DashboardTotalProjectEmployee)}</span>
                                             <h4 className="mb-0 counter"><CountUp end={generalData.total_project_employees} /></h4><Users className="icon-bg" />
                                         </div>
                                     </div>
@@ -63,7 +64,7 @@ const CompanyAdminDashboard = () => {
                                 <Row>
                                     <Col sm="3" className="pl-0">
                                         <div className="media border-after-xs">
-                                            <div className="media-body details pl-3"><span className="mb-1">{Done} {DashboardIssueCount}</span>
+                                            <div className="media-body details pl-3"><span className="mb-1">{props.t(DashboardDoneIssueCount)}</span>
                                                 <h4 className="mb-0 counter digits"><CountUp end={generalData.total_Done_issue} /></h4>
                                             </div>
                                             <div className="media-body align-self-center"><CheckCircle className="font-primary float-left ml-2" /></div>
@@ -71,7 +72,7 @@ const CompanyAdminDashboard = () => {
                                     </Col>
                                     <Col sm="3" className="pl-0">
                                         <div className="media">
-                                            <div className="media-body details pl-3"><span className="mb-1">{Doing} {DashboardIssueCount}</span>
+                                            <div className="media-body details pl-3"><span className="mb-1">{props.t(DashboardDoingIssueCount)}</span>
                                                 <h4 className="mb-0 counter digits"><CountUp end={generalData.total_Doing_issue} /></h4>
                                             </div>
                                             <div className="media-body align-self-center"><Info className="font-primary float-left ml-3" /></div>
@@ -79,7 +80,7 @@ const CompanyAdminDashboard = () => {
                                     </Col>
                                     <Col sm="3" className="pl-0">
                                         <div className="media border-after-xs">
-                                            <div className="media-body details pl-3 pt-0"><span className="mb-1">{ToDo} {DashboardIssueCount}</span>
+                                            <div className="media-body details pl-3 pt-0"><span className="mb-1">{props.t(DashboardToDoIssueCount)}</span>
                                                 <h4 className="mb-0 counter digits"><CountUp end={generalData.total_Todo_issue} /></h4>
                                             </div>
                                             <div className="media-body align-self-center"><Circle className="font-primary float-left ml-2" /></div>
@@ -87,7 +88,7 @@ const CompanyAdminDashboard = () => {
                                     </Col>
                                     <Col sm="3" className="pl-0">
                                         <div className="media">
-                                            <div className="media-body details pl-3 pt-0"><span className="mb-1">{Canceled} {DashboardIssueCount}</span>
+                                            <div className="media-body details pl-3 pt-0"><span className="mb-1">{props.t(DashboardCanceledIssueCount)}</span>
                                                 <h4 className="mb-0 counter digits"><CountUp end={generalData.total_Canceled_issue} /></h4>
                                             </div>
                                             <div className="media-body align-self-center"><XCircle className="font-primary float-left ml-2" /></div>
@@ -99,15 +100,15 @@ const CompanyAdminDashboard = () => {
                         <Col xl="12" className="xl-100 box-col-12">
                             <Card>
                                 <CardHeader>
-                                    <h5>{Employee_Status}</h5>
+                                    <h5>{props.t(Employee_Status)}</h5>
                                 </CardHeader>
                                 <CardBody>
                                     <div className="user-status table-responsive">
                                         <Table borderless>
                                             <thead>
                                                 <tr>
-                                                    <th scope="col">{Name}</th>
-                                                    <th scope="col">{DashboardCommentCount}</th>
+                                                    <th scope="col">{props.t(Name)}</th>
+                                                    <th scope="col">{props.t(DashboardCommentCount)}</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -144,4 +145,4 @@ const CompanyAdminDashboard = () => {
     )
 }
 
-export default CompanyAdminDashboard;
+export default translate(CompanyAdminDashboard);

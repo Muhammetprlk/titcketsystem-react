@@ -70,7 +70,7 @@ const Themecustomizer = (props) => {
     // fetch object which is default set in sidebar_type, used when user not select any layout
     const defaultLayoutObj = classes.find(item => Object.values(item).pop(1) === sidebar_type);
     // somecases taken static url so need to modified
-    const modifyURL= process.env.PUBLIC_URL+"/dashboard/default/"+Object.keys(defaultLayoutObj).pop()
+    const modifyURL= process.env.PUBLIC_URL+"/dashboard/"+Object.keys(defaultLayoutObj).pop()
     // fetch id from URL
     const  id  = window.location.pathname==='/'?history.push(modifyURL):window.location.pathname.split('/').pop()
     

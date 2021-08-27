@@ -10,8 +10,9 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import * as API from '../../../api/apiurls';
 import { toast } from 'react-toastify';
+import { translate } from 'react-switch-lang';
 
-const Issue = () => {
+const Issue = (props) => {
     const [text, setText] = useState('')
     const [issueDetail, setIssueDetail] = useState({});
     const [issueComments, setIssueComments] = useState([]);
@@ -28,7 +29,7 @@ const Issue = () => {
         }).catch(error => {
             toast.error(error.response.data.error);
         })
-    }, []);
+    }, [issueid]);
 
     const postAnswer = () => {
         const answer = {
@@ -69,19 +70,24 @@ const Issue = () => {
                                 </div>
                             </div>
                             <section className="comment-box">
-                                <h4>{Comments}</h4>
+                                <h4>{props.t(Comments)}</h4>
                                 <hr />
                                 <ul>
                                     {issueComments?.map((com, key) =>
                                         <li key={key}>
                                             <Media className="align-self-center">
-                                                <Col sm="0">
+                                                <Col sm="1">
                                                     <Media className="align-self-center" src={comment} alt="" />
                                                 </Col>
-                                                <Col sm="12" >
-                                                    <Media body>
+                                                <Col sm="11" >
+                                                    <Media className="ml-5" body>
                                                         <Row>
+                                                            <Col sm="8">
                                                             <h6 className="mt-0">{com.firstname + " " + com.lastname}<span> {"( " + com.username + " )"}</span></h6>
+                                                            </Col>
+                                                            <Col sm="4" >
+                                                                <p className="datetime"> {new Date(com.created_date).toLocaleDateString() + " " + new Date(com.created_date).toLocaleTimeString()}</p>
+                                                            </Col>
                                                         </Row>
                                                         <Row style={{ display: "inline-block" }} >
                                                             <ReactMarkdown children={com.content} remarkPlugins={[remarkGfm]} />
@@ -116,4 +122,4 @@ const Issue = () => {
     );
 };
 
-export default Issue;
+export default translate(Issue);

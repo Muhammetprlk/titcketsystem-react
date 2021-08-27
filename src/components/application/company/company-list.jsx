@@ -1,12 +1,13 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Breadcrumb from '../../../layout/breadcrumb'
 import { Container, Row, Col, Card, CardHeader, CardBody, Nav, NavItem, NavLink, TabContent, TabPane, Table, } from 'reactstrap'
-import { Username,  menuitemListCompany, Website, Email, Phone, Admin, FullName, CListEmployeeCount, CListEmployees, ProjectList } from '../../../constant'
+import { Username,  menuitemListCompany, Website, Email, Phone, Admin, FullName, CListEmployeeCount, CListEmployees, ProjectList, Companys } from '../../../constant'
 import axios from 'axios';
 import * as API from '../../../api/apiurls';
 import { toast } from 'react-toastify';
 import ScrollArea from 'react-scrollbar';
 import { Link } from 'react-router-dom';
+import { translate } from 'react-switch-lang';
 
 
 const CompanyList = (props) => {
@@ -30,7 +31,7 @@ const CompanyList = (props) => {
 
     return (
         <Fragment>
-            <Breadcrumb parent={menuitemListCompany} />
+            <Breadcrumb parent={props.t(menuitemListCompany)} />
             <Container fluid={true}>
                 <div className="email-wrap bookmark-wrap">
                     <Row>
@@ -40,7 +41,7 @@ const CompanyList = (props) => {
                                     <div className="pl-0">
                                         <Card className="mb-0">
                                             <CardHeader className="d-flex">
-                                                <h5>{"Companys"}</h5><span className="f-14 pull-right mt-0"></span>
+                                                <h5>{props.t(Companys)}</h5><span className="f-14 pull-right mt-0"></span>
                                             </CardHeader>
                                             <CardBody className="p-0">
                                                 <Row className="list-persons" >
@@ -72,31 +73,31 @@ const CompanyList = (props) => {
                                                                             {/* <img className="img-100 img-fluid m-r-20 rounded-circle update_img_5" src={require("../../../assets/images/user/user.png")} alt="" /> */}
                                                                             <div className="media-body my-auto">
                                                                                 <h5><span className="first_name_5">{c.name} </span></h5>
-                                                                                <p className="email_add_5">{Website}:  <span className="font-primary">{c.website}</span></p>
-                                                                                <p className="email_add_5">{Email}:  <span className="font-primary">{c.email}</span></p>
-                                                                                <p className="email_add_5">{Phone}:  <span className="font-primary">{c.phone}</span></p>
-                                                                                <p className="email_add_5">{CListEmployeeCount}:  <span className="font-primary">{c.employees.length}</span></p>
-                                                                                <Link to={`${process.env.PUBLIC_URL}/app/project/project-list/${c.id + "/"}`}>  <strong className="font-primary email_add_5" >{ProjectList}</strong> </Link>
+                                                                                <p className="email_add_5">{props.t(Website)}:  <span className="font-primary">{c.website}</span></p>
+                                                                                <p className="email_add_5">{props.t(Email)}:  <span className="font-primary">{c.email}</span></p>
+                                                                                <p className="email_add_5">{props.t(Phone)}:  <span className="font-primary">{c.phone}</span></p>
+                                                                                <p className="email_add_5">{props.t(CListEmployeeCount)}:  <span className="font-primary">{c.employees.length}</span></p>
+                                                                                <Link to={`${process.env.PUBLIC_URL}/app/project/project-list/${c.id + "/"}`}>  <strong className="font-primary email_add_5" >{props.t(ProjectList)}</strong> </Link>
                                                                             </div>
                                                                         </div>
                                                                         <div className="email-general">
-                                                                            <h6>{Admin}</h6>
-                                                                            <p>{FullName}: <span className="font-primary">{c.admin_first_name + " " + c.admin_last_name}</span></p>
-                                                                            <p>{Username}: <span className="font-primary">{c.admin_username}</span></p>
-                                                                            <p>{Email}: <span className="font-primary">{c.admin_email}</span></p>
+                                                                            <h6>{props.t(Admin)}</h6>
+                                                                            <p>{props.t(FullName)}: <span className="font-primary">{c.admin_first_name + " " + c.admin_last_name}</span></p>
+                                                                            <p>{props.t(Username)}: <span className="font-primary">{c.admin_username}</span></p>
+                                                                            <p>{props.t(Email)}: <span className="font-primary">{c.admin_email}</span></p>
                                                                             {/* <p>{EmailAddress}: <span className="font-primary email_add_5">{user.email}</span></p> */}
                                                                         </div>
                                                                         <div className="table-responsive">
                                                                             <div className="email-general">
-                                                                                <h6>{CListEmployees}</h6>
+                                                                                <h6>{props.t(CListEmployees)}</h6>
                                                                                 <ScrollArea horizontal={false} vertical={true} >
                                                                                     <Table>
                                                                                         <thead className="thead-light">
                                                                                             <tr>
                                                                                                 <th scope="col">{"#"}</th>
-                                                                                                <th scope="col">{FullName}</th>
-                                                                                                <th scope="col">{Username}</th>
-                                                                                                <th scope="col">{Email}</th>
+                                                                                                <th scope="col">{props.t(FullName)}</th>
+                                                                                                <th scope="col">{props.t(Username)}</th>
+                                                                                                <th scope="col">{props.t(Email)}</th>
                                                                                             </tr>
                                                                                         </thead>
                                                                                         <tbody>
@@ -132,4 +133,4 @@ const CompanyList = (props) => {
         </Fragment>
     );
 }
-export default CompanyList;
+export default translate(CompanyList);

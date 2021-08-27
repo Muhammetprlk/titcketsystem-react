@@ -1,6 +1,3 @@
-// dashbaord
-import Default from '../components/dashboard/default'
-import Ecommerce from '../components/dashboard/ecommerce'
 import UserProfile from "../components/users/userProfile"
 import CreateCompany from "../components/application/company/create-company"
 import CompanyList from "../components/application/company/company-list"
@@ -21,7 +18,6 @@ import UserDashboard from '../components/dashboard/user-dashboard'
 
 
 export const routes = [
-        // { path:"/dashboard/default/", Component:Default,userRole:["superuser"]},
         { path:"/dashboard/", Component:CompanyAdminDashboard,userRole:["companyadmin"]},
         { path:"/dashboard/", Component:CompanyList,userRole:["superuser"]},
         { path:"/dashboard/", Component:UserDashboard,userRole:["user"]},

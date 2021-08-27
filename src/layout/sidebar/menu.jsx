@@ -1,12 +1,12 @@
-import { Home, Airplay, Box,Briefcase, FolderPlus, Command, Cloud, FileText, Server, BarChart, Users, Layers, ShoppingBag, List, Mail, MessageCircle, GitPullRequest, Monitor, Heart, Clock, Zap, CheckSquare, Calendar, Activity,Image, Film, HelpCircle, Radio, Map, Edit, Sunrise, Package } from 'react-feather'
-import {menutitle,menuitemDashboard,menuitemCreateCompany,menuitemDashboardDefault,menuitemCompany,menuitemListCompany,menuitemDashboardEcommerce,menuitemEmployees,menuitemIssue,menuitemIssueList,menuitemIssueNew,menuitemProject,menuitemProjectList,menuitemProjectNew,menuitemEmployeesList,menuitemEmployeesNew} from '../../constant'
+import { Home, Box,Briefcase, Users,  Activity } from 'react-feather'
+import {menutitle,menuitemDashboard,menuitemCreateCompany,menuitemCompany,menuitemListCompany,menuitemEmployees,menuitemIssue,menuitemIssueList,menuitemIssueNew,menuitemProject,menuitemProjectList,menuitemProjectNew,menuitemEmployeesList,menuitemEmployeesNew} from '../../constant'
 
 export const MENUITEMS = [
     {
         menutitle:menutitle,
         menucontent:"",
         Items:[
-            { path: `${process.env.PUBLIC_URL}/dashboard`,userRole:["superuser","companyadmin"],icon: Home,  type: 'link',active:false, title: menuitemDashboard },
+            { path: `${process.env.PUBLIC_URL}/dashboard`,userRole:["superuser","companyadmin","user"],icon: Home,  type: 'link',active:false, title: menuitemDashboard },
             {
                 title: menuitemProject,icon:Box, userRole:["companyadmin","user",], type: 'sub',badge: "badge badge-danger",active:false, children: [
                     { path: `${process.env.PUBLIC_URL}/app/project/project-list`, type: 'link', title: menuitemProjectList,userRole:["companyadmin","user"] },

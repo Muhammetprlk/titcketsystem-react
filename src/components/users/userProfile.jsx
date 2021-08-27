@@ -1,7 +1,8 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import Breadcrumb from '../../layout/breadcrumb'
-import { Container, Row, Col, Card, CardHeader, Media, CardBody } from 'reactstrap'
-import { General, Username, EmailAddress, Company, Role } from '../../constant'
+import { Container, Row,  Card,  CardBody } from 'reactstrap'
+import { General, Username, EmailAddress, Company, Role, User, UserProfileTitle } from '../../constant'
+import { translate } from 'react-switch-lang';
 
 const UserProfile = (props) => {
   const authenticatedUser = JSON.parse(localStorage.getItem('authenticatedUser'));
@@ -26,7 +27,7 @@ const UserProfile = (props) => {
 
   return (
     <Fragment>
-      <Breadcrumb parent="Users" title="User Profile" />
+      <Breadcrumb parent={props.t(User)} title={props.t(UserProfileTitle)} />
       <Container fluid={true}>
         <Card>
           <CardBody>
@@ -39,11 +40,11 @@ const UserProfile = (props) => {
                   </div>
                 </div>
                 <div className="email-general">
-                  <h6>{General}</h6>
-                  <p>{Role}: <span className="font-primary">{getRole(authenticatedUser.user_role)}</span></p>
-                  {authenticatedUser.company !== undefined ? <p>{Company}: <span className="font-primary">{(authenticatedUser.company)}</span></p> : ''}
-                  <p>{Username}: <span className="font-primary">{authenticatedUser.username}</span></p>
-                  <p>{EmailAddress}: <span className="font-primary email_add_5">{authenticatedUser.user_email}</span></p>
+                  <h6>{props.t(General)}</h6>
+                  <p>{props.t(Role)}: <span className="font-primary">{props.t(getRole(authenticatedUser.user_role))}</span></p>
+                  {authenticatedUser.company !== undefined ? <p>{props.t(Company)}: <span className="font-primary">{(authenticatedUser.company)}</span></p> : ''}
+                  <p>{props.t(Username)}: <span className="font-primary">{authenticatedUser.username}</span></p>
+                  <p>{props.t(EmailAddress)}: <span className="font-primary email_add_5">{authenticatedUser.user_email}</span></p>
                 </div>
               </div>
             </Row>
@@ -54,4 +55,4 @@ const UserProfile = (props) => {
   );
 }
 
-export default UserProfile;
+export default translate(UserProfile);

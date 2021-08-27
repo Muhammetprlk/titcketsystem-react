@@ -1,14 +1,15 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Breadcrumb from '../../../layout/breadcrumb'
 import { Container, Row, Col, Card, CardBody, FormGroup, Nav, NavItem, NavLink, TabContent, TabPane, Media, Form, Input, Modal, ModalBody, ModalHeader, ModalFooter, Button } from 'reactstrap'
-import { Target, Info, CheckCircle,  Circle ,XCircle} from 'react-feather';
+import { Target, Info, CheckCircle, Circle, XCircle } from 'react-feather';
 import { Link, useParams } from 'react-router-dom'
-import { Done, All, Doing, Canceled,  ProjectDetailUpdateSuccessMessage,  ToDo, Comments, SaveChanges, Cancel, ProjectDetailTitle, ProjectDetailParent, ProjectDetailSearchCollaborators } from '../../../constant'
+import { Done, All, Doing, Canceled, ProjectDetailUpdateSuccessMessage, ToDo, Comments, SaveChanges, Cancel, ProjectDetailTitle, ProjectDetailParent, ProjectDetailSearchCollaborators } from '../../../constant'
 import * as API from '../../../api/apiurls';
 import axios from 'axios'
 import { toast } from 'react-toastify';
 import ScrollArea from 'react-scrollbar';
 import three from "../../../assets/images/user/3.jpg";
+import { translate } from 'react-switch-lang';
 
 
 const ProjectDetail = (props) => {
@@ -40,7 +41,7 @@ const ProjectDetail = (props) => {
         }).catch(error => {
             toast.error(error.response.data.error);
         })
-    }, []);
+    }, [projectid]);
 
     const getBadgeColor = (status) => {
         switch (status) {
@@ -59,13 +60,13 @@ const ProjectDetail = (props) => {
     const getStatus = (status) => {
         switch (status) {
             case 1:
-                return Done;
+                return props.t(Done);
             case 2:
-                return Doing;
+                return props.t(Doing);
             case 3:
-                return ToDo;
+                return props.t(ToDo);
             case 4:
-                return Canceled;
+                return props.t(Canceled);
             default:
                 break;
         }
@@ -94,7 +95,7 @@ const ProjectDetail = (props) => {
     const UpdateIssueStatus = () => {
         const updatedIssue = { id: issueStatus.id, status: issueStatus.status }
         axios.post(API.updateIssue, updatedIssue, API.getHeader()).then(response => {
-            toast.success(ProjectDetailUpdateSuccessMessage);
+            toast.success(props.t(ProjectDetailUpdateSuccessMessage));
 
             const newIssueList = [];
             issues.forEach(i => {
@@ -115,7 +116,7 @@ const ProjectDetail = (props) => {
 
     return (
         <Fragment>
-            <Breadcrumb parent={ProjectDetailParent} title={ProjectDetailTitle + " / " + projectInfo.project_title} />
+            <Breadcrumb parent={props.t(ProjectDetailParent)} title={props.t(ProjectDetailTitle) + " / " + projectInfo.project_title} />
             <Container fluid={true}>
                 <Row>
                     <Col md="8" className="project-list">
@@ -123,11 +124,11 @@ const ProjectDetail = (props) => {
                             <Row>
                                 <Col sm="12">
                                     <Nav tabs className="border-tab">
-                                        <NavItem><NavLink className={activeTab === "1" ? "active" : ''} onClick={() => setActiveTab("1")}><Target />{All}</NavLink></NavItem>
-                                        <NavItem><NavLink className={activeTab === "2" ? "active" : ''} onClick={() => setActiveTab("2")}><CheckCircle />{Done}</NavLink></NavItem>
-                                        <NavItem><NavLink className={activeTab === "3" ? "active" : ''} onClick={() => setActiveTab("3")}><Info />{Doing}</NavLink></NavItem>
-                                        <NavItem><NavLink className={activeTab === "4" ? "active" : ''} onClick={() => setActiveTab("4")}><Circle />{ToDo}</NavLink></NavItem>
-                                        <NavItem><NavLink className={activeTab === "5" ? "active" : ''} onClick={() => setActiveTab("5")}><XCircle />{Canceled}</NavLink></NavItem>
+                                        <NavItem><NavLink className={activeTab === "1" ? "active" : ''} onClick={() => setActiveTab("1")}><Target />{props.t(All)}</NavLink></NavItem>
+                                        <NavItem><NavLink className={activeTab === "2" ? "active" : ''} onClick={() => setActiveTab("2")}><CheckCircle />{props.t(Done)}</NavLink></NavItem>
+                                        <NavItem><NavLink className={activeTab === "3" ? "active" : ''} onClick={() => setActiveTab("3")}><Info />{props.t(Doing)}</NavLink></NavItem>
+                                        <NavItem><NavLink className={activeTab === "4" ? "active" : ''} onClick={() => setActiveTab("4")}><Circle />{props.t(ToDo)}</NavLink></NavItem>
+                                        <NavItem><NavLink className={activeTab === "5" ? "active" : ''} onClick={() => setActiveTab("5")}><XCircle />{props.t(Canceled)}</NavLink></NavItem>
                                     </Nav>
                                 </Col>
                             </Row>
@@ -146,7 +147,7 @@ const ProjectDetail = (props) => {
                                                         <Link to={`${process.env.PUBLIC_URL}/app/issue/issue/${item.id + "/"}`}>  <h6>{item.title}</h6> </Link>
                                                         <p>{new Date(item.created_date).toLocaleDateString() + " " + new Date(item.created_date).toLocaleTimeString()}</p>
                                                         <Row className="details">
-                                                            <Col xs="6"> <span>{Comments}</span></Col>
+                                                            <Col xs="6"> <span>{props.t(Comments)}</span></Col>
                                                             <Col xs="6" className='text-primary'>{item.comments}</Col>
                                                         </Row>
                                                         {user_role === "companyadmin" ? <div className="update" onClick={() => { ChangeIssueStatus(item) }} ><div className="icon-wrapper"><i className="font-primary icofont icofont-pencil-alt-5"></i></div></div> : ''}
@@ -164,7 +165,7 @@ const ProjectDetail = (props) => {
                                                         <Link to={`${process.env.PUBLIC_URL}/app/issue/issue/${item.id + "/"}`}>  <h6>{item.title}</h6> </Link>
                                                         <p>{new Date(item.created_date).toLocaleDateString() + " " + new Date(item.created_date).toLocaleTimeString()}</p>
                                                         <Row className="details">
-                                                            <Col xs="6"> <span>{Comments}</span></Col>
+                                                            <Col xs="6"> <span>{props.t(Comments)}</span></Col>
                                                             <Col xs="6" className='text-primary'>{item.comments}</Col>
                                                         </Row>
                                                         {user_role === "companyadmin" ? <div className="update" onClick={() => { ChangeIssueStatus(item) }} ><div className="icon-wrapper"><i className="font-primary icofont icofont-pencil-alt-5"></i></div></div> : ''}
@@ -182,7 +183,7 @@ const ProjectDetail = (props) => {
                                                         <Link to={`${process.env.PUBLIC_URL}/app/issue/issue/${item.id + "/"}`}>  <h6>{item.title}</h6> </Link>
                                                         <p>{new Date(item.created_date).toLocaleDateString() + " " + new Date(item.created_date).toLocaleTimeString()}</p>
                                                         <Row className="details">
-                                                            <Col xs="6"> <span>{Comments}</span></Col>
+                                                            <Col xs="6"> <span>{props.t(Comments)}</span></Col>
                                                             <Col xs="6" className='text-primary'>{item.comments}</Col>
                                                         </Row>
                                                         {user_role === "companyadmin" ? <div className="update" onClick={() => { ChangeIssueStatus(item) }} ><div className="icon-wrapper"><i className="font-primary icofont icofont-pencil-alt-5"></i></div></div> : ''}
@@ -192,7 +193,7 @@ const ProjectDetail = (props) => {
                                         </Row>
                                     </TabPane>
                                     <TabPane tabId="4">
-                                        <Row>
+                                    <Row>
                                             {issues?.map((item, i) => item.status === 3 ?
                                                 <Col sm="6" className="mt-4" key={i}>
                                                     <div className="project-box">
@@ -200,7 +201,7 @@ const ProjectDetail = (props) => {
                                                         <Link to={`${process.env.PUBLIC_URL}/app/issue/issue/${item.id + "/"}`}>  <h6>{item.title}</h6> </Link>
                                                         <p>{new Date(item.created_date).toLocaleDateString() + " " + new Date(item.created_date).toLocaleTimeString()}</p>
                                                         <Row className="details">
-                                                            <Col xs="6"> <span>{Comments}</span></Col>
+                                                            <Col xs="6"> <span>{props.t(Comments)}</span></Col>
                                                             <Col xs="6" className='text-primary'>{item.comments}</Col>
                                                         </Row>
                                                         {user_role === "companyadmin" ? <div className="update" onClick={() => { ChangeIssueStatus(item) }} ><div className="icon-wrapper"><i className="font-primary icofont icofont-pencil-alt-5"></i></div></div> : ''}
@@ -218,7 +219,7 @@ const ProjectDetail = (props) => {
                                                         <Link to={`${process.env.PUBLIC_URL}/app/issue/issue/${item.id + "/"}`}>  <h6>{item.title}</h6> </Link>
                                                         <p>{new Date(item.created_date).toLocaleDateString() + " " + new Date(item.created_date).toLocaleTimeString()}</p>
                                                         <Row className="details">
-                                                            <Col xs="6"> <span>{Comments}</span></Col>
+                                                            <Col xs="6"> <span>{props.t(Comments)}</span></Col>
                                                             <Col xs="6" className='text-primary'>{item.comments}</Col>
                                                         </Row>
                                                         {user_role === "companyadmin" ? <div className="update" onClick={() => { ChangeIssueStatus(item) }} ><div className="icon-wrapper"><i className="font-primary icofont icofont-pencil-alt-5"></i></div></div> : ''}
@@ -237,7 +238,7 @@ const ProjectDetail = (props) => {
                                 <ScrollArea horizontal={false} vertical={true} >
                                     <Form>
                                         <FormGroup className="m-0">
-                                            <Input className="form-control-social" value={searchbar} onChange={filter} type="search" placeholder={ProjectDetailSearchCollaborators} />
+                                            <Input className="form-control-social" value={searchbar} onChange={filter} type="search" placeholder={props.t(ProjectDetailSearchCollaborators)} />
                                         </FormGroup>
                                     </Form>
                                     {foundUsers?.map((user, key) => {
@@ -260,15 +261,15 @@ const ProjectDetail = (props) => {
                     </ModalHeader>
                     <ModalBody>
                         <Input type="select" onChange={e => setIssueStatus({ ...issueStatus, status: Number(e.target.value) })} value={issueStatus.status} >
-                            <option value={1}>{Done}</option>
-                            <option value={2}>{Doing}</option>
-                            <option value={3}>{ToDo}</option>
-                            <option value={4}>{Canceled}</option>
+                            <option value={1}>{props.t(Done)}</option>
+                            <option value={2}>{props.t(Doing)}</option>
+                            <option value={3}>{props.t(ToDo)}</option>
+                            <option value={4}>{props.t(Canceled)}</option>
                         </Input>
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="secondary" onClick={changestatusmodaltoggle}>{Cancel}</Button>
-                        <Button color="primary" onClick={UpdateIssueStatus}>{SaveChanges}</Button>
+                        <Button color="secondary" onClick={changestatusmodaltoggle}>{props.t(Cancel)}</Button>
+                        <Button color="primary" onClick={UpdateIssueStatus}>{props.t(SaveChanges)}</Button>
                     </ModalFooter>
                 </Modal>
 
@@ -277,4 +278,4 @@ const ProjectDetail = (props) => {
     );
 }
 
-export default ProjectDetail;
+export default translate(ProjectDetail);

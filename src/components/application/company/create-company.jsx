@@ -6,6 +6,8 @@ import { toast } from 'react-toastify';
 import Breadcrumb from '../../../layout/breadcrumb'
 import { useForm } from 'react-hook-form'
 import * as API from '../../../api/apiurls';
+import { translate } from 'react-switch-lang';
+
 
 const CreateCompany = (props) => {
   const { register, handleSubmit, errors } = useForm();   
@@ -16,7 +18,7 @@ const CreateCompany = (props) => {
 
     const create=(company)=>{
       axios.post(API.createCompany,company,API.getHeader()).then(response=>{
-        toast.success(CCopmanySuccessMessage);
+        toast.success(props.t(CCopmanySuccessMessage));
       }).catch(error=>{
         toast.error(error.response.data.error);
       });
@@ -24,7 +26,7 @@ const CreateCompany = (props) => {
 
     return (
       <Fragment>
-        <Breadcrumb parent={menuitemCompany} title={menuitemCreateCompany} /> 
+        <Breadcrumb parent={props.t(menuitemCompany)} title={props.t(menuitemCreateCompany)} /> 
         <Container fluid={true}>
             <Row>
               <Col sm="12">
@@ -34,7 +36,7 @@ const CreateCompany = (props) => {
                       <Row>
                         <Col>
                           <FormGroup>
-                            <Label>{CCompanyName}</Label>
+                            <Label>{props.t(CCompanyName)}</Label>
                             <Input className="form-control" type="text"  name="company_name" placeholder="" innerRef={register({ required: true })} />
                             <span style={{ color: "red" }}>{errors.title && 'Title is required'}</span>
                           </FormGroup>
@@ -43,19 +45,19 @@ const CreateCompany = (props) => {
                       <Row>
                         <Col sm="4">
                           <FormGroup>
-                            <Label>{CCopmanyEmail}</Label>
+                            <Label>{props.t(CCopmanyEmail)}</Label>
                             <Input className="form-control" type="text" name="company_email" placeholder="" innerRef={register({ required: true })}/>
                           </FormGroup>
                         </Col>
                         <Col sm="4">
                           <FormGroup>
-                            <Label>{CCopmanyPhone}</Label>
+                            <Label>{props.t(CCopmanyPhone)}</Label>
                             <Input className="form-control" type="text" name="company_phone" placeholder="" innerRef={register({ required: true })}/>
                           </FormGroup>
                         </Col>
                         <Col sm="4">
                           <FormGroup>
-                            <Label>{CCopmanyWebsite}</Label>
+                            <Label>{props.t(CCopmanyWebsite)}</Label>
                             <Input className="form-control" type="text" name="company_website" placeholder="www.example.com" innerRef={register({ required: true })}/>
                           </FormGroup>
                         </Col>
@@ -63,13 +65,13 @@ const CreateCompany = (props) => {
                       <Row>
                         <Col sm="4">
                           <FormGroup>
-                            <Label>{CCopmanyAdminName}</Label>
+                            <Label>{props.t(CCopmanyAdminName)}</Label>
                             <Input className="form-control" type="text" name="admin_firstname" placeholder="" innerRef={register({ required: true })}/>
                           </FormGroup>
                         </Col>
                         <Col sm="4">
                           <FormGroup>
-                            <Label>{CCopmanyAdminLastname}</Label>
+                            <Label>{props.t(CCopmanyAdminLastname)}</Label>
                             <Input className="form-control" type="text" name="admin_lastname" placeholder="" innerRef={register({ required: true })}/>
                           </FormGroup>
                         </Col>
@@ -77,19 +79,19 @@ const CreateCompany = (props) => {
                       <Row>
                         <Col sm="4">
                           <FormGroup>
-                            <Label>{CCopmanyAdminUsername}</Label>
+                            <Label>{props.t(CCopmanyAdminUsername)}</Label>
                             <Input className="form-control" type="text" name="admin_username" placeholder="" innerRef={register({ required: true })}/>
                           </FormGroup>
                         </Col>
                         <Col sm="4">
                           <FormGroup>
-                            <Label>{CCopmanyAdminEmail}</Label>
+                            <Label>{props.t(CCopmanyAdminEmail)}</Label>
                             <Input className="form-control" type="text" name="admin_email" placeholder="" innerRef={register({ required: true })}/>
                           </FormGroup>
                         </Col>
                         <Col sm="4">
                           <FormGroup>
-                            <Label>{Password}</Label>
+                            <Label>{props.t(Password)}</Label>
                             <Input className="form-control" type={togglePassword ?  "text" : "password" } name="admin_password" innerRef={register({ required: true })} placeholder="*********"/>
                             <div className="show-hide" onClick={() => HideShowPassword(togglePassword)}><span className={togglePassword ? "" : "show"}></span></div>
                           </FormGroup>
@@ -98,7 +100,7 @@ const CreateCompany = (props) => {
                       <Row>
                         <Col>
                           <FormGroup className="mb-0">
-                              <Button color="primary" className="mr-3">{CCompanyCreate}</Button>
+                              <Button color="primary" className="mr-3">{props.t(CCompanyCreate)}</Button>
                           </FormGroup>
                         </Col>
                       </Row>
@@ -112,4 +114,4 @@ const CreateCompany = (props) => {
     );
 }
 
-export default CreateCompany;
+export default translate(CreateCompany);
