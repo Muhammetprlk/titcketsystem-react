@@ -60,6 +60,7 @@ const Rightbar = (props) => {
   const Logout_From_Firebase = () => {
     localStorage.removeItem('profileURL')
     localStorage.removeItem('token');
+    localStorage.removeItem('authenticatedUser');
     firebase_app.auth().signOut()
     history.push(`${process.env.PUBLIC_URL}/login`)
   }

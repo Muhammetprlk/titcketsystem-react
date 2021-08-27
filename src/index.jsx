@@ -56,7 +56,7 @@ const Root = (props) => {
   const abortController = new AbortController();
   const [currentUser, setCurrentUser] = useState(false);
   const [authenticated, setAuthenticated] = useState(false)
-  const { user_role } = JSON.parse(localStorage.getItem('authenticatedUser'));
+  const { user_role } = JSON.parse(localStorage.getItem('authenticatedUser')!==null?localStorage.getItem('authenticatedUser'):"{}");
 
   useEffect(() => {
     VerifyToken();
